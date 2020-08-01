@@ -333,6 +333,7 @@ function random() {
 
 // Запрос по API
 
+/* рабоает только локально из-за http
 const request = async (number, type) => {
 	let res = await fetch(`http://numbersapi.com/${number}/${type}`)
 
@@ -354,6 +355,30 @@ form.addEventListener('submit', function(event) {
 		request(number, type)
 			.then( response => {
 				result.textContent = response
+			})		
+	}		
+})
+*/
+const request = async (pokemon) => {
+	let res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+
+	return await res.json()
+}
+
+
+
+const form = document.getElementById('form')
+const result = document.getElementById('result_api')
+
+form.addEventListener('submit', function(event) {
+	event.preventDefault()
+
+	let pokemon = form.elements.pokemon.value
+
+	if (pokemon != "") {
+		request(pokemon)
+			.then( response => {
+				result.innerHTML = `${response.species.name.toUpperCase()} <img src='${response.sprites.front_default}'>`
 			})		
 	}		
 })

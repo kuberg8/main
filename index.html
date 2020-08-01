@@ -5,7 +5,6 @@
 
 	<meta name="description" content="до 200 символов, серое описание под сайтом">
 	<meta name="viewport" content="width=device-width">
-	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 	<link rel="stylesheet" href="css.css">
 	<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 	<link rel="shortcut icon" href="icon.ico" type="image/x-icon">
@@ -123,6 +122,7 @@
 				
 
 				<h2><i class="fas fa-network-wired"></i> API (get) <i class="fas fa-wifi"></i></h2>
+					<!--
 					<form id="form">
 						<input name="number" placeholder="Введите число" type="number">
 						<select name="type">
@@ -135,11 +135,15 @@
 						<p>
 							<button>Сделать запрос</button>								
 						</p>
-						<p>
 							<span id="result_api">date or number information</span>
-						</p>
+						<span style='font-size: 20px;'>работает только на локальном сайте т.к. запрос с незащищенного сайта (http)</span>
 					</form>
-
+					-->
+					<form id="form">
+						<input id="pokemon" name="pokemon" placeholder="Введите имя покемона или число">
+						<span id="result_api">POKEMON</span>
+						<button>Сделать запрос</button>	
+					</form>
 
 
 
