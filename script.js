@@ -334,7 +334,7 @@ function random() {
 // Запрос по API
 
 const request = async (number, type) => {
-	let res = await fetch(`https://numbersapi.com/${number}/${type}`)
+	let res = await fetch(`http://numbersapi.com/${number}/${type}`)
 
 	return await res.text()
 }
