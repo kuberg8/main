@@ -430,7 +430,7 @@ img {
 	box-shadow: none;
 	width: 150px;
 	height: 150px;
-	animation: mr 0.2s linear;
+	animation: mr 1s linear;
 }
 @font-face {
 	font-family: "Rowdies";
