@@ -49,15 +49,21 @@ nav {
 	background: #86fde8;
 	z-index: 1000;
 	transition: top 0.2s linear;
-	box-shadow: 5px 5px 14px rgba(0,0,0, 0.8)
+	box-shadow: 5px 5px 14px rgba(0,0,0, 0.8);
+	min-height: 81px;
 }
 
 
 nav span {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	position: absolute; 
 	right: 20px; 
-	top: 80px;
+	bottom: -100%;
 	width: 50px;
+	height: 73px;
 }
 
 
@@ -445,7 +451,7 @@ img {
 	border: 2px dashed black;
 	border-radius: 50%;
 	background: url(img/pokeball.jpg) no-repeat center;
-	background-size: 100% 100%;
+	background-size: auto 100%;
 	box-shadow: 5px 5px 14px rgba(0,0,0, 0.8);
 	width: 250px;
 	height: 250px;
@@ -537,7 +543,7 @@ img {
 	}	
 
 	nav span {
-		top: 150px;
+		bottom: -60%;
 	}
 
 	nav a {
