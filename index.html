@@ -194,13 +194,14 @@
 							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON">JSON</a>
 							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol">Symbol</a>
 							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>
-							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Set">Set</a>							
+							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Set">Set</a>
+							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>															
 						</span>
 					</span>							
 
 					<ul>
 						<h3 style="font-family: Indie Flower;">Reminder:</h3>
-						<span style="display: block; margin-bottom: 60px;">
+						<span class="reminder_item">
 							<h3>Структуры данных:</h3>
 							<li>
 								<b>Объекты</b> - для хранения именованных коллекций.
@@ -214,7 +215,7 @@
 							<li><b>WeakSet</b> - коллекция, элементами которой могут быть только объекты. Ссылки на эти объекты в WeakSet являются слабыми. Каждый объект может быть добавлен в WeakSet только один раз.</li>												
 						</span>		
 
-						<span>
+						<span class="reminder_item">
 							<h3>Циклы:</h3>
 							<li>
 								<b>for(key of arr)</b> - Перебирает элементы итерируемых объектов(объекты с ключами - цифрами, свойством length и свойством Symbol.itertor(в __proto__))
@@ -233,7 +234,32 @@
 							<li>
 								<b>for(начало; условие; шаг) {}</b>
 							</li>							
-						</span>				
+						</span>		
+
+						<span class="reminder_item">
+							<h3>Формат данных(Сетевых запросов):</h3>
+							<li>
+								<b>JSON</b> (JavaScript Object Notation) - это текстовый формат обмена данными, основанный на JavaScript. JSON требует меньше кода и имеет меньший размер, что ускоряет обработку и передачу данных. Не смотря на то, что JSON написан на JavaScript , он не зависит от языка. Но это все, что может сделать с JSON. Он не имеет каких-либо мощных функций, связанных с проверкой и схемой, которые есть у XML.
+								<p><img src="img/JSON.jpg"></p>
+							</li>
+							<li>
+								<b>XML</b> (Extensible Markup Language) - это язык разметки. Является выбором по умолчанию для обмена данными, так-как практически у каждого языка есть синтаксический анализатор, будь то Java, .NET или любой другой язык, поэтому легко извлечь определенные данные из XML, и есть схемы, которые могут проверять XML. XML также широко используется в сфере услуг: банковские услуги, онлайн-магазины розничной торговли, интеграция промышленных систем и т.д.
+								<p><img src="img/XML.jpg"></p>
+							</li>							
+						</span>	
+
+
+						<span class="reminder_item">
+							<h3>Типы сетевых запросов:</h3>
+							<li>
+								<b>Fetch(url)</b>
+								<p><img src="img/fetch.jpg"> <img src="img/fetch_post.jpg"></p>
+							</li>
+							<li>
+								<b>Axios</b> - это широко известная JavaScript-библиотека. Она представляет собой HTTP-клиент, основанный на промисах и предназначенный для браузеров и для Node.js.
+								<p><img src="img/axios.jpg"> <img src="img/axios_post.jpg"></p>
+							</li>							
+						</span>																
 					</ul>		
 				</span>
 				

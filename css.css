@@ -153,7 +153,8 @@ h1 {
 	border: 2px dashed black;
 	margin-bottom: 20px;
 	box-shadow: 0px 5px 14px rgba(0,0,0, 0.8);
-	transition: background 0.1s, color 0.1s linear
+	transition: background 0.1s, color 0.1s linear;
+	margin: 10px;
 }
 
 .methods_item:hover {
@@ -161,6 +162,12 @@ h1 {
 	color: white;
 }
 
+
+
+.reminder_item {
+	display: block;
+	margin-bottom: 60px;
+}
 
 
 
@@ -214,6 +221,8 @@ img {
 	border: 2px dashed black;
 	border-radius: 10px;
 	box-shadow: 0px 5px 14px rgba(0,0,0, 0.8);
+	max-width: 90%;
+	margin: 5px;
 }
 
 

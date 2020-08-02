@@ -305,6 +305,10 @@ form.addEventListener('submit', function(event) {
 const request = async (pokemon) => {
 	let res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.toLowerCase()}`)
 
+	if (res.status === 404) {
+		result.innerHTML = 'Not Correct'
+	}
+
 	return await res.json()
 }
 
