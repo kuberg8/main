@@ -97,29 +97,9 @@
 
 
 
-				
-				<h2><i class="fas fa-map-marker"></i> Event <i class="fas fa-location-arrow"></i></h2>
-					<div id="cub" onmousemove="movvv(event)" onclick="movvvClick(event)">
-						<span id="item1">X: </span>
-						<span id="item2">Y:</span>
-						<div id="divCub"></div>
-					</div>	
 
 
 
-				<h2><i class="fas fa-random"></i> Random <i class="fas fa-sync-alt"></i></h2>
-					<div class="random_block">
-						<span class="result_block"><span id="result_random">0</span></span>	
-						<span class="random_input">
-							<span><input id="min" placeholder="0" style="width: 120px; height: 40px;"> <b>- MINIMUM</b></span>
-							<span><input id="max" placeholder="0" style="width: 120px; height: 40px;"> <b>- MAXIMUM</b></span>
-						</span>
-					</div>
-					
-					<button id="random_button" onclick="random()" style="height: 40px;">Сгенерировать</button>
-
-
-				
 
 				<h2><i class="fas fa-network-wired"></i> API (get) <i class="fas fa-wifi"></i></h2>
 					<!--
@@ -140,10 +120,43 @@
 					</form>
 					-->
 					<form id="form">
-						<input id="pokemon" name="pokemon" placeholder="Введите имя покемона или число">
+						<input id="pokemon" name="pokemon" autocomplete="off" placeholder="Enter the number or name of the pokemon">
 						<span id="result_api">POKEMON</span>
 						<button>Сделать запрос</button>	
 					</form>
+
+
+
+
+
+
+
+				
+				<h2><i class="fas fa-map-marker"></i> Event <i class="fas fa-location-arrow"></i></h2>
+					<div id="cub" onmousemove="movvv(event)" onclick="movvvClick(event)">
+						<span id="item1">X: </span>
+						<span id="item2">Y:</span>
+						<div id="divCub"></div>
+					</div>	
+
+
+
+
+
+
+				<h2><i class="fas fa-random"></i> Random <i class="fas fa-sync-alt"></i></h2>
+					<div class="random_block">
+						<span class="result_block"><span id="result_random">0</span></span>	
+						<span class="random_input">
+							<span><input id="min" placeholder="0" style="width: 120px; height: 40px;"> <b>- MINIMUM</b></span>
+							<span><input id="max" placeholder="0" style="width: 120px; height: 40px;"> <b>- MAXIMUM</b></span>
+						</span>
+					</div>
+					
+					<button id="random_button" onclick="random()" style="height: 40px;">Сгенерировать</button>
+
+
+				
 
 
 
@@ -248,6 +261,7 @@
 							<h3>Часто используемые методы у document:</h3>
 							<div style="font-style: italic;font-weight: bold; padding-bottom: 10px;">Это встроенные методы которые берутся в document.__proto__.__proto__ || Document.prototype</div>
 							<li><b>document.createElement('<тег>')</b></li>
+							<li><b>document.insertAdjacentHTML('afterend', '&ltdiv>&lt/div>')</b></li>
 							<li><b>document.getElementById('id')</b></li>
 							<li><b>document.getElementsByClassName('class')</b></li>
 							<li><b>document.querySelector('css-selector')</b> - возвращает первый элемент из коллекции</li>

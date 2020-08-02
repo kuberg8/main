@@ -398,30 +398,22 @@ img {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	font-size: 40px;
+	padding-top: 30px;
+	font-size: 25px;
 	border: 2px dashed black;
-	border-radius: 10px;
-	background: white;
+	border-radius: 50%;
+	background: url(img/pokeball.jpg) no-repeat center;
+	background-size: 100% 100%;
 	box-shadow: 5px 5px 14px rgba(0,0,0, 0.8);
-	width: 300px;
-	height: 200px;
+	width: 250px;
+	height: 250px;
 	margin: 15px auto;
-	overflow: hidden;	
+	overflow: hidden;
+	color: white;	
 
 	font-family: Rowdies;
 }
 
-@keyframes mr {
-	from {
-		margin-right: -100%; 
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-		margin-right: 0%; 
-	}
-}
 
 
 #result_api img {
@@ -432,6 +424,16 @@ img {
 	height: 150px;
 	animation: mr 1s linear;
 }
+@keyframes mr {
+	from {
+		margin-right: -100%; 
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+		margin-right: 0%; 
+	}
+}
 @font-face {
 	font-family: "Rowdies";
 	src: url("https://fonts.googleapis.com/css2?family=Rowdies&display=swap");
@@ -440,7 +442,8 @@ img {
 
 
 #pokemon {
-	width: 37%;
+	min-width: 495px;
+	font-size: 25px;
 }
 
 
@@ -551,6 +554,7 @@ img {
 	}
 	#pokemon {
 		width: 90%;
+		min-width: 0;
 		font-size: 20px;
 	}
 
