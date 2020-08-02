@@ -124,10 +124,43 @@ h1 {
 }
 
 .methods {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	font-family: Indie Flower; 
 	font-weight: bold;
 	font-size: 25px;
+	margin-bottom: 40px;
 }
+
+.methods_block {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin: 0 auto;
+	width: 90%;
+}
+
+.methods_item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: auto;
+	padding: 10px 25px;
+	background: white;
+	border-radius: 10px;
+	border: 2px dashed black;
+	margin-bottom: 20px;
+	box-shadow: 0px 5px 14px rgba(0,0,0, 0.8);
+	transition: background 0.1s, color 0.1s linear
+}
+
+.methods_item:hover {
+	background: red;
+	color: white;
+}
+
 
 
 
@@ -410,8 +443,6 @@ img {
 	margin: 15px auto;
 	overflow: hidden;
 	color: white;	
-
-	font-family: Rowdies;
 }
 
 
@@ -434,10 +465,7 @@ img {
 		margin-right: 0%; 
 	}
 }
-@font-face {
-	font-family: "Rowdies";
-	src: url("https://fonts.googleapis.com/css2?family=Rowdies&display=swap");
-}
+
 
 
 

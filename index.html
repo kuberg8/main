@@ -121,7 +121,7 @@
 					-->
 					<form id="form">
 						<input id="pokemon" name="pokemon" autocomplete="off" placeholder="Enter the number or name of the pokemon">
-						<span id="result_api">POKEMON</span>
+						<b><span id="result_api">POKEMON</span></b>
 						<button>Сделать запрос</button>	
 					</form>
 
@@ -181,38 +181,59 @@
 		<span class="border_top" style="font-style: italic;">
 			<h1 id="js"><i class="fab fa-js-square"></i> JS <i class="fab fa-chrome"></i></h1>
 				<span style="padding: 0 20px; text-align: left; font-size: 18px; font-family: Arial;">
-					<ol class="methods">
+					<span class="methods">
 						<h3>Cheat sheets:</h3>
-						<li><h3><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects">Standard objects</a></h3></li>
-						<li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array#">Array</a></li>
-						<li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></li>
-						<li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></li>
-						<li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></li>	
-						<li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></li>	
-						<li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON">JSON</a></li>	
-						<li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol">Symbol</a></li>
-					</ol>	
+						<h3><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects">Standard objects</a></h3>
+						<span class="methods_block">
+						    <a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array#">Array</a>
+							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>	
+							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a>						
+							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>	
+							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON">JSON</a>
+							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol">Symbol</a>
+							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>
+							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Set">Set</a>							
+						</span>
+					</span>							
 
 					<ul>
 						<h3 style="font-family: Indie Flower;">Reminder:</h3>
-						<h3>Циклы:</h3>
-						<li>
-							<b>for(key of arr)</b> - Перебирает элементы итерируемых объектов(объекты с ключами - цифрами, свойством length и свойством Symbol.itertor(в __proto__))
-							<p>(псевдомассивы не работают так как нету Symbol.itertor, потому что __proto__ ссылается на Object.prototype).</p>
-							<p>Способ перебрать объект через <b>for(key of obj)</b> - <b>for([key, value] of Object.entries(obj))</b></p>
-						</li>
-						<li>
-							<b>for(key in obj) </b> - Перебирает ключи у объектов(всех)
-						</li>
-						<li>
-							<p>
-								<b>while (condition) {}</b> - проверяет условие на true потом выполняет тело
-								<br><b>do {} while()</b> - сначала выолнит тело потом если условие true, повторит цикл
-							</p>
-						</li>	
-						<li>
-							<b>for(начало; условие; шаг) {}</b>
-						</li>
+						<span style="display: block; margin-bottom: 60px;">
+							<h3>Структуры данных:</h3>
+							<li>
+								<b>Объекты</b> - для хранения именованных коллекций.
+							</li>
+							<li>
+								<b>Массивы</b> - для хранения упорядоченных коллекций.
+							</li>
+							<li><b>Map</b> - это коллекция ключ/значение, как и Object. Но основное отличие в том, что Map позволяет использовать ключи любого типа. Object приводит свои ключи к строкам</li>		
+							<li><b>Set</b> - это особый вид коллекции: «множество» значений (без ключей), где каждое значение может появляться только один раз.</li>	
+							<li><b>WeakMap</b> — коллекция пар ключ-значение. В качестве ключей могут быть использованы только объекты, а значения могут быть произвольных типов.<span style="text-decoration: underline;">(В основном, WeakMap используется в качестве дополнительного хранилища данных.)</span></li>
+							<li><b>WeakSet</b> - коллекция, элементами которой могут быть только объекты. Ссылки на эти объекты в WeakSet являются слабыми. Каждый объект может быть добавлен в WeakSet только один раз.</li>												
+						</span>		
+
+						<span>
+							<h3>Циклы:</h3>
+							<li>
+								<b>for(key of arr)</b> - Перебирает элементы итерируемых объектов(объекты с ключами - цифрами, свойством length и свойством Symbol.itertor(в __proto__))
+								<p>(псевдомассивы не работают так как нету Symbol.itertor, потому что __proto__ ссылается на Object.prototype).</p>
+								<p>Способ перебрать объект через <b>for(key of obj)</b> - <b>for([key, value] of Object.entries(obj))</b></p>
+							</li>
+							<li>
+								<b>for(key in obj) </b> - Перебирает ключи у объектов(всех)
+							</li>
+							<li>
+								<p>
+									<b>while (condition) {}</b> - проверяет условие на true потом выполняет тело
+									<br><b>do {} while()</b> - сначала выолнит тело потом если условие true, повторит цикл
+								</p>
+							</li>	
+							<li>
+								<b>for(начало; условие; шаг) {}</b>
+							</li>							
+						</span>				
 					</ul>		
 				</span>
 				
@@ -430,7 +451,7 @@
 
 						<div style="padding-bottom: 20px;"><b>Action</b> — это объект, у которого есть свойство - «type» (с названием действия, которое нужно выполнить)</div>
 
-						<div style="padding-bottom: 20px;"><b>Action</b> Creator — это вспомогательная функция, которая возвращает action </div>
+						<div style="padding-bottom: 20px;"><b>Action Creator</b> — это вспомогательная функция, которая возвращает action </div>
 
 						<div style="padding-bottom: 20px;"><b>Subscribe</b> — это метод принимает функцию, которая будет вызывается каждый раз после обновления store. Он как бы «подписывает» функцию, переданную ему на обновление. К примеру следующий код при каждом обновлении (при каждом вызове dispatch()) будет выводить новое значение store в консоль.	</div>			
 					</ul>	
