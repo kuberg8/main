@@ -325,7 +325,7 @@ form.addEventListener('submit', function(event) {
 	if (pokemon != "") {
 		request(pokemon)
 			.then( response => {
-				result.innerHTML = `${response.species.name.toUpperCase()} <img src='${response.sprites.front_default}'>`
+				result.innerHTML = `${response.name.toUpperCase()} <img src='${response.sprites.front_default}'>`
 			})		
 	}		
 })
