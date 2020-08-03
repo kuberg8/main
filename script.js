@@ -306,7 +306,6 @@ async function play() {
 
 
 
-
 /*
  //Цепочка промисов 
 dang('black', 500)
@@ -382,6 +381,8 @@ function play() {
 	})	
 }
 */
+
+
 
 
 
