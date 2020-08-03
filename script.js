@@ -341,10 +341,12 @@ form.addEventListener('submit', function(event) {
 
 
 //Кординаты
+let cub = document.getElementById('cub')
+
+
 function movvv(event) {
 	document.getElementById("item1").textContent = "X: " + event.clientX
 	document.getElementById("item2").textContent = "Y: " + event.clientY
-
 }
 
 
