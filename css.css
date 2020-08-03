@@ -448,7 +448,7 @@ img {
 	align-items: center;
 	padding-top: 30px;
 	font-size: 25px;
-	border: 2px dashed black;
+	border: 4px solid black;
 	border-radius: 50%;
 	background: url(img/pokeball.jpg) no-repeat center;
 	background-size: auto 100%;
