@@ -274,6 +274,74 @@ function t() {
 
 
 
+//Promise
+let dang = (color, mr) => {
+	return new Promise( (resolve, reject) => {
+		document.getElementById('promise').disabled = true
+
+		setTimeout( () => {
+			document.body.style.background = color
+			resolve("1")
+		}, mr)	
+	})	
+}
+
+
+/* Цепочка промисов
+dang().then( (value) => {
+	setTimeout( () => {
+		document.body.style.background = "blue"	
+		console.log(value)
+	}, 1000)	
+}).then( (value) => {
+	setTimeout( () => {
+		document.body.style.background = "white"
+	}, 1500)	
+}).then( (value) => {
+	setTimeout( () => {
+		document.body.style.background = "green"
+	}, 2000)	
+}).then( (value) => {
+	setTimeout( () => {
+		document.body.style.background = "green"
+	}, 2500)	
+}).then( (value) => {
+	setTimeout( () => {
+		document.body.style.background = "yellow"
+	}, 3000)	
+}).then( (value) => {
+	setTimeout( () => {
+		document.body.style.background = "orange"
+	}, 3500)	
+}).then( () => {
+	setTimeout( () => {
+		document.body.style.background = "pink"
+	}, 4000)	
+})
+*/
+
+function play() {
+	Promise.all([dang('pink', 500), dang('blue', 1000), dang('red', 1500), dang('orange', 2000)])
+	.then( () => {
+		setTimeout( () => {
+			document.body.style.background = 'linear-gradient(-45deg, #acb6e5,#86fde8)'
+		}, 500)
+	})
+	.finally( () => {
+		setTimeout( () => {
+			document.getElementById('promise').disabled = false
+		}, 500)
+	})	
+}
+
+
+
+
+
+
+
+
+
 // Запрос по API
 
 /* рабоает только локально из-за http
@@ -282,11 +350,6 @@ const request = async (number, type) => {
 
 	return await res.text()
 }
-
-
-
-const form = document.getElementById('form')
-const result = document.getElementById('result_api')
 
 form.addEventListener('submit', function(event) {
 	event.preventDefault()
@@ -302,8 +365,24 @@ form.addEventListener('submit', function(event) {
 	}		
 })
 */
+
+
+
+/* без async await
+function request(pokemon) {
+	return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`).then( response => {
+
+		if (response.ok === false ) { 
+			result.innerHTML = 'Not Correct'
+		}		
+
+		return response.json()
+	})	
+} 
+*/
+
 const request = async (pokemon) => {
-	let res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.toLowerCase()}`)
+	let res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
 
 	if (res.ok === false ) { // if (res.status === 404 ) {
 		result.innerHTML = 'Not Correct'
@@ -311,8 +390,6 @@ const request = async (pokemon) => {
 
 	return await res.json()
 }
-
-
 
 const form = document.getElementById('form')
 const result = document.getElementById('result_api')
@@ -323,12 +400,14 @@ form.addEventListener('submit', function(event) {
 	let pokemon = form.elements.pokemon.value
 
 	if (pokemon != "") {
-		request(pokemon)
+		request(pokemon.toLowerCase())
 			.then( response => {
 				result.innerHTML = `${response.name.toUpperCase()} <img src='${response.sprites.front_default}'>`
 			})		
 	}		
 })
+
+
 
 
 
@@ -402,6 +481,11 @@ function random() {
 	}
 
 }
+
+
+
+
+
 
 
 
