@@ -275,53 +275,101 @@ function t() {
 
 
 //Promise
-let dang = (color, mr) => {
+let dang = (backgroundColor, mr) => {
 	return new Promise( (resolve, reject) => {
 		document.getElementById('promise').disabled = true
 
 		setTimeout( () => {
-			document.body.style.background = color
-			resolve("1")
+			document.body.style.background = backgroundColor
+			resolve(1)
 		}, mr)	
 	})	
 }
 
 
-/* Цепочка промисов
-dang().then( (value) => {
+
+/* Через Async Await*/ 
+// Надо ставить Await перед промисами, js перестает работать пока Await ждет промис 
+async function play() {
+	await dang('pink', 500)
+	await dang('blue', 500)
+	await dang('red', 500)
+	await dang('orange', 500)
+	await dang('violet', 500)
+
 	setTimeout( () => {
-		document.body.style.background = "blue"	
-		console.log(value)
-	}, 1000)	
-}).then( (value) => {
-	setTimeout( () => {
-		document.body.style.background = "white"
-	}, 1500)	
-}).then( (value) => {
-	setTimeout( () => {
-		document.body.style.background = "green"
-	}, 2000)	
-}).then( (value) => {
-	setTimeout( () => {
-		document.body.style.background = "green"
-	}, 2500)	
-}).then( (value) => {
-	setTimeout( () => {
-		document.body.style.background = "yellow"
-	}, 3000)	
-}).then( (value) => {
-	setTimeout( () => {
-		document.body.style.background = "orange"
-	}, 3500)	
-}).then( () => {
-	setTimeout( () => {
-		document.body.style.background = "pink"
-	}, 4000)	
-})
-*/
+		document.body.style.background = 'linear-gradient(-45deg, #acb6e5,#86fde8)'
+		document.getElementById('promise').disabled = false
+	}, 500)	
+}
+
+
+
+
+
+/*
+ //Цепочка промисов 
+dang('black', 500)
+	.then( (value) => {
+		return new Promise((resolve, reject) => { 
+			setTimeout(() => {
+				document.body.style.background = "blue"	
+				resolve(++value)
+			}, 500)
+		});			
+	})
+	.then( (value) => {
+		return new Promise((resolve, reject) => { 
+			setTimeout(() => {
+				document.body.style.background = "white"	
+				resolve(++value)
+			}, 500)
+		});		
+	})
+	.then( (value) => {
+		return new Promise((resolve, reject) => { 
+			setTimeout(() => {
+				document.body.style.background = "green"	
+				resolve(++value)
+			}, 500)
+		});		
+	})
+	.then( (value) => {
+		return new Promise((resolve, reject) => { 
+			setTimeout(() => {
+				document.body.style.background = "violet"	
+				resolve(++value)
+			}, 500)
+		});		
+	})
+	.then( (value) => {
+		return new Promise((resolve, reject) => { 
+			setTimeout(() => {
+				document.body.style.background = "yellow"	
+				resolve(++value)
+			}, 500)
+		});
+	})
+	.then( (value) => {
+		return new Promise((resolve, reject) => { 
+			setTimeout(() => {
+				document.body.style.background = "orange"	
+				resolve(++value)
+			}, 500)
+		});	
+	})
+	.then( (value) => {
+		return new Promise((resolve, reject) => { 
+			setTimeout(() => {
+				document.body.style.background = "pink"	
+				resolve(console.log('Промисов в цепочке - ' + ++value))
+			}, 500)
+		});	
+	})
+
 
 function play() {
-	Promise.all([dang('pink', 500), dang('blue', 1000), dang('red', 1500), dang('orange', 2000)])
+	Promise.all([dang('pink', 500), dang('blue', 1000), dang('red', 1500), dang('orange', 2000)]) // для параллельного выполнения промисов
 	.then( () => {
 		setTimeout( () => {
 			document.body.style.background = 'linear-gradient(-45deg, #acb6e5,#86fde8)'
@@ -333,6 +381,9 @@ function play() {
 		}, 500)
 	})	
 }
+*/
+
+
 
 
 
@@ -388,7 +439,7 @@ const request = async (pokemon) => {
 		result.innerHTML = 'Not Correct'
 	}
 
-	return await res.json()
+	return res.json()
 }
 
 const form = document.getElementById('form')

@@ -6,7 +6,7 @@ body {
 	text-align: center;
 	font-family: Indie Flower;
 	margin: 0;
-	transition: background 0.5s linear;
+	transition: background 0.5s, color 0.5s linear;
 }
 
 @keyframes gradientt {
