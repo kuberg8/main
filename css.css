@@ -7,6 +7,7 @@ body {
 	font-family: Indie Flower;
 	margin: 0;
 	transition: background 0.5s, color 0.5s linear;
+	will-change: transform;
 }
 
 @keyframes gradientt {
@@ -50,6 +51,7 @@ nav {
 	background: #86fde8;
 	z-index: 1000;
 	transition: top 0.2s linear;
+	will-change: transform;
 	box-shadow: 5px 5px 14px rgba(0,0,0, 0.8);
 	min-height: 81px;
 }
@@ -254,7 +256,8 @@ img {
 
 
 .infinity {
-	animation: inf 10s infinite linear;;
+	animation: inf 10s infinite linear;
+	will-change: transform;
 }
 
 
@@ -410,6 +413,7 @@ img {
 	box-sizing: content-box;
 	display: block;
 	animation: random 0.2s;
+	will-change: transform;
 }
 
 @keyframes random {
@@ -470,6 +474,7 @@ img {
 	width: 150px;
 	height: 150px;
 	animation: mr 1s linear;
+	will-change: transform;
 }
 @keyframes mr {
 	from {
