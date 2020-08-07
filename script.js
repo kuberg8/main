@@ -280,7 +280,7 @@ let dang = (backgroundColor, mr) => {
 		document.getElementById('promise').disabled = true
 
 		setTimeout( () => {
-			document.body.style.background = backgroundColor
+			document.getElementById('promise_title').style.color = backgroundColor
 			resolve(1)
 		}, mr)	
 	})	
@@ -296,14 +296,12 @@ async function play() {
 	await dang('red', 500)
 	await dang('orange', 500)
 	await dang('violet', 500)
+	await dang('black', 500)
 
 	setTimeout( () => {
-		document.body.style.background = 'linear-gradient(-45deg, #acb6e5,#86fde8)'
 		document.getElementById('promise').disabled = false
 	}, 500)	
 }
-
-
 
 
 /*

@@ -6,8 +6,6 @@ body {
 	text-align: center;
 	font-family: Indie Flower;
 	margin: 0;
-	transition: background 0.5s, color 0.5s linear;
-	will-change: transform;
 }
 
 @keyframes gradientt {
@@ -51,7 +49,7 @@ nav {
 	background: #86fde8;
 	z-index: 1000;
 	transition: top 0.2s linear;
-	will-change: transform;
+	will-change: top;
 	box-shadow: 5px 5px 14px rgba(0,0,0, 0.8);
 	min-height: 81px;
 }
@@ -385,6 +383,15 @@ img {
 
 
 
+
+
+#promise_title {
+	transition: color 0.5s linear
+}
+
+
+
+
 .random_block {
 	display: flex; 
 	width: 70%; 
@@ -413,7 +420,7 @@ img {
 	box-sizing: content-box;
 	display: block;
 	animation: random 0.2s;
-	will-change: transform;
+	will-change: margin-top, margin-bottom;
 }
 
 @keyframes random {
@@ -474,7 +481,7 @@ img {
 	width: 150px;
 	height: 150px;
 	animation: mr 1s linear;
-	will-change: transform;
+	will-change: margin-right, opacity;
 }
 @keyframes mr {
 	from {
