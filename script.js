@@ -24,7 +24,8 @@ function scrollToBlock(block) {
 	document.getElementById(block).scrollIntoView({block: "start", behavior: "smooth"})
 
 	if (document.documentElement.clientWidth < 778) {
-		nav.style.top = '-132px'
+		nav.style.transform = "translateY(0px)"
+		//nav.style.top = '-132px'
 		navSpan.setAttribute('onclick', 'openNav()')
 	} 
 }
