@@ -149,6 +149,28 @@ h1 {
 	width: 90%;
 }
 
+#methods_title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: auto;
+	padding: 10px 25px;
+	background: black;
+	color: white;
+	border-radius: 10px;
+	border: 2px dashed white;
+	margin-bottom: 20px;
+	box-shadow: 0px 5px 14px rgba(255,255,255, 0.8);
+	transition: background 0.1s, color 0.1s linear;
+	margin: 10px;	
+}
+
+#methods_title:hover {
+	background: pink;
+	color: black;
+	border: 2px dashed black;
+}
+
 .methods_item {
 	display: flex;
 	justify-content: center;
