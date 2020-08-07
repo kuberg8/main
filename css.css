@@ -538,9 +538,7 @@ img {
 	font-family: Arial; 
 	text-align: left; 
 	margin-top: 30px;
-	background: url("img/js.jpeg");
-	background-size: 100% auto;
-	background-color: #fff2f2d1;
+	background-color: #f8dc3d;
 	padding: 10px 0;
 	border: 1px solid black;
 	overflow: auto;
