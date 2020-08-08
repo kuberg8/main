@@ -330,17 +330,11 @@ img {
 	direction: rtl;
 
 	border-radius: 5px;
+	margin-bottom: 10px;
 }
 
-.caption {
-	padding-bottom: 20px;
-	width: 90%;
-	margin: 0 auto;
-}
 
-.caption input {
-	width: 100%;
-}
+
 
 .cal_item {
 	display: flex;
@@ -365,13 +359,13 @@ img {
 	color: black;
 }
 
-.t2 {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	width: 90%;
-	margin: 0 auto;
+
+
+.above {
+	width: 100%;
 }
+
+
 
 
 

@@ -178,7 +178,9 @@ function shr() {
 }
 
 function lst() {
+	y = null
 	operation = "%"
+	
 	x = textArea.value
 	textArea.value = ""
 	textArea.placeholder = ""
