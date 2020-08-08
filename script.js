@@ -94,25 +94,6 @@ function clear() {
 
 
 
-/*
-function add_v1(a, b) {
-    let sum = a;
-
-    let makeSum = function (b) {
-        if (b) {
-            sum += b;
-            return makeSum;
-        } else {
-            return sum;
-        }
-    }
-
-    return makeSum;
-}
-
-console.log(add_v1(2)(5)());
-*/
-
 
 // Калькулятор
 let x
@@ -740,6 +721,7 @@ function sortByPrice(arr) {
 		`
 	})		
 }
+
 
 
 
