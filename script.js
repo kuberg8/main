@@ -94,6 +94,25 @@ function clear() {
 
 
 
+/*
+function add_v1(a, b) {
+    let sum = a;
+
+    let makeSum = function (b) {
+        if (b) {
+            sum += b;
+            return makeSum;
+        } else {
+            return sum;
+        }
+    }
+
+    return makeSum;
+}
+
+console.log(add_v1(2)(5)());
+*/
+
 
 // Калькулятор
 let x
@@ -168,19 +187,36 @@ function lst() {
 
 
 function reslt() {
-	//y = textArea.value
-	
-	if(operation === "+") {
-		textArea.value = Number(x) + Number(textArea.value)
-	} else if(operation === "-") {
-		textArea.value = Number(x) - Number(textArea.value)
-	} else if(operation === "*") {
-		textArea.value = Number(x) * Number(textArea.value) 
-	} else if(operation === "/") {
-		textArea.value = Number(x) / Number(textArea.value) 
-	} else if(operation === "%")	{
-		textArea.value = Number(x) % Number(textArea.value)
-	}	
+	if (y === null) {
+
+		y = textArea.value
+
+
+		if(operation === "+") {
+			textArea.value = Number(x) + Number(textArea.value)
+		} else if(operation === "-") {
+			textArea.value = Number(x) - Number(textArea.value)
+		} else if(operation === "*") {
+			textArea.value = Number(x) * Number(textArea.value) 
+		} else if(operation === "/") {
+			textArea.value = Number(x) / Number(textArea.value) 
+		} else if(operation === "%")	{
+			textArea.value = Number(x) % Number(textArea.value)
+		}				
+	} else {
+
+		if(operation === "+") {
+			textArea.value = Number(textArea.value) + Number(y)
+		} else if(operation === "-") {
+			textArea.value = Number(textArea.value) - Number(y)
+		} else if(operation === "*") {
+			textArea.value = Number(textArea.value) * Number(y) 
+		} else if(operation === "/") {
+			textArea.value = Number(textArea.value) / Number(y) 
+		} else if(operation === "%")	{
+			textArea.value = Number(textArea.value) % Number(y)
+		}			
+	}
 }
 
 
