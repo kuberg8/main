@@ -6,18 +6,20 @@ let navSpan = nav.getElementsByTagName('span')[0]
 
 
 
+
+
 function openNav() {
-	if (document.documentElement.clientWidth < 778 /*&& pageYOffset >= nav.clientHeight + header.clientHeight*/) {
-		//nav.style.transform = "translateY(132px)"
-		nav.style.top = '0'
+	if (document.documentElement.clientWidth < 778 && pageYOffset >= nav.clientHeight + header.clientHeight) {
+		nav.style.transform = "translateY(132px)"
+		//nav.style.top = '0'
 		navSpan.setAttribute('onclick', 'closeNav()')
 	} 
 }
 
 function closeNav() {
-	if (document.documentElement.clientWidth < 778 /*&& pageYOffset >= nav.clientHeight + header.clientHeight*/) {
-		//nav.style.transform = "translateY(0px)"
-		nav.style.top = '-132px'
+	if (document.documentElement.clientWidth < 778) {
+		nav.style.transform = "translateY(0px)"
+		//nav.style.top = '-132px'
 		navSpan.setAttribute('onclick', 'openNav()')
 	} 
 }
@@ -27,11 +29,21 @@ function scrollToBlock(block) {
 	document.getElementById(block).scrollIntoView({block: "start", behavior: "smooth"})
 
 	if (document.documentElement.clientWidth < 778) {
-		//nav.style.transform = "translateY(0px)"
-		nav.style.top = '-132px'
+		nav.style.transform = "translateY(0px)"
+		//nav.style.top = '-132px'
 		navSpan.setAttribute('onclick', 'openNav()')
 	} 
 }
+
+function autoClose() {
+	if (document.documentElement.clientWidth < 778  && pageYOffset < nav.clientHeight + header.clientHeight) {
+		nav.style.transform = "translateY(0px)"
+		//nav.style.top = '-132px'
+		navSpan.setAttribute('onclick', 'openNav()')		
+	}
+}
+
+
 
 
 
