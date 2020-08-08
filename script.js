@@ -94,94 +94,73 @@ function clear() {
 
 
 
-// Калькулятор
-let lastPlus
-let lastMinus
-let lastMultipl
-let lastShare
-let lastLst
 
-//let last = 0
+// Калькулятор
+let x
+let y
+let operation
+
+
 
 let textArea = document.getElementById('caption')
 
 
 function pressing(elim) {
 	textArea.value = textArea.value + elim.value
-	//elim.style.background = "white"   - потом сделай красиво
 }
 
 function delet() {
 	textArea.value = ""
 	textArea.placeholder = 0
 
-	//last = 0
 
-	//document.getElementsByClassName('cal_item').style.color = "linear-gradient(-45deg, orange, red)"
-
-	lastPlus = undefined
-	lastMinus = undefined 
-	lastMultipl = undefined
-	lastShare = undefined
-	lastLst = undefined
+	x = null
+	y = null
+	operation = ""
 }
 
 
 function pls() {
-	lastMinus = undefined
-	lastMultipl = undefined
-	lastShare = undefined
-	// херь сверху не работает
+	y = null
+	operation = "+"
 
-	//last = Number(last) + Number(textArea.value)
 
-	lastPlus = textArea.value
+	x = textArea.value
 	textArea.value = ""
 	textArea.placeholder = ""
 }
 
 function mns() {
-	lastPlus = undefined
-	lastMultipl = undefined
-	lastShare = undefined
-	// херь сверху не работает
+	y = null
+	operation = "-"
+	
 
-	//last = Number(textArea.value) - Number(last)
-
-	lastMinus = textArea.value
+	x = textArea.value
 	textArea.value = ""
 	textArea.placeholder = ""
 }
 
 function mlt() {
-	lastPlus = undefined
-	lastMinus = undefined
-	lastShare = undefined
-	// херь сверху не работает
+	y = null
+	operation = "*"
 
-	
-	//last = Number(last) * Number(textArea.value)
-
-	lastMultipl = textArea.value
+	x = textArea.value
 	textArea.value = ""
 	textArea.placeholder = ""
 }
 
 function shr() {
-	lastPlus = undefined
-	lastMinus = undefined
-	lastMultipl = undefined
-	// херь сверху не работает
-
-	//last = Number(last) / Number(textArea.value)
+	y = null
+	operation = "/"
 	
-	lastShare = textArea.value
+	x = textArea.value
 	textArea.value = ""
 	textArea.placeholder = ""
 }
 
 function lst() {
-	lastLst = textArea.value
+	operation = "%"
+	x = textArea.value
 	textArea.value = ""
 	textArea.placeholder = ""
 }
@@ -189,21 +168,22 @@ function lst() {
 
 
 function reslt() {
-	//textArea.value = Number(last) + Number(textArea.value)
-
+	//y = textArea.value
 	
-	if(lastPlus != undefined) {
-		textArea.value = Number(lastPlus) + Number(textArea.value)
-	} else if(lastMinus != undefined) {
-		textArea.value = Number(lastMinus) - Number(textArea.value)
-	} else if(lastMultipl != undefined) {
-		textArea.value = Number(lastMultipl) * Number(textArea.value) 
-	} else if(lastShare != undefined) {
-		textArea.value = Number(lastShare) / Number(textArea.value) 
-	} else if(lastLst != undefined)	{
-		textArea.value = Number(lastLst) % Number(textArea.value)
+	if(operation === "+") {
+		textArea.value = Number(x) + Number(textArea.value)
+	} else if(operation === "-") {
+		textArea.value = Number(x) - Number(textArea.value)
+	} else if(operation === "*") {
+		textArea.value = Number(x) * Number(textArea.value) 
+	} else if(operation === "/") {
+		textArea.value = Number(x) / Number(textArea.value) 
+	} else if(operation === "%")	{
+		textArea.value = Number(x) % Number(textArea.value)
 	}	
 }
+
+
 
 
 
@@ -722,6 +702,7 @@ function sortByPrice(arr) {
 		`
 	})		
 }
+
 
 
 
