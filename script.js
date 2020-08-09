@@ -100,9 +100,9 @@ let x
 let y
 let operation
 
-
-
 let textArea = document.getElementById('caption')
+
+
 
 
 function pressing(elim) {
@@ -206,6 +206,50 @@ function reslt() {
 
 
 
+
+
+//Калькулятор 2
+let textArea2 = document.getElementById('caption2')
+
+
+function pressing2(elim) {
+	textArea2.value = textArea2.value + elim.value
+}
+
+function pressingOperation(elim) {
+	if (elim.value === "(" || elim.value === ")") {
+		textArea2.value = textArea2.value + elim.value
+	} else {
+		textArea2.value = textArea2.value + " " + elim.value + " "	
+	}
+}
+
+function delet2() {
+	textArea2.value = ""
+	textArea2.placeholder = 0
+}
+
+
+function deletOne() {
+	let value
+
+	value = textArea2.value.split("")
+
+	if(value[value.length - 1] === " ") {
+		value.pop()
+		value.pop()
+		value.pop()
+	} else {
+		value.pop()
+	}
+
+	textArea2.value = value.join('')
+}
+
+
+function reslt2() {
+	textArea2.value = eval(textArea2.value)
+}
 
 
 

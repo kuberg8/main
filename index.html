@@ -48,45 +48,92 @@
 
 				
 				<h2><i class="fas fa-square-root-alt"></i> Calculator <i class="fas fa-calculator"></i></h2>
-					<div class="calculator">
-						<table align="center" cols="4">
-							<caption><input id="caption" class="figures" placeholder="0"></caption>
-							<tbody>
-							<tr>
-								<td colspan="3"><input class="cal_item above" type="button" value="AC" onclick="delet()"></td>
-								<td><input class="cal_item" type="button" value="%" onclick="lst()"></td>
-							</tr>
+					<span class="flex">
+						<div class="calculator">
+							<table align="center" cols="4">
+								<caption><input id="caption" placeholder="0"></caption>
+								<tbody>
+								<tr>
+									<td colspan="3"><input class="cal_item above" type="button" value="AC" onclick="delet()"></td>
+									<td><input class="cal_item" type="button" value="%" onclick="lst()"></td>
+								</tr>
 
-							<tr>
-								<td><input class="cal_item" type="button" value="7" onclick="pressing(this)"></td>
-								<td><input class="cal_item" type="button" value="8" onclick="pressing(this)"></td>
-								<td><input class="cal_item" type="button" value="9" onclick="pressing(this)"></td>
-								<td><input class="cal_item" type="button" value="/" onclick="shr()"></td>
-							</tr>
-							
-							<tr>
-								<td><input class="cal_item" type="button" value="4" onclick="pressing(this)"></td>
-								<td><input class="cal_item" type="button" value="5" onclick="pressing(this)"></td>
-								<td><input class="cal_item" type="button" value="6" onclick="pressing(this)"></td>
-								<td><input class="cal_item" type="button" value="x" onclick="mlt()"></td>
-							</tr>
-							
-							<tr>
-								<td><input class="cal_item" type="button" value="1" onclick="pressing(this)"></td>
-								<td><input class="cal_item" type="button" value="2" onclick="pressing(this)"></td>
-								<td><input class="cal_item" type="button" value="3" onclick="pressing(this)"></td>
-								<td><input class="cal_item" type="button" value="-" onclick="mns()"></td>
-							</tr>
+								<tr>
+									<td><input class="cal_item" type="button" value="7" onclick="pressing(this)"></td>
+									<td><input class="cal_item" type="button" value="8" onclick="pressing(this)"></td>
+									<td><input class="cal_item" type="button" value="9" onclick="pressing(this)"></td>
+									<td><input class="cal_item" type="button" value="/" onclick="shr()"></td>
+								</tr>
+								
+								<tr>
+									<td><input class="cal_item" type="button" value="4" onclick="pressing(this)"></td>
+									<td><input class="cal_item" type="button" value="5" onclick="pressing(this)"></td>
+									<td><input class="cal_item" type="button" value="6" onclick="pressing(this)"></td>
+									<td><input class="cal_item" type="button" value="x" onclick="mlt()"></td>
+								</tr>
+								
+								<tr>
+									<td><input class="cal_item" type="button" value="1" onclick="pressing(this)"></td>
+									<td><input class="cal_item" type="button" value="2" onclick="pressing(this)"></td>
+									<td><input class="cal_item" type="button" value="3" onclick="pressing(this)"></td>
+									<td><input class="cal_item" type="button" value="-" onclick="mns()"></td>
+								</tr>
 
-							<tr>
-								<td><input class="cal_item" type="button" value="0" onclick="pressing(this)"></td>
-								<td><input class="cal_item" type="button" value="." onclick="pressing(this)"></td>
-								<td><input class="cal_item" type="button" value="=" onclick="reslt()"></td>
-								<td><input class="cal_item" type="button" value="+" onclick="pls()"></td>
-							</tr>
-							</tbody>
-						</table>
-					</div>	
+								<tr>
+									<td><input class="cal_item" type="button" value="0" onclick="pressing(this)"></td>
+									<td><input class="cal_item" type="button" value="." onclick="pressing(this)"></td>
+									<td><input class="cal_item" type="button" value="=" onclick="reslt()"></td>
+									<td><input class="cal_item" type="button" value="+" onclick="pls()"></td>
+								</tr>
+								</tbody>
+							</table>
+						</div>	
+
+						<div class="calculator2">
+							<table align="center" cols="5">
+								<caption><input id="caption2" placeholder="0" disabled></caption>
+								<tbody>
+								<tr>
+									<td><input class="cal_item" type="button" value="(" onclick="pressingOperation(this)"></td>
+									<td><input class="cal_item" type="button" value=")" onclick="pressingOperation(this)"></td>
+									<td><input class="cal_item" type="button" value="%" onclick="pressingOperation(this)"></td>
+									<td><input class="cal_item" type="button" value="C" onclick="deletOne()"></td>
+									<td rowspan="5"><input class="cal_item above2" type="button" value="AC" onclick="delet2()"></td>
+								</tr>
+
+								<tr>
+									<td><input class="cal_item" type="button" value="7" onclick="pressing2(this)"></td>
+									<td><input class="cal_item" type="button" value="8" onclick="pressing2(this)"></td>
+									<td><input class="cal_item" type="button" value="9" onclick="pressing2(this)"></td>
+									<td><input class="cal_item" type="button" value="/" onclick="pressingOperation(this)"></td>
+								</tr>
+								
+								<tr>
+									<td><input class="cal_item" type="button" value="4" onclick="pressing2(this)"></td>
+									<td><input class="cal_item" type="button" value="5" onclick="pressing2(this)"></td>
+									<td><input class="cal_item" type="button" value="6" onclick="pressing2(this)"></td>
+									<td><input class="cal_item" type="button" value="*" onclick="pressingOperation(this)"></td>
+								</tr>
+								
+								<tr>
+									<td><input class="cal_item" type="button" value="1" onclick="pressing2(this)"></td>
+									<td><input class="cal_item" type="button" value="2" onclick="pressing2(this)"></td>
+									<td><input class="cal_item" type="button" value="3" onclick="pressing2(this)"></td>
+									<td><input class="cal_item" type="button" value="-" onclick="pressingOperation(this)"></td>
+								</tr>
+
+								<tr>
+									<td><input class="cal_item" type="button" value="0" onclick="pressing2(this)"></td>
+									<td><input class="cal_item" type="button" value="." onclick="pressing2(this)"></td>
+									<td><input class="cal_item" type="button" value="=" onclick="reslt2()"></td>
+									<td><input class="cal_item" type="button" value="+" onclick="pressingOperation(this)"></td>
+								</tr>
+								</tbody>
+							</table>
+						</div>								
+					</span>
+			
+
 
 
 				<h2><i class="far fa-calendar-alt"></i> Time <i class="far fa-clock"></i></h2>
