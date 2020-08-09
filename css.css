@@ -662,6 +662,13 @@ img {
 
 
 
+
+	.calculator2 {
+		display: none;
+	}
+
+
+
 	#text {
 		width: 90%;
 		margin: 10px auto;
