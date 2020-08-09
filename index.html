@@ -228,7 +228,7 @@
 							<li>
 								<b>for(key of arr)</b> - Перебирает элементы итерируемых объектов(объекты с ключами - цифрами, свойством length и свойством Symbol.itertor(у массивов в __proto__ лежит))
 								<p>(псевдомассивы не работают так как нету Symbol.itertor, потому что __proto__ ссылается на Object.prototype).</p>
-								<p>Способ перебрать объект через <b>for(key of obj)</b> - <b>for([key, value] of Object.entries(obj))</b></p>
+								<p>Способ перебрать объект через <b>for(key of obj)</b> - <b>for([key, value] of Object.entries(obj))</b>, работает так как Object.entries() и Object.keys() возвращают МАССИВ из ключей и значений</p>
 							</li>
 							<li>
 								<b>for(key in obj) </b> - Перебирает ключи у объектов(всех)
@@ -347,6 +347,7 @@
 							<li><b>elim.parentElement</b> - вернет родителя</li>
 							<li><b>elim.firstElementChild & lastElementChild</b> - первый и последний дочерний элемент</li>
 							<li><b>elim.previousElementSibling & nextElementSibling</b> - соседи-элементы</li>
+							<li><b>elim.children</b> - вернет коллекцию детей элемента</li>
 
 							<li style="padding-top: 10px;"><b>elim.style</b></li>
 							<li><b>elim.className</b></li>
@@ -375,8 +376,9 @@
 							<li><b>button</b></li>
 							<li><b>...</b></li>
 
-							<h3 style="padding-top: 10px;">Cпособ посмотреть все атрибуты у элементов:</h3>
-							<li><b>console.log(document.body.children)</b> - вернет коллекцию детей, которые являются элементами страницы</li>
+							<h3 style="padding-top: 10px;">Cпособ посмотреть HTMLCollection из элементов страницы:</h3>
+							<li>console.log(document.body.children) - <small>HTMLCollection это список узлов. Отдельный узел может быть доступен по порядковому номеру или имени узла и атрибута.
+Коллекции в HTML DOM являются живыми. Коллекции обновляются при изменении документа. Неживые коллекции при изминении DOM не меняются</small></li>						
 						</ul>
 					</span>
 
