@@ -6,7 +6,6 @@
 	<meta name="description" content="до 200 символов, серое описание под сайтом">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="css.css">
-	<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 	<link rel="shortcut icon" href="icon.ico" type="image/x-icon">
 	<link rel="apple-touch-icon" href="icon120.png">
 	<link rel="apple-touch-icon" size="72x72" href="icon76.png">
@@ -332,7 +331,7 @@
 							<h3>EventLoop(цикл событий):</h3>
 							<p><b>- добавляет асинхронные операции в конец Call Stack</b></p>	
 							<p><b>Call Stack(очередь вызовов)</b></p>
-							<a style="font-style: normal; font-family: Indie Flower; font-size: 40px; color: red;" href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D"><b>-> How EvenLoop works <-</b></a>
+							<a style="font-style: normal; font-family: Indie Flower; font-size: 25px; color: red;" href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D"><b>-> How EvenLoop works <-</b></a>
 						</span>																								
 
 
@@ -432,8 +431,7 @@
 							<li><b>...</b></li>
 
 							<h3 style="padding-top: 10px;">Cпособ посмотреть HTMLCollection из элементов страницы:</h3>
-							<li>console.log(document.body.children) - <small>HTMLCollection это список узлов. Отдельный узел может быть доступен по порядковому номеру или имени узла и атрибута.
-Коллекции в HTML DOM являются живыми. Коллекции обновляются при изменении документа. Неживые коллекции при изминении DOM не меняются</small></li>						
+							<li>console.log(document.body.children) - <small>HTMLCollection это список узлов. Отдельный узел может быть доступен по порядковому номеру или имени узла и атрибута. Коллекции в HTML DOM являются живыми. Коллекции обновляются при изменении документа. Неживые коллекции при изминении DOM не меняются</small></li>						
 						</ul>
 					</span>
 
@@ -518,7 +516,23 @@
 						<li><b>Функциональная компонента</b> — ...; потребляет меньше ресурсов чем классовая компонента.</li>
 					</ol>
 
+
+
 				
+
+				<h2 class="h2_with_border">ComponentDidUpdate, ComponentDidMount</h2>
+					<ul style="text-align: left; font-size: 20px;">
+						<div style="padding-bottom: 20px;"><b>Mounted</b> - означает что компонент вмонтирован в DOM дерево</div>
+						<div style="padding-bottom: 20px;"><b>ComponentDidUpdate</b> -  это метод который вызывается сразу после обновления. Этот метод не вызывается при первоначальной отрисовке. Используется метод как возможность работать с DOM при обновлении компонента.</div>
+						<div style="padding-bottom: 20px;"><b>ComponentDidMount</b> -  это метод который запускается после того, как компонент отрендерился в DOM .</div>
+					</ul>	
+					<div><img style="width:850px; max-width: 90%;" src="img/component_live.png"></div>
+
+
+
+
+
+
 				<h2 class="h2_with_border">Props</h2>
 					<span style="font-size: 20px;"><b>Props</b> — это объект,  аргумент функции, с которым мы можем работать внутри, но не изменять. С помощью props можно передавать данные от родителя к дочернему компоненту.</span>
 
@@ -705,18 +719,10 @@
 
 				<h2 class="h2_with_border">Suspense, React.lazy </h2>
 					<ul style="text-align: left; font-size: 20px;">
-						<div><b>Compose()</b> - это отложенная загрузка. (До востребования)</div>
+						<div>это отложенная загрузка. (До востребования)</div>
 					</ul>				
 
 
-
-				<h2 class="h2_with_border">ComponentDidUpdate, ComponentDidMount</h2>
-					<ul style="text-align: left; font-size: 20px;">
-						<div style="padding-bottom: 20px;"><b>Mounted</b> - означает что компонент вмонтирован в DOM дерево</div>
-						<div style="padding-bottom: 20px;"><b>ComponentDidUpdate</b> -  это метод который вызывается сразу после обновления. Этот метод не вызывается при первоначальной отрисовке. Используется метод как возможность работать с DOM при обновлении компонента.</div>
-						<div style="padding-bottom: 20px;"><b>ComponentDidMount</b> -  это метод который запускается после того, как компонент отрендерился в DOM .</div>
-					</ul>	
-					<div><img style="width:850px; max-width: 90%;" src="img/component_live.png"></div>
 
 
 
@@ -749,7 +755,7 @@
 
 				<h2 class="h2_with_border">ShouldComponentUpdate, PureComponent, memo </h2>
 					<ul style="text-align: left; font-size: 20px;">
-						<div> Используется чтобы указать необходимость следующего рендера на основе изменений состояния и пропсов. Эти метод нужен только для повышения производительности.</div>			
+						<div> Используется чтобы указать необходимость следующего рендера на основе изменений состояния и пропсов. Этот метод нужен только для повышения производительности.</div>			
 					</ul>	
 
 
