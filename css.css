@@ -225,14 +225,15 @@ h2 {
 
 
 select {
+	display: block;
+	margin: 0 auto;
 	background: white;
 	outline: none;
 	border: 3px dashed black;
 	font-size: 30px;
 	padding: 0 20px;
-	width: 200px;
+	width: 80%;
 	font-family: Indie Flower;
-	margin: 10px;
 }
 
 
@@ -455,17 +456,58 @@ img {
 
 
 
-#cub {
-	display: block;
-	margin: 0 auto;
-	width: 300px;
-	height: 300px;
-	background: black;
-	border-radius: 10px;
-	color: white;
-	position: relative;
-	font-size: 20px;
+
+
+
+
+/*Шахматы*/
+td {
+	width: 50px;
+	height: 50px;
+	border: 1px solid black;
+	font-size: 30px;
+} 
+
+td i {
+	width: 100%;
+	height: 100%;
 }
+td i:before {
+	display: flex;
+	justify-content: center;
+}
+
+.cell_white {
+	background: #f2d675;
+}
+
+.cell_black {
+	background: #59453a;
+}
+
+
+
+.black {
+	color: black;
+}
+
+.white {
+	color: white;
+}
+
+
+.chosen {
+	color: red;
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -611,6 +653,11 @@ img {
 
 
 
+#mass {
+}
+
+
+
 
 @media(max-width: 778px) {
 	.box {
@@ -712,5 +759,17 @@ img {
 		min-width: 0;
 		font-size: 20px;
 	}
+
+
+
+
+	td {
+		width: 38px;
+		height: 38px;
+		font-size: 25px;
+	}
+
+	td i:before {
+	}	
 
 }

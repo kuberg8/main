@@ -336,7 +336,7 @@ function t() {
 
 
 //Promise
-let dang = (backgroundColor, mr) => {
+let dang = (backgroundColor = "black", mr) => {
 	return new Promise( (resolve, reject) => {
 		document.getElementById('promise').disabled = true
 
@@ -352,7 +352,7 @@ let dang = (backgroundColor, mr) => {
 /* Через Async Await*/ 
 // Надо ставить Await перед промисами, js перестает работать пока Await ждет промис 
 async function play() {
-	await dang('pink', 500)
+	await dang('pink', 0)
 	await dang('blue', 500)
 	await dang('red', 500)
 	await dang('orange', 500)
@@ -367,7 +367,7 @@ async function play() {
 
 /*
  //Цепочка промисов 
-dang('black', 500)
+dang('purple', 0)
 	.then( (value) => {
 		return new Promise((resolve, reject) => { 
 			setTimeout(() => {
@@ -531,13 +531,37 @@ form.addEventListener('submit', function(event) {
 
 
 //Кординаты
-let cub = document.getElementById('cub')
+
+let moveTeam = "white"
+let isChosen = false
 
 
-function movvv(event) {
-	document.getElementById("item1").textContent = "X: " + event.clientX
-	document.getElementById("item2").textContent = "Y: " + event.clientY
+function chess(event) {
+	
+	if (isChosen === false) {
+		if (event.target.hasAttribute("id") === true && event.target.getAttribute("team") === moveTeam) {
+			event.target.classList.add('chosen')
+			isChosen = true
+		} else {
+			return
+		}
+	} else if(isChosen === true) {
+		if (event.target.hasAttribute('id') === false) {
+
+			let figureChosen = document.getElementsByClassName('chosen')[0]
+			figureChosen.classList.remove('chosen')
+			
+			event.target.innerHTML = figureChosen.outerHTML
+			figureChosen.outerHTML = ''
+
+
+			moveTeam = (moveTeam === "white" ? "black" : "white")
+			isChosen = false
+		}
+	}
 }
+
+
 
 
 
@@ -621,6 +645,13 @@ let arr = [
 
 ]
 
+
+
+
+
+
+
+
 function sortDate(arr) {
 	let copyArr = JSON.parse(JSON.stringify(arr))
 
@@ -679,7 +710,7 @@ let mass = document.getElementById('mass')
 arr2.map( (key) => {
 	let elim = document.createElement("div")
 	elim.textContent = key.name
-	elim.style.cssText = "display:block; padding: 20px; cursor: pointer; border: 1px dashed black; color: black; margin-bottom: 10px; font-weight: bold; transition: background 0.3s linear;"
+	elim.style.cssText = " padding: 20px; cursor: pointer; border: 1px dashed black; color: black; margin: 5px auto; font-weight: bold; transition: background 0.3s linear;"
 	elim.setAttribute('class', 'hover')
 	elim.setAttribute('onclick', "alr(this)");
 	elim.review = key.ratingRevievs
@@ -713,7 +744,7 @@ function sortByReview(arr) {
 	copyArr.forEach( (item) => {
 		item.ratingRevievs = item.ratingRevievs.toString()
 		mass.innerHTML += `
-			<div class="hover" style="display:block; padding: 20px; cursor: pointer; border: 1px solid black; color: black; margin-bottom: 10px; font-weight: bold; transition: background 0.3s linear;">
+			<div class="hover" style="padding: 20px; cursor: pointer; border: 1px dashed black; color: black; margin: 5px auto; font-weight: bold; transition: background 0.3s linear;">
 				${item.name}
 				<p>Цена: ${typeof(item.price) === 'string' ? item.price : item.price.newUan}.</p>
 				<p>Отзывов: ${item.ratingRevievs}</p>
@@ -757,7 +788,7 @@ function sortByPrice(arr) {
 		item.price = item.price.join("")
 	
 		mass.innerHTML += `
-			<div class="hover" style="display:block; padding: 20px; cursor: pointer; border: 1px solid black; color: black; margin-bottom: 10px; font-weight: bold; transition: background 0.3s linear;">
+			<div class="hover" style="padding: 20px; cursor: pointer; border: 1px dashed black; color: black; margin-bottom: 10px; font-weight: bold; transition: background 0.3s linear;">
 				${item.name}
 				<p>Цена: ${item.price} грн.</p>
 				<p>Отзывов: ${item.ratingRevievs}</p>
@@ -774,3 +805,322 @@ function sortByPrice(arr) {
 
 
 
+
+
+
+
+/* Анаграмма
+let f = prompt("введите слово")
+let s = prompt("введите слово")
+
+
+function finder(word1, word2) {
+	let sameSymbolLenght = 0
+
+	for (var i = 0; i < word1.length; i++) {
+		for (var j = 0; j < word2.length; j++) {
+			if(word1[i] === word2[j]) {
+				sameSymbolLenght += 1
+			}
+		}
+	}
+
+	if (sameSymbolLenght === word1.length) {
+		console.log(sameSymbolLenght)
+		alert(`same, same = ${sameSymbolLenght}`)
+	} else {
+		console.log(sameSymbolLenght)
+		alert(`not same, same = ${sameSymbolLenght}`)
+	} 
+}
+
+finder(f, s)
+*/
+
+
+
+
+
+
+
+
+ //Составление слова
+/*
+let input = {
+	" ": [5],
+	d: [10],
+	e: [1],
+	H: [0],
+	l: [2, 3, 9],
+	o: [4, 7],
+	r: [8],
+	w: [6]
+}
+
+
+let buildString = (m) => {
+	let result = []
+
+	let countSymbols = []
+
+	for(let key in m) {
+		for(let value of m[key]) {
+			countSymbols.push(value)
+		}
+	}
+	
+	countSymbols = Math.max.apply(null, countSymbols)
+
+
+
+	for (var i = 0; i <= countSymbols; i++) {
+		for(let key in m) {
+			for (var j = 0; j < m[key].length; j++) {
+				if (m[key][j] == i) {
+					result.push(key)
+				}
+			}
+		}
+	}
+
+
+	alert(result.join(""))
+}
+
+buildString(input)
+
+
+второй способ:
+
+
+let buildString2 = (m) => {
+	let result = []
+
+
+	for(let key in m) {
+		for(let j of m[key]) {
+			result[j] = key
+		}
+	}
+
+
+
+	alert(result.join(""))
+}
+
+buildString2(input)
+*/
+
+
+
+
+
+ 
+
+
+
+
+
+
+/* Палиндром
+let word = prompt('Введите слово')
+
+function isPalindrom(word) {
+	word.toLowerCase()
+
+	for (var i = 0; i < word.length; i++) {
+		for (var j = word.length - 1; j <= 0; j--) {
+			if (word[i] != word[j]) {
+				return alert(false)
+			}
+		}
+	}
+
+	return alert(true)
+}
+
+isPalindrom(word)
+*/
+
+
+
+
+
+/* FizzBuzz 
+let number = prompt('Введите число')
+
+function FizzBuzz(n) {
+	for (var i = 1; i <= n; i++) {
+		if (i % 5 === 0 && i % 3 === 0) {
+			console.log("FizzBuzz")
+		} else if (i % 5 === 0) {
+			console.log("buzz")
+		} else if (i % 3 === 0) {
+			console.log("fizz")
+		} else {
+			console.log(i)
+		}
+		
+	}
+}
+
+FizzBuzz(number)
+*/
+
+
+
+
+
+/* Сколько гласных в слове
+let string = prompt('Введите слово')
+
+function findVowels(word) {
+	let Vowels = ["e","y","u","i","o","a"]
+	let Vowelscount = 0
+
+	word = word.split('')
+
+	for (var i = 0; i < word.length; i++) {
+		for (var j = 0; j < Vowels.length; j++) {
+			if (Vowels[j] === word[i]) {
+				Vowelscount++
+			}			
+		}
+	}
+
+	console.log("Гласных в этом слове - " + Vowelscount)		
+}
+
+findVowels(string)
+
+
+//второй метод 
+
+let string = prompt('Введите слово')
+
+function findVowels(word) {
+	let Vowels = ["e","y","u","i","o","a"]
+	let Vowelscount = 0
+
+	for(let value of word.toLowerCase()) {
+		if (Vowels.includes(value)) {  // выявляет, содержит ли массив определенное значение
+			Vowelscount++
+		}
+	}
+
+	console.log("Гласных в этом слове - " + Vowelscount)		
+}
+
+findVowels(string)
+*/
+
+
+
+
+
+//из массива в объект 
+/*
+let aR = [
+	{name: "height", value: 10},
+	{name: "width", value: 20}
+]
+
+function obj() {
+	let ob = {}
+
+	aR.forEach( (item) => {
+		ob[item.name] = item.value
+	})
+
+	console.log(ob)
+}
+
+obj() 
+*/
+
+
+
+
+
+/* Каррирование
+function add_v1(a, b) {
+    let sum = a;
+
+    let makeSum = function (b) {
+        if (b) {
+            sum += b;
+            return makeSum;
+        } else {
+            return sum;
+        }
+    }
+
+    return makeSum;
+}
+
+console.log(add_v1(2)(5)());
+*/
+
+
+
+
+
+
+
+//Уникальные значения в массиве
+/*
+let massive = [1,1,2,2,3,3,4,4,5,5]
+
+function unique(arr) {
+	let res = []
+
+	arr.forEach( (item) => {
+		if (res.indexOf(item) === -1) {
+			res.push(item)
+		}
+	})
+
+	return res
+}
+
+console.log(unique(massive))
+*/
+
+
+
+
+
+
+
+//Расплющивание массива + Рекурсия
+
+let massive = [1,[2,[3,[4]]]]
+
+function flat(arr) {
+	let res = []
+
+	arr.forEach( (item) => {
+		if (Array.isArray(item)) {
+			res = res.concat(flat(item))
+		} else {
+			res.push(item)
+		}
+	})
+
+	return res
+}
+
+console.log(flat(massive))
+
+
+/* Деструктурирующее присваивание очень полезно знать (особенно для react)
+let res = [0]
+let res2 = [2,3]
+let res3 = [4,5]
+
+console.log([...res, ...res2, ...res3])
+*/
+
+//Второй метод через встроенный метод массива Array.protottype.flat()
+
+console.log(massive.flat(Infinity))

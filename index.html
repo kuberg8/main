@@ -187,8 +187,152 @@
 				
 				<h2><i class="fas fa-map-marker"></i> Event <i class="fas fa-location-arrow"></i></h2>
 					<div id="cub" onmousemove="movvv(event)">
-						<span id="item1">X: </span>
-						<span id="item2">Y:</span>
+					<table cols="8" align="center" onclick="chess(event)">
+						<tr>
+							<td class="cell_white" align="center" valign="center">
+								<i id="rook1_black" team="black" class="fas fa-chess-rook black"></i>
+							</td>
+							<td class="cell_black" align="center">
+								<i id="horse1_black" team="black" class="fas fa-chess-knight black"></i>
+							</td>
+							<td class="cell_white" align="center">
+								<i id="bishop1_black" team="black" class="fas fa-chess-bishop black"></i>
+							</td>
+							<td class="cell_black" align="center">
+								<i id="queen_black" team="black" class="fas fa-chess-queen black"></i>
+							</td>
+							<td class="cell_white" align="center">
+								<i id="king_black" team="black" class="fas fa-chess-king black"></i>
+							</td>
+							<td class="cell_black" align="center">
+								<i id="bishop1_black" team="black" class="fas fa-chess-bishop black"></i>
+							</td>
+							<td class="cell_white" align="center">
+								<i id="horse2_black" team="black" class="fas fa-chess-knight black"></i>
+							</td>
+							<td class="cell_black" align="center">
+								<i id="rook2_black" team="black" class="fas fa-chess-rook black"></i>
+							</td>
+						</tr>
+						<tr>
+							<td class="cell_black" align="center">
+								<i id="pawn1_black" team="black" class="fas fa-chess-pawn black"></i>
+							</td>
+							<td class="cell_white" align="center">
+								<i id="pawn2_black" team="black" class="fas fa-chess-pawn black"></i>
+							</td>
+							<td class="cell_black" align="center">
+								<i id="pawn3_black" team="black" class="fas fa-chess-pawn black"></i>
+							</td>
+							<td class="cell_white" align="center">
+								<i id="pawn4_black" team="black" class="fas fa-chess-pawn black"></i>
+							</td>
+							<td class="cell_black" align="center">
+								<i id="pawn5_black" team="black" class="fas fa-chess-pawn black"></i>
+							</td>
+							<td class="cell_white" align="center">
+								<i id="pawn6_black" team="black" class="fas fa-chess-pawn black"></i>
+							</td>
+							<td class="cell_black" align="center">
+								<i id="pawn7_black" team="black" class="fas fa-chess-pawn black"></i>
+							</td>
+							<td class="cell_white" align="center">
+								<i id="pawn8_black" team="black" class="fas fa-chess-pawn black"></i>
+							</td>			
+						</tr>
+						<tr>
+							<td class="cell_white" align="center"></td>
+							<td class="cell_black" align="center"></td>
+							<td class="cell_white" align="center"></td>
+							<td class="cell_black" align="center"></td>
+							<td class="cell_white" align="center"></td>
+							<td class="cell_black" align="center"></td>
+							<td class="cell_white" align="center"></td>
+							<td class="cell_black" align="center"></td>			
+						</tr>
+						<tr>
+							<td class="cell_black" align="center"></td>
+							<td class="cell_white" align="center"></td>
+							<td class="cell_black" align="center"></td>
+							<td class="cell_white" align="center"></td>
+							<td class="cell_black" align="center"></td>
+							<td class="cell_white" align="center"></td>
+							<td class="cell_black" align="center"></td>
+							<td class="cell_white" align="center"></td>			
+						</tr>
+						<tr>
+							<td class="cell_white" align="center"></td>
+							<td class="cell_black" align="center"></td>
+							<td class="cell_white" align="center"></td>
+							<td class="cell_black" align="center"></td>
+							<td class="cell_white" align="center"></td>
+							<td class="cell_black" align="center"></td>
+							<td class="cell_white" align="center"></td>
+							<td class="cell_black" align="center"></td>			
+						</tr>
+						<tr>
+							<td class="cell_black" align="center"></td>
+							<td class="cell_white" align="center"></td>
+							<td class="cell_black" align="center"></td>
+							<td class="cell_white" align="center"></td>
+							<td class="cell_black" align="center"></td>
+							<td class="cell_white" align="center"></td>
+							<td class="cell_black" align="center"></td>
+							<td class="cell_white" align="center"></td>			
+						</tr>
+						<tr>
+							<td class="cell_white" align="center">
+								<i id="pawn1_white" team="white" class="fas fa-chess-pawn white"></i>
+							</td>
+							<td class="cell_black" align="center">
+								<i id="pawn2_white" team="white" class="fas fa-chess-pawn white"></i>
+							</td>
+							<td class="cell_white" align="center">
+								<i id="pawn3_white" team="white" class="fas fa-chess-pawn white"></i>
+							</td>
+							<td class="cell_black" align="center">
+								<i id="pawn4_white" team="white" class="fas fa-chess-pawn white"></i>
+							</td>
+							<td class="cell_white" align="center">
+								<i id="pawn5_white" team="white" class="fas fa-chess-pawn white"></i>
+							</td>
+							<td class="cell_black" align="center">
+								<i id="pawn6_white" team="white" class="fas fa-chess-pawn white"></i>
+							</td>
+							<td class="cell_white" align="center">
+								<i id="pawn7_white" team="white" class="fas fa-chess-pawn white"></i>
+							</td>
+							<td class="cell_black" align="center">
+								<i id="pawn8_white" team="white" class="fas fa-chess-pawn white"></i>
+							</td>		
+						</tr>
+						<tr>
+							<td class="cell_black" align="center">
+								<i id="rook1_white" team="white" class="fas fa-chess-rook white"></i>
+							</td>
+							<td class="cell_white" align="center">
+								<i id="horse1_white" team="white" class="fas fa-chess-knight white"></i>
+							</td>
+							<td class="cell_black" align="center">
+								<i id="bishop1_white" team="white" class="fas fa-chess-bishop white"></i>
+							</td>
+							<td class="cell_white" align="center">
+								<i id="king_white" team="white" class="fas fa-chess-king white"></i>
+							</td>
+							<td class="cell_black" align="center">
+								<i id="queen_white" team="white" class="fas fa-chess-queen white"></i>
+							</td>
+							<td class="cell_white" align="center">
+								<i id="bishop1_white" team="white" class="fas fa-chess-bishop white"></i>
+							</td>
+							<td class="cell_black" align="center">
+								<i id="horse1_white" team="white" class="fas fa-chess-knight white"></i>
+							</td>
+							<td class="cell_white" align="center">
+								<i id="rook2_white" team="white" class="fas fa-chess-rook white"></i>
+							</td>			
+						</tr>
+					</table>					
 					</div>	
 
 
@@ -219,12 +363,15 @@
 					<span id="sort_date">
 						<h3>Сортировка по дате :</h3>
 					</span>
+					
 
-					<span style="display: flex; width: 100%; flex-direction: column; text-align: center; margin: 100px 0;">
-						<span style="display: flex; width: 100%; justify-content: space-around; margin-bottom: 20px;">
+					
+					<span style="display: flex; width: 100%; flex-direction: column; text-align: center; margin-bottom: 100px;">
+						<span style="display: flex; width: 100%; justify-content: space-around; margin: 100px 0 20px 0;">
 							<button onclick="sortByReview(arr2)" style="width: 45%;">Отсортировать по кол-ву отзывов</button>
-							<button onclick="sortByPrice(arr2)" style="width: 45%;">Отсортировать по цене</button>				
+							<button onclick="sortByPrice(arr2)" style="width: 45%;">Отсортировать по цене</button>	
 						</span>
+
 						<span id="mass"></span>
 					</span>			
 		</span>
@@ -391,7 +538,40 @@
 							<h3>Prototype:</h3>	
 							- это независимый объект, с определенным набором свойств и методов.		
 							<p>Любой Class или function имеет свой прототип</p>				
-						</span>								
+						</span>	
+
+						<span class="reminder_item">
+							<h3>Делегирование событий:</h3>
+							Если есть много элементов, события на которых нужно обрабатывать похожим образом, то вместо того, чтобы назначать обработчик каждому, мы ставим один обработчик на их общего предка.
+							<h4>Зачем использовать?</h4>
+							<ul>
+								<li>Упрощает процесс инициализации и экономит память: не нужно вешать много обработчиков.</li>
+								<li>Меньше кода: при добавлении и удалении элементов не нужно ставить или снимать обработчики.</li>
+								<li>Удобство изменений DOM: можно массово добавлять или удалять элементы путём изменения innerHTML и ему подобных.</li>
+							</ul>
+							<h4>Есть свои ограничения:</h4>
+							<ul>
+								<li>Событие должно всплывать. Некоторые события этого не делают. Также, низкоуровневые обработчики не должны вызывать event.stopPropagation()</li>
+								<li>Делегирование создаёт дополнительную нагрузку на браузер, ведь обработчик запускается, когда событие происходит в любом месте контейнера, не обязательно на элементах, которые нам интересны. Но обычно эта нагрузка настолько пустяковая, что её даже не стоит принимать во внимание.</li>
+							</ul>			
+							<h4>Методы:</h4>	
+							<ul>
+								<li>type - строка, содержащее имя события.</li>
+								<li>target - DOM-элемент, который сгенерировал событие.</li>
+								<li>currentTarget - DOM-элемент, который вызвал обработчик события.</li>
+								<li>eventPhase - число, показывающее на каком этапе произошло событие (1 - этапе погружения (перехвата), 2 - на цели, 3 - на этапе всплытия).</li>
+								<li>timestamp - число (дата), когда произошло событие</li>
+								<li>bubbles - возвращает логическое значение, указывающее может ли данное событие всплывать</li>
+								<li>defaultPrevented - проверяет можно ли вызвать метод preventDefault() для данного события.</li>
+								<li>view - возвращает ссылку на объект window, в котором произошло событие.</li>
+								<li>detail (для мыши) - возвращает число, указывающее сколько раз была нажата кнопка мыши в некоторой области за короткий промежуток времени.</li>
+								<li>screenX, screenY (для мыши) - возвращают информацию о положении курсора (screenX - горизонтальная координата, screenY - вертикальная координата) относительно левого верхнего угла экрана.</li>
+								<li>clientX, clientY (для мыши) - возвращают информацию о положении курсора (clientX - горизонтальная координата, clientY - вертикальная координата) относительно левого верхнего угла клиентской области.</li>
+								<li>location (для клавиатуры) - возвращает число, указывающее на область клавиатуры или устройства в котором расположена нажатая клавиша (0 - основная область клавиатуры, 1 - область, в которой расположена левая клавиша CTRL или левая клавиша ALT, 2 - область, в которой расположена правая клавиша CTRL или правая клавиша ALT, 3 - область цифровой панели, которая дублирует клавиши основной области для ввода цифр и арифметических операторов).</li>
+								<li>keyCode, which (для клавиатуры) - возвращает код символа Unicode (для события keypress) или код ключа Unicode (для событий keydown и keyup).</li>
+								<li>charCode (для клавиатуры) - возвращает код символа Unicode нажатой клавиши (для события keypress). Если данное свойство использовать для получения дополнительной информации о событиях keydown или keyup, то оно всегда вернёт "0".</li>
+							</ul>											
+						</span>														
 				</span>
 				
 				<h2 class="h2_with_border">Work with D.O.M</h2>
@@ -768,6 +948,7 @@
 					</ul>								
 		</span>	
 	</span>
+
 
 
 
