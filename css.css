@@ -461,18 +461,18 @@ img {
 
 
 /*Шахматы*/
-td {
+.chess td {
 	width: 50px;
 	height: 50px;
 	border: 1px solid black;
 	font-size: 30px;
 } 
 
-td i {
+.chess td i {
 	width: 100%;
 	height: 100%;
 }
-td i:before {
+.chess td i:before {
 	display: flex;
 	justify-content: center;
 }
@@ -763,13 +763,13 @@ td i:before {
 
 
 
-	td {
+	.chess td {
 		width: 38px;
 		height: 38px;
 		font-size: 25px;
 	}
 
-	td i:before {
+	.chess td i:before {
 	}	
 
 }
