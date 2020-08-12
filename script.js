@@ -537,26 +537,50 @@ let isChosen = false
 
 
 function chess(event) {
-	
+	let cell = event.target
+
+	function move() {
+		let figureChosen = document.getElementsByClassName('chosen')[0]
+		let NameFigureChosen = figureChosen.getAttribute('figure')
+
+		figureChosen.classList.remove('chosen')
+		
+		cell.innerHTML = figureChosen.outerHTML
+		figureChosen.outerHTML = ''
+
+		moveTeam = (moveTeam === "white" ? "black" : "white")
+		isChosen = false		
+	}
+
+
+	function eat() {
+		let figureChosen = document.getElementsByClassName('chosen')[0]
+		let NameFigureChosen = figureChosen.getAttribute('figure')
+
+		figureChosen.classList.remove('chosen')
+		
+		cell.outerHTML = figureChosen.outerHTML
+		figureChosen.outerHTML = ''
+
+		moveTeam = (moveTeam === "white" ? "black" : "white")
+		isChosen = false		
+	}	
+
+
+
 	if (isChosen === false) {
-		if (event.target.hasAttribute("id") === true && event.target.getAttribute("team") === moveTeam) {
-			event.target.classList.add('chosen')
+		if (cell.hasAttribute("figure") === true && cell.getAttribute("team") === moveTeam) {
+			cell.classList.add('chosen')
 			isChosen = true
 		} else {
 			return
 		}
 	} else if(isChosen === true) {
-		if (event.target.hasAttribute('id') === false) {
 
-			let figureChosen = document.getElementsByClassName('chosen')[0]
-			figureChosen.classList.remove('chosen')
-			
-			event.target.innerHTML = figureChosen.outerHTML
-			figureChosen.outerHTML = ''
-
-
-			moveTeam = (moveTeam === "white" ? "black" : "white")
-			isChosen = false
+		if (cell.hasAttribute('figure') === false) {
+			move()
+		} else if(cell.hasAttribute("figure") === true && cell.getAttribute("team") != moveTeam /*&& */) {
+			eat()			
 		}
 	}
 }
@@ -835,11 +859,26 @@ function finder(word1, word2) {
 }
 
 finder(f, s)
+
+
+//второй способ 
+
+function finder(word1, word2) {
+
+	if(word1.length != word2.length) {
+		return false
+	}
+
+
+	if (word1.split('').sort().join('') === word2.split('').sort().join('')) {
+		return true
+	} 
+
+	return false
+}
+
+alert(finder("word1", "rd1wo"))
 */
-
-
-
-
 
 
 
@@ -1093,7 +1132,7 @@ console.log(unique(massive))
 
 
 //Расплющивание массива + Рекурсия
-
+/*
 let massive = [1,[2,[3,[4]]]]
 
 function flat(arr) {
@@ -1113,14 +1152,15 @@ function flat(arr) {
 console.log(flat(massive))
 
 
-/* Деструктурирующее присваивание очень полезно знать (особенно для react)
+// Деструктурирующее присваивание очень полезно знать (особенно для react)
 let res = [0]
 let res2 = [2,3]
 let res3 = [4,5]
 
 console.log([...res, ...res2, ...res3])
-*/
 
-//Второй метод через встроенный метод массива Array.protottype.flat()
+
+//Второй метод через встроенный метод массива Array.prototype.flat()
 
 console.log(massive.flat(Infinity))
+*/
