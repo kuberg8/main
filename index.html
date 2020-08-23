@@ -356,8 +356,62 @@
 
 
 			
+				
+				<h2><i class="far fa-keyboard"></i> Send Form <i class="fas fa-mouse"></i></h2>
+					<form id="form2">
+						<h1>Form send</h1>
+						<input 
+							name="login" 
+							placeholder="Login" 
+							required
+							maxlength='8'><!--pattern='[a-zA-Z]' не работает почему-то-->
+						<input 
+							type="password" 
+							name="password" 
+							required 
+							placeholder="Password">
+
+						<textarea name="textarea" placeholder="Message..."></textarea>
+						
+						<select name='select' style="margin: 100px 0 0 15px; width: 50%;">
+							<option>Mood</option>
+							<option value="good">Good</option>
+							<option value="bad">Bad</option>
+							<option value="idk">I dont know</option>
+						</select>
+
+						<span style="font-size: 20px; text-align: left; margin: 10px 0;">
+							<input type="checkbox" name="checkbox" style="width: 30px; height: 30px;">
+							<span>Remember</span> 
+						</span>
+
+						<span style="font-size: 20px; text-align: left;">
+							<input type="radio"
+							name="radio" value="male">
+							<label for="male">Male</label>
+
+							<input type="radio"
+							name="radio" value="female">
+							<label for="female">Female</label>			
+						</span>
 
 
+
+						<input type="file" name="file" multiple style="border: none; font-size: 15px;">
+
+						<span style="text-align: left;">
+							<input type="datetime-local" name="time"> - choose time
+						</span>
+
+						<span style="text-align: left;">
+							<input type="color" name="color"> - choose color
+						</span>	
+
+						<input type="range" name="range" step="1" value="5" min="0" max="10">
+
+						<input type="reset" style="width: 50%; margin: 50px auto 0; cursor: pointer; border-radius: 10px; font-size: 17px; border: 2px dashed black;">
+						<button>Отправить</button>
+					</form>					
 
 
 
@@ -952,6 +1006,8 @@
 	</span>
 
 
+
+	
 
 
 

@@ -96,6 +96,52 @@ a {
 	text-decoration: none;
 }
 
+
+
+
+#form2 {
+	display: flex; 
+	justify-content: center; 
+	flex-direction: column;
+
+	width: 50%; 
+	margin: 0 auto; 
+	background: #acb6e5;
+	border: 2px solid black; 
+	padding: 20px; 
+	border-radius: 20px;
+	box-shadow: 0px 5px 14px rgba(0,0,0, 0.8);
+
+}
+
+#form2 input {
+	border-radius: 20px;
+	margin: 10px 0;
+}
+
+#form2 button {
+	width: 50%;
+	margin: 10px auto;
+}
+
+#form2 textarea {
+	border: 3px dashed black;
+	border-radius: 10px;
+	max-width: 100%;
+	min-width: 100%;
+	outline: none;
+	min-height: 150px;
+	font-size: 25px;
+	padding: 10px;
+	font-family: Indie Flower;
+}
+
+
+
+
+
+
+
 .menu {
 	display: flex;
 	align-items: center;
@@ -659,8 +705,7 @@ img {
 
 
 
-#mass {
-}
+
 
 
 
@@ -775,4 +820,13 @@ img {
 	.chess td i:before {
 	}	
 
+
+
+	#form2 {
+		width: 90%;
+	}
+
+	#form2 input {
+		font-size: 18px;
+	}	
 }

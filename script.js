@@ -495,7 +495,7 @@ function request(pokemon) {
 const request = async (pokemon) => {
 	let res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
 
-	if (res.ok === false ) { // if (res.status === 404 ) {
+	if (res.ok === false) { // if (res.status === 404 ) {
 		result.innerHTML = 'Not Correct'
 	}
 
@@ -640,6 +640,80 @@ function random() {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Отправка формы
+const postData =  async (url, data) => {
+	let res = await fetch(url, {
+		headers: {
+			'Content-Type': 'multipart/form-data',
+		},
+		method: "POST",
+		body: JSON.stringify(data) //data (если передаешь в формате FormData)
+	})
+
+	return res
+}
+
+
+
+
+let form2 = document.forms[1]
+
+form2.addEventListener('submit', function(event) { 
+	event.preventDefault()
+
+	/**/
+	let formData = {
+		login: form2.login.value,
+		password: form2.password.value,
+		textarea: form2.textarea.value,
+		select: form2.select.value,
+		checkbox: form2.checkbox.checked,
+		radio: form2.radio.value,
+		file: form2.file.files, 
+		time: form2.time.value, 
+		color: form2.color.value, 
+		range: form2.range.value, 
+	}
+		
+
+	//let formData = new FormData(form2) - альтернатива варианта сверху
+
+	//Способ проверить все ключи и значения
+	/*
+	for (var pair of formData.entries()) {
+	    console.log(pair[0]+ ': ' + pair[1]); 
+	}
+	*/
+
+
+	postData('https://jsonplaceholder.typicode.com/', formData)
+	.then( (response) => {
+		alert('Отправлено')
+		console.log(response)
+	}).catch( (response) => {
+		alert('ошибка')
+		console.log(response)
+	})
+})
+
+
+
+
 
 
 
