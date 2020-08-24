@@ -898,9 +898,3 @@ function sortByPrice(arr) {
 
 
 
-
-
-
-
-
-
