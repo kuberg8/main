@@ -709,6 +709,44 @@ img {
 
 
 
+#game {
+	display: flex;
+	border-radius: 50%;
+	flex-wrap: wrap;
+	width: 400px;
+	height: 400px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.gameColor {
+	display: block;
+	width: 200px; 
+	height: 200px; 
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+.gameColor:hover {
+	opacity: 1;
+}
+
+#customization {
+	margin: 10px;
+	font-size: 20px;
+}
+
+
+#Round {
+	font-size: 25px;
+}
+#game_result {
+	font-size: 20px;
+	position: absolute;
+	width: 100%;
+}
+
+
 
 @media(max-width: 778px) {
 	.box {
@@ -828,5 +866,20 @@ img {
 
 	#form2 input {
 		font-size: 18px;
+	}	
+
+
+	#game {
+		width: 200px;
+		height: 200px;
+	}
+
+	.gameColor {
+		width: 100px; 
+		height: 100px;
+	}	
+
+	.gameColor:hover {
+		opacity: 0.8;
 	}	
 }

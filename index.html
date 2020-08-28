@@ -355,6 +355,39 @@
 					<button id="random_button" onclick="random()" style="height: 40px;">Сгенерировать</button>
 
 
+
+
+
+
+				<h2><i class="fas fa-gamepad"></i> Simon said <i class="fas fa-puzzle-piece"></i></h2>
+					<span id="Round">Round: 1</span>
+					<div id="game" onclick="game(event)">
+						<span class="gameColor" style="background: #1e90ff;">
+							<audio preload='auto' src="audio/1.mp3"></audio>
+						</span>
+						<span class="gameColor" style="background: #FF5643;">
+							<audio preload='auto' src="audio/2.mp3"></audio>
+						</span>
+						<span class="gameColor" style="background: #feef33;">
+							<audio preload='auto' src="audio/3.mp3"></audio>
+						</span>
+						<span class="gameColor" style="background: #BEDE15;">
+							<audio preload='auto' src="audio/4.mp3"></audio>
+						</span>
+					</div>
+					<form id="customization">
+						<input type="radio" name="complexity" value="1500" checked><label>Easy</label>
+						<input type="radio" name="complexity" value="1000"><label>Middle</label>
+						<input type="radio" name="complexity" value="400"><label>Hard</label>		
+					</form>
+
+
+					<div id="game_result"></div>
+					<button id="gameButton" onclick="getMassRandom()" style="margin: 30px 0; font-size: 20px;">Play</button>
+
+
+
+
 			
 				
 				<h2><i class="far fa-keyboard"></i> Send Form <i class="fas fa-mouse"></i></h2>
@@ -734,7 +767,11 @@
 						</ol></p>
 						<p><img style="max-width: 80%; width: 450px;" src="img/JSX.jpeg"></p>
 					</li>
-					<li><b>Виртуальный DOM - виртуальное представление пользовательского интерфейса хранится в памяти и синхронизируется с настоящим DOM при помощи библиотеки ReactDOM</b></li>
+					<li>
+						Виртуальный DOM - виртуальное представление пользовательского интерфейса хранится в памяти и синхронизируется с настоящим DOM при помощи библиотеки ReactDOM. Благодаря V.D. React не перересовывает элементы которые не изменились. 
+						<br>JSX превращается в V.D.
+						<br>V.D. превращается в DOM<!-- , затем при изменении компоненты(JSX), V.D. перересовывает только те элементы дерева которые изменились -->
+					</li>
 					<li><b>SPA (Single Page Application) - это одностроничный веб-сайт или веб-приложение, которое загружается на одну HTML-страницу. Благодаря динамическому обновлению JavaScript, во время использования не нужно перезагружать или подгружать дополнительные страницы.</b></li>
 				</ul>
 
@@ -872,7 +909,7 @@
 
 				<h2 class="h2_with_border">Reducer</h2>
 					<ul style="text-align: left; font-size: 20px;">
-						<div><b>Редуктор (reducer)</b> — это чистая функция, которая принимает state, принимает action и возвращает новый state</div>
+						<b>Редуктор (reducer)</b> — это чистая функция, которая принимает state, принимает action и возвращает новый state.
 					</ul>
 
 
@@ -927,8 +964,8 @@
 
 				<h2 class="h2_with_border">Side Effect</h2>
 					<ul style="text-align: left; font-size: 20px;">
-						<div><b>Side Effect</b> —  это что-то, что может повлиять на "чистоту" вашей функции.</div>
-						<div><b>Чистая функция</b> —  это функция которая если ей на вход подать одни и те же параметры, то результат будет всегда один и тот же.</div>
+						<div><b>Side Effect</b> —  это что-то, что может повлиять на "чистоту" вашей функции. Асинхронные операции...</div>
+						<div><b>Чистая функция</b>(Идемпоте́нтность) —  это функция которая если ей на вход подать одни и те же параметры, то результат будет всегда один и тот же. Компонента может вернуть другой JSX только если поменялся локальный State или пришли другие props. В ней нету ни глобального state, ни локальных данных</div>
 					</ul>							
 
 
@@ -1008,8 +1045,6 @@
 	</span>
 
 
-
-	
 
 
 

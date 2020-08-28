@@ -653,6 +653,143 @@ function random() {
 
 
 
+// Саймон говорит
+
+let box = document.getElementsByClassName('gameColor') // массив цветов
+let amount = box.length // кол-во итераций в игре
+
+function getMassRandom(arr = []) {
+	let gameButton = document.getElementById('gameButton')
+	let game = document.getElementById('game')
+
+	document.getElementById('game_result').innerHTML = ''
+
+	game.onclick = null
+	gameButton.disabled = true
+
+
+	if (arr.length === amount) {
+		let sounds = document.getElementsByTagName('audio')
+		let customizationTime = document.getElementById('customization')
+		let time = +customizationTime.complexity.value		
+
+		let i = 0
+		let j = 1
+		let color
+
+
+		setTimeout(function tick() {
+			if (i === amount) {
+				return null
+			}
+
+			color = box[arr[i]].style.background
+			box[arr[i]].style.background = 'green'
+			box[arr[i]].number = box[arr[i]].number ? [...box[arr[i]].number, j] : [j]
+			sounds[arr[i]].play()
+
+
+			setTimeout(tick, time)
+		}, time)	
+
+
+		setTimeout(function tick() {
+			if (i === amount) {
+				game.setAttribute('onclick', 'game(event)')
+				gameButton.disabled = false
+				return null
+			}
+
+			box[arr[i]].style.background = color
+			sounds[arr[i]].pause()
+			i++
+			j++
+
+			setTimeout(tick, time)
+		}, time + (time / 2))			
+	} else {
+		let value = Math.round(0 - 0.5 + Math.random() * (3 - 0 + 1))
+		if(arr.some(item => item === value) && amount < 5) {
+			getMassRandom(arr)
+		} else {
+			arr[0] && arr[arr.length - 1] === value ? null : arr.push(value)
+			getMassRandom(arr)
+		}	
+	}
+}
+
+
+
+
+let orderNumber = 1
+let RoundNumber = 1
+
+
+function game(event) {
+	let sound = event.target.getElementsByTagName('audio')[0]
+	let color = event.target.style.background
+	let box = document.getElementsByClassName('gameColor')
+
+	let Round = document.getElementById('Round')
+
+	if (orderNumber === amount) {
+		console.log(event.target.number + " - " + orderNumber)
+
+		sound.play()
+		event.target.style.background = 'green'
+		orderNumber = 1
+
+		RoundNumber++
+		amount++
+		Round.innerHTML = 'Round: ' + RoundNumber
+
+		for (var i = 0; i < box.length; i++) {
+			box[i].number = null
+		}
+
+		getMassRandom()
+	}
+	else if (event.target.number && event.target.number.some( item => item === orderNumber)) {
+		console.log(event.target.number + " - " + orderNumber)
+
+		sound.play()
+		event.target.style.background = 'green'
+		orderNumber++
+	} else {
+		console.log(event.target.number + " != " + orderNumber + " ERROR")
+		document.getElementById('game_result').innerHTML = `Sorry, you lost on ${RoundNumber} round`
+
+		sound.play()
+		event.target.style.background = 'red'
+		orderNumber = 1
+
+		RoundNumber = 1
+		Round.innerHTML = 'Round: ' + RoundNumber
+		amount = 4
+
+		for (var i = 0; i < box.length; i++) {
+			box[i].number = null
+		}	
+	}
+	
+	setTimeout(() => {
+		sound.pause()
+		event.target.style.background = color
+	}, 250)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //Отправка формы
@@ -894,6 +1031,11 @@ function sortByPrice(arr) {
 		`
 	})		
 }
+
+
+
+
+
 
 
 
