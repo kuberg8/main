@@ -262,16 +262,7 @@ function reslt2() {
 
 //Время
 
-var date = new Date();
 
-
-let sec = date.getSeconds()
-let min = date.getMinutes()
-let hour = date.getHours()
-
-let day = date.getDate()
-let mon = date.getMonth()
-let year = date.getFullYear()
 
 function timeIs(num) {
 	if(num < 10) {
@@ -282,12 +273,28 @@ function timeIs(num) {
 }
 
 
-document.getElementById("time").textContent = (timeIs(hour) + ":"+ timeIs(min) + ":" + timeIs(sec))
-document.getElementById("date").textContent = (timeIs(day) + "." + timeIs((mon+1)) + "." + timeIs(year))
 
+function t() {
+	let date = new Date();
+
+
+	let sec = date.getSeconds()
+	let min = date.getMinutes()
+	let hour = date.getHours()
+
+	let day = date.getDate()
+	let mon = date.getMonth()
+	let year = date.getFullYear()
+
+
+	document.getElementById("time").textContent = (timeIs(hour) + ":"+ timeIs(min) + ":" + timeIs(sec))
+	document.getElementById("date").textContent = (timeIs(day) + "." + timeIs((mon+1)) + "." + timeIs(year))	
+}
 
 setInterval(t, 1000)
 
+/*
+//Вручную менять время
 function t() {
 	if(mon == 11 && day == 31 && hour == 23 && min == 59 && sec == 59) {
 		mon = -1
@@ -326,6 +333,8 @@ function t() {
 	document.getElementById("date").textContent = (timeIs(day) + "." + timeIs((mon+1)) + "." + timeIs(year))
 }
 
+setInterval(t, 1000)
+*/
 
 
 
@@ -1040,3 +1049,335 @@ function sortByPrice(arr) {
 
 
 
+
+/* Анаграмма
+let f = prompt("введите слово")
+let s = prompt("введите слово")
+
+
+function finder(word1, word2) {
+	let sameSymbolLenght = 0
+
+	for (var i = 0; i < word1.length; i++) {
+		for (var j = 0; j < word2.length; j++) {
+			if(word1[i] === word2[j]) {
+				sameSymbolLenght += 1
+			}
+		}
+	}
+
+	if (sameSymbolLenght === word1.length) {
+		console.log(sameSymbolLenght)
+		alert(`same, same = ${sameSymbolLenght}`)
+	} else {
+		console.log(sameSymbolLenght)
+		alert(`not same, same = ${sameSymbolLenght}`)
+	} 
+}
+
+finder(f, s)
+
+
+//второй способ 
+
+function finder(word1, word2) {
+
+	if(word1.length != word2.length) {
+		return false
+	}
+
+
+	if (word1.split('').sort().join('') === word2.split('').sort().join('')) {
+		return true
+	} 
+
+	return false
+}
+
+alert(finder("word1", "rd1wo"))
+*/
+
+
+
+
+ //Составление слова
+/*
+let input = {
+	" ": [5],
+	d: [10],
+	e: [1],
+	H: [0],
+	l: [2, 3, 9],
+	o: [4, 7],
+	r: [8],
+	w: [6]
+}
+
+
+let buildString = (m) => {
+	let result = []
+
+	let countSymbols = []
+
+	for(let key in m) {
+		for(let value of m[key]) {
+			countSymbols.push(value)
+		}
+	}
+	
+	countSymbols = Math.max.apply(null, countSymbols)
+
+
+
+	for (var i = 0; i <= countSymbols; i++) {
+		for(let key in m) {
+			for (var j = 0; j < m[key].length; j++) {
+				if (m[key][j] == i) {
+					result.push(key)
+				}
+			}
+		}
+	}
+
+
+	alert(result.join(""))
+}
+
+buildString(input)
+
+
+второй способ:
+
+
+let buildString2 = (m) => {
+	let result = []
+
+
+	for(let key in m) {
+		for(let j of m[key]) {
+			result[j] = key
+		}
+	}
+
+
+
+	alert(result.join(""))
+}
+
+buildString2(input)
+*/
+
+
+
+
+
+ 
+
+
+
+
+
+
+/* Палиндром
+let word = prompt('Введите слово')
+
+function isPalindrom(word) {
+	word.toLowerCase()
+
+	for (var i = 0; i < word.length; i++) {
+		for (var j = word.length - 1; j <= 0; j--) {
+			if (word[i] != word[j]) {
+				return alert(false)
+			}
+		}
+	}
+
+	return alert(true)
+}
+
+isPalindrom(word)
+*/
+
+
+
+
+
+/* FizzBuzz 
+let number = prompt('Введите число')
+
+function FizzBuzz(n) {
+	for (var i = 1; i <= n; i++) {
+		if (i % 5 === 0 && i % 3 === 0) {
+			console.log("FizzBuzz")
+		} else if (i % 5 === 0) {
+			console.log("buzz")
+		} else if (i % 3 === 0) {
+			console.log("fizz")
+		} else {
+			console.log(i)
+		}
+		
+	}
+}
+
+FizzBuzz(number)
+*/
+
+
+
+
+
+/* Сколько гласных в слове
+let string = prompt('Введите слово')
+
+function findVowels(word) {
+	let Vowels = ["e","y","u","i","o","a"]
+	let Vowelscount = 0
+
+	word = word.split('')
+
+	for (var i = 0; i < word.length; i++) {
+		for (var j = 0; j < Vowels.length; j++) {
+			if (Vowels[j] === word[i]) {
+				Vowelscount++
+			}			
+		}
+	}
+
+	console.log("Гласных в этом слове - " + Vowelscount)		
+}
+
+findVowels(string)
+
+
+//второй метод 
+
+let string = prompt('Введите слово')
+
+function findVowels(word) {
+	let Vowels = ["e","y","u","i","o","a"]
+	let Vowelscount = 0
+
+	for(let value of word.toLowerCase()) {
+		if (Vowels.includes(value)) {  // выявляет, содержит ли массив определенное значение
+			Vowelscount++
+		}
+	}
+
+	console.log("Гласных в этом слове - " + Vowelscount)		
+}
+
+findVowels(string)
+*/
+
+
+
+
+
+//из массива в объект 
+/*
+let aR = [
+	{name: "height", value: 10},
+	{name: "width", value: 20}
+]
+
+function obj() {
+	let ob = {}
+
+	aR.forEach( (item) => {
+		ob[item.name] = item.value
+	})
+
+	console.log(ob)
+}
+
+obj() 
+*/
+
+
+
+
+
+/* Каррирование
+function add_v1(a, b) {
+    let sum = a;
+
+    let makeSum = function (b) {
+        if (b) {
+            sum += b;
+            return makeSum;
+        } else {
+            return sum;
+        }
+    }
+
+    return makeSum;
+}
+
+console.log(add_v1(2)(5)());
+*/
+
+
+
+
+
+
+
+//Уникальные значения в массиве
+/*
+let massive = [1,1,2,2,3,3,4,4,5,5]
+
+function unique(arr) {
+	let res = []
+
+	arr.forEach( (item) => {
+		if (res.indexOf(item) === -1) {
+			res.push(item)
+		}
+	})
+
+	return res
+}
+
+console.log(unique(massive))
+*/
+
+
+
+
+
+
+
+//Расплющивание массива + Рекурсия
+/*
+let massive = [1,[2,[3,[4]]]]
+
+function flat(arr) {
+	let res = []
+
+	arr.forEach( (item) => {
+		if (Array.isArray(item)) {
+			res = res.concat(flat(item))
+		} else {
+			res.push(item)
+		}
+	})
+
+	return res
+}
+
+console.log(flat(massive))
+
+
+// Деструктурирующее присваивание очень полезно знать (особенно для react)
+let res = [0]
+let res2 = [2,3]
+let res3 = [4,5]
+
+console.log([...res, ...res2, ...res3])
+
+
+//Второй метод через встроенный метод массива Array.prototype.flat()
+
+console.log(massive.flat(Infinity))
+*/
