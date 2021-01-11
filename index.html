@@ -1,1053 +1,668 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Шпаргалка</title>
-
-	<meta name="description" content="до 200 символов, серое описание под сайтом">
-	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="css.css">
-	<link rel="shortcut icon" href="icon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" href="icon120.png">
-	<link rel="apple-touch-icon" size="72x72" href="icon76.png">
-	<link rel="apple-touch-icon" size="128x128" href="icon120.png">
-	<link rel="apple-touch-icon" size="256x256" href="icon152.png">
-
-	<script src="https://kit.fontawesome.com/adcc431357.js" crossorigin="anonymous"></script>
-</head>
-<body onscroll="autoClose()">
-	
-	<header>
-		<div class="box">
-			<i class="fas fa-code"></i>
-			<span>Hello world!</span>
-			<i class="fas fa-atom infinity"></i>
-		</div>
-		
-		<span class="menu">
-			<a href="https://www.instagram.com/kuberg/" target="_blank" class="menu_item"><i class="fab fa-instagram"></i></a>
-			<a href="mailto:kuberg8@gmail.com" class="menu_item"><i class="fas fa-envelope"></i></a>		
-			<a href="https://github.com/kuberg8?tab=repositories" target="_blank" class="menu_item"><i class="fas fa-briefcase"></i></a>
-		</span>	
-	</header>
-
-
-	<nav>
-		<a onclick="scrollToBlock('Tasks')">Tasks</a>
-		<a onclick="scrollToBlock('js')">JS</a>
-		<a onclick="scrollToBlock('React')">React</a>
-		<span onclick="openNav()"><i class="fas fa-sort"></i></span>
-	</nav>
-
-	<span>
-		<span class="border_top">
-			<h1 id="Tasks"><i class="fas fa-thumbtack"></i> Tasks <i class="fas fa-tasks"></i></h1>
-				<h2><i class="fas fa-binoculars"></i> Search <i class="fas fa-search"></i></h2>
-					<input placeholder="Search.." onkeyup="find(this)" style="width: 80%; height: 50px; border-radius: 10px;">
-					<div id="text">Meet my family. There are five of us – my parents, my elder brother, my baby sister and me. First, meet my mum and dad, Jane and Michael. My mum enjoys reading and my dad enjoys playing chess with my brother Ken. My mum is slim and rather tall. She has long red hair and big brown eyes. She has a very pleasant smile and a soft voice. My mother is very kind and understanding. We are real friends. She is a housewife. As she has three children, she is always busy around the house. She takes care of my baby sister Meg, who is only three months old. My sister is very small and funny. She sleeps, eats and sometimes cries. We all help our mother and let her have a rest in the evening. Then she usually reads a book or just watches TV. My father is a doctor. He is tall and handsome. He has short dark hair and gray eyes. He is a very hardworking man. He is rather strict with us, but always fair. My elder brother Ken is thirteen, and he is very clever. He is good at Maths and always helps me with it, because I can hardly understand all these sums and problems. Ken has red hair and brown eyes. My name is Jessica. I am eleven. I have long dark hair and brown eyes. I am not as clever as my brother, though I try to do my best at school too. I am fond of dancing. Our dancing studio won The Best Dancing Studio 2015 competition last month. I am very proud of it. I also like to help my mother with my little sister very much. Our family is very united. We love each other and always try to spend more time together.</div>
-					<b><a style="font-size: 20px; color: red;" target="_blank" href="http://old.code.mu/tasks/javascript/regular/rabota-s-regulyarnymi-vyrazeniyami-v-javascript-glava-1.html">Reminder - Regular Expressions</a></b>
-
-				
-				<h2><i class="fas fa-square-root-alt"></i> Calculator <i class="fas fa-calculator"></i></h2>
-					<span class="flex">
-						<div class="calculator">
-							<table align="center" cols="4">
-								<caption><input id="caption" placeholder="0"></caption>
-								<tbody>
-								<tr>
-									<td colspan="3"><input class="cal_item above" type="button" value="AC" onclick="delet()"></td>
-									<td><input class="cal_item" type="button" value="%" onclick="lst()"></td>
-								</tr>
-
-								<tr>
-									<td><input class="cal_item" type="button" value="7" onclick="pressing(this)"></td>
-									<td><input class="cal_item" type="button" value="8" onclick="pressing(this)"></td>
-									<td><input class="cal_item" type="button" value="9" onclick="pressing(this)"></td>
-									<td><input class="cal_item" type="button" value="/" onclick="shr()"></td>
-								</tr>
-								
-								<tr>
-									<td><input class="cal_item" type="button" value="4" onclick="pressing(this)"></td>
-									<td><input class="cal_item" type="button" value="5" onclick="pressing(this)"></td>
-									<td><input class="cal_item" type="button" value="6" onclick="pressing(this)"></td>
-									<td><input class="cal_item" type="button" value="x" onclick="mlt()"></td>
-								</tr>
-								
-								<tr>
-									<td><input class="cal_item" type="button" value="1" onclick="pressing(this)"></td>
-									<td><input class="cal_item" type="button" value="2" onclick="pressing(this)"></td>
-									<td><input class="cal_item" type="button" value="3" onclick="pressing(this)"></td>
-									<td><input class="cal_item" type="button" value="-" onclick="mns()"></td>
-								</tr>
-
-								<tr>
-									<td><input class="cal_item" type="button" value="0" onclick="pressing(this)"></td>
-									<td><input class="cal_item" type="button" value="." onclick="pressing(this)"></td>
-									<td><input class="cal_item" type="button" value="=" onclick="reslt()"></td>
-									<td><input class="cal_item" type="button" value="+" onclick="pls()"></td>
-								</tr>
-								</tbody>
-							</table>
-						</div>	
-
-						<div class="calculator2">
-							<table align="center" cols="5">
-								<caption><input id="caption2" placeholder="0" disabled></caption>
-								<tbody>
-								<tr>
-									<td><input class="cal_item" type="button" value="(" onclick="pressingOperation(this)"></td>
-									<td><input class="cal_item" type="button" value=")" onclick="pressingOperation(this)"></td>
-									<td><input class="cal_item" type="button" value="%" onclick="pressingOperation(this)"></td>
-									<td><input class="cal_item" type="button" value="C" onclick="deletOne()"></td>
-									<td rowspan="5"><input class="cal_item above2" type="button" value="AC" onclick="delet2()"></td>
-								</tr>
-
-								<tr>
-									<td><input class="cal_item" type="button" value="7" onclick="pressing2(this)"></td>
-									<td><input class="cal_item" type="button" value="8" onclick="pressing2(this)"></td>
-									<td><input class="cal_item" type="button" value="9" onclick="pressing2(this)"></td>
-									<td><input class="cal_item" type="button" value="/" onclick="pressingOperation(this)"></td>
-								</tr>
-								
-								<tr>
-									<td><input class="cal_item" type="button" value="4" onclick="pressing2(this)"></td>
-									<td><input class="cal_item" type="button" value="5" onclick="pressing2(this)"></td>
-									<td><input class="cal_item" type="button" value="6" onclick="pressing2(this)"></td>
-									<td><input class="cal_item" type="button" value="*" onclick="pressingOperation(this)"></td>
-								</tr>
-								
-								<tr>
-									<td><input class="cal_item" type="button" value="1" onclick="pressing2(this)"></td>
-									<td><input class="cal_item" type="button" value="2" onclick="pressing2(this)"></td>
-									<td><input class="cal_item" type="button" value="3" onclick="pressing2(this)"></td>
-									<td><input class="cal_item" type="button" value="-" onclick="pressingOperation(this)"></td>
-								</tr>
-
-								<tr>
-									<td><input class="cal_item" type="button" value="0" onclick="pressing2(this)"></td>
-									<td><input class="cal_item" type="button" value="." onclick="pressing2(this)"></td>
-									<td><input class="cal_item" type="button" value="=" onclick="reslt2()"></td>
-									<td><input class="cal_item" type="button" value="+" onclick="pressingOperation(this)"></td>
-								</tr>
-								</tbody>
-							</table>
-						</div>								
-					</span>
-			
-
-
-
-				<h2><i class="far fa-calendar-alt"></i> Time <i class="far fa-clock"></i></h2>
-					<div id="time"></div>
-					<div id="date"></div>
-
-
-
-
-
-
-
-				<h2 id="promise_title">Promise & Async Await</h2>					
-					<button id="promise" onclick="play()" style=" display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 0 auto; height: 40px; width: 40px; min-height: 40px; min-width: 40px; border-radius: 50%; font-size: 30px;"><i class="fas fa-play-circle"></i></button>
-
-
-
-
-
-
-
-				<h2><i class="fas fa-network-wired"></i> API (get) <i class="fas fa-wifi"></i></h2>
-					<!--
-					<form id="form">
-						<input name="number" placeholder="Введите число" type="number">
-						<select name="type">
-							<option disabled="diabled" >type</option>
-							<option value="trivia" selected>trivia</option>
-							<option value="math">math</option>
-							<option value="date">date</option>
-							<option value="year">year</option>
-						</select>
-						<p>
-							<button>Сделать запрос</button>								
-						</p>
-							<span id="result_api">date or number information</span>
-						<span style='font-size: 20px;'>работает только на локальном сайте т.к. запрос с незащищенного сайта (http)</span>
-					</form>
-					-->
-					<form id="form">
-						<input id="pokemon" name="pokemon" autocomplete="off" placeholder="Number or name of the pokemon">
-						<b><span id="result_api">POKEMON</span></b>
-						<button>Сделать запрос</button>	
-					</form>
-
-
-
-
-
-
-
-				
-				<h2><i class="fas fa-map-marker"></i> Event <i class="fas fa-location-arrow"></i></h2>
-					<b>не закончено</b>
-					<div style="display: flex; justify-content: space-around;">
-					<table class="chess" cols="8" align="center" onclick="chess(event)">
-						<tr>
-							<td class="cell_white" align="center" valign="center">
-								<i figure="rook" team="black" class="fas fa-chess-rook black"></i>
-							</td>
-							<td class="cell_black" align="center">
-								<i figure="horse" team="black" class="fas fa-chess-knight black"></i>
-							</td>
-							<td class="cell_white" align="center">
-								<i figure="bishop" team="black" class="fas fa-chess-bishop black"></i>
-							</td>
-							<td class="cell_black" align="center">
-								<i figure="queen" team="black" class="fas fa-chess-queen black"></i>
-							</td>
-							<td class="cell_white" align="center">
-								<i figure="king" team="black" class="fas fa-chess-king black"></i>
-							</td>
-							<td class="cell_black" align="center">
-								<i figure="bishop" team="black" class="fas fa-chess-bishop black"></i>
-							</td>
-							<td class="cell_white" align="center">
-								<i figure="horse" team="black" class="fas fa-chess-knight black"></i>
-							</td>
-							<td class="cell_black" align="center">
-								<i figure="rook" team="black" class="fas fa-chess-rook black"></i>
-							</td>
-						</tr>
-						<tr>
-							<td class="cell_black" align="center">
-								<i figure="pawn" team="black" class="fas fa-chess-pawn black"></i>
-							</td>
-							<td class="cell_white" align="center">
-								<i figure="pawn" team="black" class="fas fa-chess-pawn black"></i>
-							</td>
-							<td class="cell_black" align="center">
-								<i figure="pawn" team="black" class="fas fa-chess-pawn black"></i>
-							</td>
-							<td class="cell_white" align="center">
-								<i figure="pawn" team="black" class="fas fa-chess-pawn black"></i>
-							</td>
-							<td class="cell_black" align="center">
-								<i figure="pawn" team="black" class="fas fa-chess-pawn black"></i>
-							</td>
-							<td class="cell_white" align="center">
-								<i figure="pawn" team="black" class="fas fa-chess-pawn black"></i>
-							</td>
-							<td class="cell_black" align="center">
-								<i figure="pawn" team="black" class="fas fa-chess-pawn black"></i>
-							</td>
-							<td class="cell_white" align="center">
-								<i figure="pawn" team="black" class="fas fa-chess-pawn black"></i>
-							</td>			
-						</tr>
-						<tr>
-							<td class="cell_white" align="center"></td>
-							<td class="cell_black" align="center"></td>
-							<td class="cell_white" align="center"></td>
-							<td class="cell_black" align="center"></td>
-							<td class="cell_white" align="center"></td>
-							<td class="cell_black" align="center"></td>
-							<td class="cell_white" align="center"></td>
-							<td class="cell_black" align="center"></td>			
-						</tr>
-						<tr>
-							<td class="cell_black" align="center"></td>
-							<td class="cell_white" align="center"></td>
-							<td class="cell_black" align="center"></td>
-							<td class="cell_white" align="center"></td>
-							<td class="cell_black" align="center"></td>
-							<td class="cell_white" align="center"></td>
-							<td class="cell_black" align="center"></td>
-							<td class="cell_white" align="center"></td>			
-						</tr>
-						<tr>
-							<td class="cell_white" align="center"></td>
-							<td class="cell_black" align="center"></td>
-							<td class="cell_white" align="center"></td>
-							<td class="cell_black" align="center"></td>
-							<td class="cell_white" align="center"></td>
-							<td class="cell_black" align="center"></td>
-							<td class="cell_white" align="center"></td>
-							<td class="cell_black" align="center"></td>			
-						</tr>
-						<tr>
-							<td class="cell_black" align="center"></td>
-							<td class="cell_white" align="center"></td>
-							<td class="cell_black" align="center"></td>
-							<td class="cell_white" align="center"></td>
-							<td class="cell_black" align="center"></td>
-							<td class="cell_white" align="center"></td>
-							<td class="cell_black" align="center"></td>
-							<td class="cell_white" align="center"></td>			
-						</tr>
-						<tr>
-							<td class="cell_white" align="center">
-								<i figure="pawn" team="white" class="fas fa-chess-pawn white"></i>
-							</td>
-							<td class="cell_black" align="center">
-								<i figure="pawn" team="white" class="fas fa-chess-pawn white"></i>
-							</td>
-							<td class="cell_white" align="center">
-								<i figure="pawn" team="white" class="fas fa-chess-pawn white"></i>
-							</td>
-							<td class="cell_black" align="center">
-								<i figure="pawn" team="white" class="fas fa-chess-pawn white"></i>
-							</td>
-							<td class="cell_white" align="center">
-								<i figure="pawn" team="white" class="fas fa-chess-pawn white"></i>
-							</td>
-							<td class="cell_black" align="center">
-								<i figure="pawn" team="white" class="fas fa-chess-pawn white"></i>
-							</td>
-							<td class="cell_white" align="center">
-								<i figure="pawn" team="white" class="fas fa-chess-pawn white"></i>
-							</td>
-							<td class="cell_black" align="center">
-								<i figure="pawn" team="white" class="fas fa-chess-pawn white"></i>
-							</td>		
-						</tr>
-						<tr>
-							<td class="cell_black" align="center">
-								<i figure="rook" team="white" class="fas fa-chess-rook white"></i>
-							</td>
-							<td class="cell_white" align="center">
-								<i figure="horse" team="white" class="fas fa-chess-knight white"></i>
-							</td>
-							<td class="cell_black" align="center">
-								<i figure="bishop" team="white" class="fas fa-chess-bishop white"></i>
-							</td>
-							<td class="cell_white" align="center">
-								<i figure="king" team="white" class="fas fa-chess-king white"></i>
-							</td>
-							<td class="cell_black" align="center">
-								<i figure="queen" team="white" class="fas fa-chess-queen white"></i>
-							</td>
-							<td class="cell_white" align="center">
-								<i figure="bishop" team="white" class="fas fa-chess-bishop white"></i>
-							</td>
-							<td class="cell_black" align="center">
-								<i figure="horse" team="white" class="fas fa-chess-knight white"></i>
-							</td>
-							<td class="cell_white" align="center">
-								<i figure="rook" team="white" class="fas fa-chess-rook white"></i>
-							</td>			
-						</tr>
-					</table>	
-									
-					</div>	
-
-
-
-
-
-
-				<h2><i class="fas fa-random"></i> Random <i class="fas fa-sync-alt"></i></h2>
-					<div class="random_block">
-						<span class="result_block"><span id="result_random">0</span></span>	
-						<span class="random_input">
-							<span><input id="min" placeholder="0" style="width: 120px; height: 40px;"> <b>- MINIMUM</b></span>
-							<span><input id="max" placeholder="0" style="width: 120px; height: 40px;"> <b>- MAXIMUM</b></span>
-						</span>
-					</div>
-					
-					<button id="random_button" onclick="random()" style="height: 40px;">Сгенерировать</button>
-
-
-
-
-
-
-				<h2><i class="fas fa-gamepad"></i> Simon said <i class="fas fa-puzzle-piece"></i></h2>
-					<span id="Round">Round: 1</span>
-					<div id="game" onclick="game(event)">
-						<span class="gameColor" style="background: #1e90ff;">
-							<audio preload='auto' src="audio/1.mp3"></audio>
-						</span>
-						<span class="gameColor" style="background: #FF5643;">
-							<audio preload='auto' src="audio/2.mp3"></audio>
-						</span>
-						<span class="gameColor" style="background: #feef33;">
-							<audio preload='auto' src="audio/3.mp3"></audio>
-						</span>
-						<span class="gameColor" style="background: #BEDE15;">
-							<audio preload='auto' src="audio/4.mp3"></audio>
-						</span>
-					</div>
-					<form id="customization">
-						<input type="radio" name="complexity" value="1500" checked><label>Easy</label>
-						<input type="radio" name="complexity" value="1000"><label>Middle</label>
-						<input type="radio" name="complexity" value="400"><label>Hard</label>		
-					</form>
-
-
-					<div id="game_result"></div>
-					<button id="gameButton" onclick="getMassRandom()" style="margin: 30px 0; font-size: 20px;">Play</button>
-
-
-
-
-			
-				
-				<h2><i class="far fa-keyboard"></i> Send Form <i class="fas fa-mouse"></i></h2>
-					<form id="form2">
-						<h1>Form send</h1>
-						<input 
-							name="login" 
-							placeholder="Login" 
-							required
-							pattern='[A-Za-z1-9]{1,8}' 
-							title="Только латинские буквы" 
-							maxlength='8'><!--pattern='[a-zA-Z]' не работает почему-то-->
-						<input 
-							type="password" 
-							name="password" 
-							required 
-							placeholder="Password">
-
-						<textarea name="textarea" placeholder="Message..."></textarea>
-						
-						<select name='select' style="margin: 100px 0 0 15px; width: 50%;">
-							<option>Mood</option>
-							<option value="good">Good</option>
-							<option value="bad">Bad</option>
-							<option value="idk">I dont know</option>
-						</select>
-
-						<span style="font-size: 20px; text-align: left; margin: 10px 0;">
-							<input type="checkbox" name="checkbox" style="width: 30px; height: 30px;">
-							<span>Remember</span> 
-						</span>
-
-						<span style="font-size: 20px; text-align: left;">
-							<input type="radio"
-							name="radio" value="male">
-							<label for="male">Male</label>
-
-							<input type="radio"
-							name="radio" value="female">
-							<label for="female">Female</label>			
-						</span>
-
-
-
-						<input type="file" name="file" multiple style="border: none; font-size: 15px;">
-
-						<span style="text-align: left;">
-							<input type="datetime-local" name="time"> - choose time
-						</span>
-
-						<span style="text-align: left;">
-							<input type="color" name="color"> - choose color
-						</span>	
-
-						<input type="range" name="range" step="1" value="5" min="0" max="10">
-
-						<input type="reset" style="width: 50%; margin: 50px auto 0; cursor: pointer; border-radius: 10px; font-size: 17px; border: 2px dashed black;">
-						<button>Отправить</button>
-					</form>					
-
-
-
-
-				<h2><i class="fas fa-filter"></i> .sort() <i class="fas fa-sort-amount-down-alt"></i></h2>
-					<span id="sort_date">
-						<h3>Сортировка по дате :</h3>
-					</span>
-					
-
-					
-					<span style="display: flex; width: 100%; flex-direction: column; text-align: center; margin-bottom: 100px;">
-						<span style="display: flex; width: 100%; justify-content: space-around; margin: 100px 0 20px 0;">
-							<button onclick="sortByReview(arr2)" style="width: 45%;">Отсортировать по кол-ву отзывов</button>
-							<button onclick="sortByPrice(arr2)" style="width: 45%;">Отсортировать по цене</button>	
-						</span>
-
-						<span id="mass"></span>
-					</span>			
-		</span>
-
-
-
-
-		<span class="border_top" style="font-style: italic;">
-			<h1 id="js"><i class="fab fa-js-square"></i> JS <i class="fab fa-chrome"></i></h1>
-				<span style="padding: 0 20px; text-align: left; font-size: 18px; font-family: Arial;">
-					<span class="methods">
-						<h3>Cheat sheets:</h3>
-						<h3><a id="methods_title" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects">Standard objects</a></h3>
-						<span class="methods_block">
-						    <a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array#">Array</a>
-							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
-							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
-							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>	
-							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a>						
-							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>	
-							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON">JSON</a>
-							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol">Symbol</a>
-							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>
-							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Set">Set</a>
-							<a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>															
-						</span>
-					</span>							
-
-					
-						<h3 style="font-family: Indie Flower; padding-left: 30px; font-size: 40px;">Reminder:</h3>
-						<span class="reminder_item">
-							<h3>Структуры данных:</h3>
-							<li>
-								<b>Объекты</b> - для хранения именованных коллекций.
-							</li>
-							<li>
-								<b>Массивы</b> - для хранения упорядоченных коллекций.
-							</li>
-							<li><b>Map</b> - это коллекция ключ/значение, как и Object. Но основное отличие в том, что Map позволяет использовать ключи любого типа. Object приводит свои ключи к строкам</li>		
-							<li><b>Set</b> - это особый вид коллекции: «множество» значений (без ключей), где каждое значение может появляться только один раз.</li>	
-							<li><b>WeakMap</b> — коллекция пар ключ-значение. В качестве ключей могут быть использованы только объекты, а значения могут быть произвольных типов.<span style="text-decoration: underline;">(В основном, WeakMap используется в качестве дополнительного хранилища данных.)</span></li>
-							<li><b>WeakSet</b> - коллекция, элементами которой могут быть только объекты. Ссылки на эти объекты в WeakSet являются слабыми. Каждый объект может быть добавлен в WeakSet только один раз.</li>												
-						</span>		
-
-						<span class="reminder_item">
-							<h3>Циклы:</h3>
-							<li>
-								<b>for(key of arr)</b> - Перебирает элементы итерируемых объектов(объекты с ключами - цифрами, свойством length и свойством Symbol.itertor(у массивов в __proto__ лежит))
-								<p>(псевдомассивы не работают так как нету Symbol.itertor, потому что __proto__ ссылается на Object.prototype).</p>
-								<p>Способ перебрать объект через <b>for(key of obj)</b> - <b>for([key, value] of Object.entries(obj))</b>, работает так как Object.entries() и Object.keys() возвращают МАССИВ из ключей и значений</p>
-							</li>
-							<li>
-								<b>for(key in obj) </b> - Перебирает ключи у объектов(всех)
-							</li>
-							<li><b>while (condition) {}</b> - проверяет условие на true потом выполняет тело</li>
-							<li><b>do {} while()</b> - сначала выолнит тело потом если условие true, повторит цикл
-							</li>	
-							<li>
-								<b>for(начало; условие; шаг) {}</b>
-							</li>	
-							<li>
-								<b>Метод массивов forEach( (item) => {body})</b>
-							</li>													
-						</span>		
-
-						<span class="reminder_item">
-							<h3>Формат данных(Сетевых запросов):</h3>
-							<li>
-								<b>JSON</b> (JavaScript Object Notation) - это текстовый формат обмена данными, основанный на JavaScript. JSON требует меньше кода и имеет меньший размер, что ускоряет обработку и передачу данных. Не смотря на то, что JSON написан на JavaScript , он не зависит от языка. Но это все, что может сделать с JSON. Он не имеет каких-либо мощных функций, связанных с проверкой и схемой, которые есть у XML.
-								<p><img src="img/JSON.jpg"></p>
-							</li>
-							<li>
-								<b>XML</b> (Extensible Markup Language) - это язык разметки. Является выбором по умолчанию для обмена данными, так-как практически у каждого языка есть синтаксический анализатор, будь то Java, .NET или любой другой язык, поэтому легко извлечь определенные данные из XML, и есть схемы, которые могут проверять XML. XML также широко используется в сфере услуг: банковские услуги, онлайн-магазины розничной торговли, интеграция промышленных систем и т.д.
-								<p><img src="img/XML.jpg"></p>
-							</li>							
-						</span>	
-
-						<span class="reminder_item">
-							<h3>Promise:</h3>
-							<p><b>- это объект, представляющий результат успешного или неудачного завершения асинхронной операции. (Обещание выполнить какое-либо действие)</b></p>
-							<h3>Async Await:</h3>
-							<p><b>Async - это функция всегда возвращает промис. <br>Await - заставляет ждать JS до тех пор пока промис справа от него не выполнится</b></p>											
-						</span>		
-
-
-						<span class="reminder_item">
-							<h3>Замыкание:</h3>
-							<p><b>- функция, которая ссылается на свободные переменные в своей области видимости.</b></p>
-							<p><b>Замыкание возникает в том случае если мы из одной функции возвращаем новую функцию, в таком случае функция замкнута на область видимости родительской функции</b></p>
-							<p><b>Область видимости — это область, где компилятор ищет переменные или функции когда они ему нужны, если не находит начинает искать в родительской области видимости и так пока не доходит до глобальной области.</b></p>	
-							<img src="img/count.jpg">										
-						</span>	
-
-
-						<span class="reminder_item">
-							<h3>this.(контекст):</h3>
-							<p><b>- это переменная, которая ссылается на текущий обьект.</b></p>		
-							<p><b>this определяется от того как она вызвана.Например, как метод объекта или ...</b></p>	
-						</span>		
-
-
-						<span class="reminder_item">
-							<h3>EventLoop(цикл событий):</h3>
-							<p><b>- добавляет асинхронные операции в конец Call Stack</b></p>	
-							<p><b>Call Stack(очередь вызовов)</b></p>
-							<a style="font-style: normal; font-family: Indie Flower; font-size: 25px; color: red;" href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D"><b>-> How EvenLoop works <-</b></a>
-						</span>																								
-
-
-						<span class="reminder_item">
-							<h3>Способы AJAX запросов:</h3>
-							<li>
-								<b>Fetch(url)</b>
-								<p><img src="img/fetch.jpg"> <img src="img/fetch_post.jpg"></p>
-							</li>
-							<li>
-								<b>XMLHttpRequest</b> - это встроенный в браузер объект, который даёт возможность делать HTTP-запросы к серверу без перезагрузки страницы. Несмотря на наличие слова «XML» в названии, XMLHttpRequest может работать с любыми данными, а не только с XML. Мы можем загружать/скачивать файлы, отслеживать прогресс и многое другое. <p>Запрос <b>XHR</b> легко завершить с помощью <b>xhr.abort()</b> и, при необходимости, обнаружить такое событие с помощью функции <b>xhr.onabort</b>.</p>
-								<ol>
-									<h4>Свойства и методы:</h4>
-									<li>response</li>
-									<li>responseType - можно указать тип response</li>
-									<li>status</li>
-									<li>setRequestHeader</li>
-									<li>open()</li>
-									<li>send()</li>
-								</ol>								
-								<ol>
-									<h4>События (on):</h4>
-									<li>loadstart - начало запроса.</li>
-									<li>progress – прибыла часть данных ответа, тело ответа полностью на данный момент можно получить из свойства responseText.</li>
-									<li>abort – запрос был прерван вызовом xhr.abort().</li>
-									<li>error – произошла ошибка соединения, например неправильное доменное имя. Событие не генерируется для HTTP-ошибок как, например, 404.</li>
-									<li>load – запрос успешно завершён.</li>
-									<li>timeout – запрос был отменён по причине истечения отведённого для него времени (происходит, только если был установлен таймаут).</li>
-									<li>loadend – срабатывает после load, error, timeout или abort.</li>
-									<li>readystatechange - срабатывает, когда изменяется атрибут</li>
-								</ol>
-								<p><img src="img/XMLHttpRequest.jpg"></p>
-							</li>								
-							<li>
-								<b>Axios</b> - это широко известная JavaScript-библиотека. Она представляет собой HTTP-клиент, основанный на промисах и предназначенный для браузеров и для Node.js.
-								<p><img src="img/axios.jpg"> <img src="img/axios_post.jpg"></p>
-							</li>							
-						</span>	
-
-
-						<span class="reminder_item">
-							<h3>Конструктор "new":</h3>
-							<p><b>- это конструктор который позволяет создать множество однотипных объектов</b></p>
-							<p><b>все объекты в js создаются через конструктор new или class</p>
-							<h3>Class:</h3>	
-							<p> - это аналог конструктора, для создания объектов, который устанавливает в них начальные значения(свойства) и методы</p>	
-							<h4>Отличия от обычного конструктора:</h4>	
-							<li>Есть специальное внутреннее свойство FunctionKind: classConstructor, из-за которого конструктор класса не может быть вызван без new</li>	
-							<li>В классах методы не перечисляются(в циклах)</li>		
-						</span>																							
-
-						<span class="reminder_item">
-							<h3>Прототипное наследование:</h3>
-							<b>__proto__ - это объект (ссылка на prototype).</b><br> __proto__ есть у ЛЮБОГО объекта, но оно скрыто (ВСЕ в JS это объекты)
-							<p><b>Прототипное наследование - это когда мы хотим прочитать свойство из объекта, а оно отсутсвует, js автоматически берет его из прототипа</p>										
-							<p><b>__proto__ любого объекта ссылается на prototype класса(функции-конструктора) с помощью которого этот объект был создан</p>	
-							<h3>Prototype:</h3>	
-							- это независимый объект, с определенным набором свойств и методов.		
-							<p>Любой Class или function имеет свой прототип</p>				
-						</span>	
-
-						<span class="reminder_item">
-							<h3>Делегирование событий:</h3>
-							Если есть много элементов, события на которых нужно обрабатывать похожим образом, то вместо того, чтобы назначать обработчик каждому, мы ставим один обработчик на их общего предка.
-							<h4>Зачем использовать?</h4>
-							<ul>
-								<li>Упрощает процесс инициализации и экономит память: не нужно вешать много обработчиков.</li>
-								<li>Меньше кода: при добавлении и удалении элементов не нужно ставить или снимать обработчики.</li>
-								<li>Удобство изменений DOM: можно массово добавлять или удалять элементы путём изменения innerHTML и ему подобных.</li>
-							</ul>
-							<h4>Есть свои ограничения:</h4>
-							<ul>
-								<li>Событие должно всплывать. Некоторые события этого не делают. Также, низкоуровневые обработчики не должны вызывать event.stopPropagation()</li>
-								<li>Делегирование создаёт дополнительную нагрузку на браузер, ведь обработчик запускается, когда событие происходит в любом месте контейнера, не обязательно на элементах, которые нам интересны. Но обычно эта нагрузка настолько пустяковая, что её даже не стоит принимать во внимание.</li>
-							</ul>			
-							<h4>Методы:</h4>	
-							<ul>
-								<li>type - строка, содержащее имя события.</li>
-								<li>target - DOM-элемент, который сгенерировал событие.</li>
-								<li>currentTarget - DOM-элемент, который вызвал обработчик события.</li>
-								<li>eventPhase - число, показывающее на каком этапе произошло событие (1 - этапе погружения (перехвата), 2 - на цели, 3 - на этапе всплытия).</li>
-								<li>timestamp - число (дата), когда произошло событие</li>
-								<li>bubbles - возвращает логическое значение, указывающее может ли данное событие всплывать</li>
-								<li>defaultPrevented - проверяет можно ли вызвать метод preventDefault() для данного события.</li>
-								<li>view - возвращает ссылку на объект window, в котором произошло событие.</li>
-								<li>detail (для мыши) - возвращает число, указывающее сколько раз была нажата кнопка мыши в некоторой области за короткий промежуток времени.</li>
-								<li>screenX, screenY (для мыши) - возвращают информацию о положении курсора (screenX - горизонтальная координата, screenY - вертикальная координата) относительно левого верхнего угла экрана.</li>
-								<li>clientX, clientY (для мыши) - возвращают информацию о положении курсора (clientX - горизонтальная координата, clientY - вертикальная координата) относительно левого верхнего угла клиентской области.</li>
-								<li>location (для клавиатуры) - возвращает число, указывающее на область клавиатуры или устройства в котором расположена нажатая клавиша (0 - основная область клавиатуры, 1 - область, в которой расположена левая клавиша CTRL или левая клавиша ALT, 2 - область, в которой расположена правая клавиша CTRL или правая клавиша ALT, 3 - область цифровой панели, которая дублирует клавиши основной области для ввода цифр и арифметических операторов).</li>
-								<li>keyCode, which (для клавиатуры) - возвращает код символа Unicode (для события keypress) или код ключа Unicode (для событий keydown и keyup).</li>
-								<li>charCode (для клавиатуры) - возвращает код символа Unicode нажатой клавиши (для события keypress). Если данное свойство использовать для получения дополнительной информации о событиях keydown или keyup, то оно всегда вернёт "0".</li>
-							</ul>											
-						</span>														
-				</span>
-				
-				<h2 class="h2_with_border">Work with D.O.M</h2>
-					<span class="work_With_Dom">
-						<ul>
-							<h3>Часто используемые атрибуты(свойства) у document.elim:</h3>
-							<li><b>elim.parentElement</b> - вернет родителя</li>
-							<li><b>elim.firstElementChild & lastElementChild</b> - первый и последний дочерний элемент</li>
-							<li><b>elim.previousElementSibling & nextElementSibling</b> - соседи-элементы</li>
-							<li><b>elim.children</b> - вернет коллекцию детей элемента</li>
-
-							<li style="padding-top: 10px;"><b>elim.style</b></li>
-							<li><b>elim.className</b></li>
-							<li><b>elim.classList</b></li>
-							<li><b>elim.tagName</b></li>
-							<li><b>elim.onclick.. onblur.. on...</b></li>
-							<li><b>...</b></li>
-							<li><b>elim..clientTop || left ...</b></li>
-							<li><b>elim.scrollTop || right ...</b></li>
-							<li><b>elim.scrollHeight || Width</b></li>
-							<li><b>elim.offsetWidth || Height</b></li>					
-
-							<div style="padding: 10px 0 5px 0; font-style: italic;"><b>Берутся из __proto__:</b></div>
-							<li><b>elim.remove()</b></li>
-							<li><b>elim.removeChild(child)</b></li>
-							<li><b>elim.appendChild(child)</b></li>
-							<li><b>elim.cloneNode(true)</b></li>
-							<li><b>elim.addEventListener()</b></li>
-							<li><b>elim.removeEventListener()</b></li>
-							<li><b>elim.setAttribute()</b></li>
-							<li><b>elim.removeAttribute()</b></li>
-							<li><b>...</b></li>
-
-							<h3 style="padding-top: 10px;">Некоторые теги имеют дополнительные атрибуты:</h3>
-							<li><b>input</b></li>
-							<li><b>button</b></li>
-							<li><b>...</b></li>
-
-							<h3 style="padding-top: 10px;">Cпособ посмотреть HTMLCollection из элементов страницы:</h3>
-							<li>console.log(document.body.children) - <small>HTMLCollection это список узлов. Отдельный узел может быть доступен по порядковому номеру или имени узла и атрибута. Коллекции в HTML DOM являются живыми. Коллекции обновляются при изменении документа. Неживые коллекции при изминении DOM не меняются</small></li>						
-						</ul>
-					</span>
-
-					<span class="work_With_Dom">
-						<ul>
-							<h3>Часто используемые методы у document:</h3>
-							<div style="font-style: italic;font-weight: bold; padding-bottom: 10px;">Это встроенные методы которые берутся в document.__proto__.__proto__ || Document.prototype</div>
-							<li><b>document.createElement('<тег>')</b></li>
-							<li><b>document.insertAdjacentHTML('afterend', '&ltdiv>&lt/div>')</b></li>
-							<li><b>document.getElementById('id')</b></li>
-							<li><b>document.getElementsByClassName('class')</b></li>
-							<li><b>document.querySelector('css-selector')</b> - возвращает первый элемент из коллекции</li>
-							<li><b>document.querySelectorAll('css-selector')</b> - возвращает всю коллекцию</li>
-							<li><b>document.getElementsByName('name')</b></li>		
-							<li><b>getElementsByTagName('tag')</b></li>	
-
-							<h3 style="padding-top: 10px;">Полезные функции:</h3>	
-							<li><b>getComputedStyle(elim).height ... .width</b> - свойства написанные в css</li>
-							<li><b>window.pageYOffset || window.pageXOffset</b></li>		
-							<li><b>window.scrollBy</b></li>
-						</ul>
-					</span>				
-
-					<span class="work_With_Dom">
-						<ul>
-							<h3>Способы присваивать, создавать и удалять события и атрибуты:</h3>
-							<li class="margin">
-								<b>elim.addEventListener("click", func), elim.removeEventListener("click", func)</b> - преимущество в том что можно повесить сразу несколько функций и несколько обработчиков событий. 
-							</li>
-							<li class="margin">
-								<b>elim.onclick = func, elim.onclick = null || " "</b>
-							</li>
-							<li>
-								<b>elim.setAttribute("onclick", "func(this)"), elim.removeAttribute("onclick"), elim.hasAttribute("onclick"), elim.getAttribute("onclick")</b>
-							</li>
-						</ul>
-						<span style="padding: 0 20px;">
-							<ol>
-								<h4>Способ передать параметр в функцию если нельзя писать func(): </h4>
-								<li>Обернуть анонимной фунцией или стрелочной: <b>function() { func(this) } || () => { func(this) }</b></li>
-								<li><b>func.bind(this)</b> (но это не точно)</li>
-							</ol>			
-						</span>
-					</span>					
-		</span>
-
-
-
-
-		<span class="border_top">
-			<h1 id="React"><i class="fab fa-node-js"></i> React <i class="fab fa-react"></i></h1>
-				<ul style="text-align: left; font-size: 20px;">
-					<h3>React - это JavaScript библиотека, для упращения разработки визуальных интерфейсов. Используется для создания одностраничных веб-приложений</h3>
-					<h3>Преимущества:</h3>
-					<li>
-						<b>JSX - расширение JavaScript. Синтаксис который позволяет писать HTML внутри JS.</b>
-						<p><ol>
-							<b>Advantages:</b>
-							<li>Тег</li>
-							<li>Атрибут</li>
-							<li>Текст внутри тега</li> 
-						</ol></p>
-						<p><img style="max-width: 80%; width: 450px;" src="img/JSX.jpeg"></p>
-					</li>
-					<li>
-						Виртуальный DOM - виртуальное представление пользовательского интерфейса хранится в памяти и синхронизируется с настоящим DOM при помощи библиотеки ReactDOM. Благодаря V.D. React не перересовывает элементы которые не изменились. 
-						<br>JSX превращается в V.D.
-						<br>V.D. превращается в DOM<!-- , затем при изменении компоненты(JSX), V.D. перересовывает только те элементы дерева которые изменились -->
-					</li>
-					<li><b>SPA (Single Page Application) - это одностроничный веб-сайт или веб-приложение, которое загружается на одну HTML-страницу. Благодаря динамическому обновлению JavaScript, во время использования не нужно перезагружать или подгружать дополнительные страницы.</b></li>
-				</ul>
-
-				<h2 class="h2_with_border">Components</h2>
-					<ol style="text-align: left; font-size: 20px;">
-						<div style="padding-bottom: 20px;"><b>Компоненты</b> - (составляющая чего-либо) позволяют разделить UI на независимые, повторно используемые части и работать с каждой из них отдельно. Концептуально, компоненты похожи на JavaScript-функции. Они принимают произвольные данные (props) и возвращают React-элементы, которые описывают то, что должно появиться на экране.</div>
-
-						<li><b>Презентационный компонента</b> - должна быть чистой функцией ...</li>
-
-
-						<li><b>Контейнерная компонента</b> - напоминает (hoc) , оборачивает презентационную компоненту и выполняет какую-то логику (не точное определение)</li>
-
-
-						<li><b>Классовая компонента</b> — ..., преимущества local state и методы жизненного цикла (componentDidMount, componentDidUpdate...)</li>
-
-
-						<li><b>Функциональная компонента</b> — ...; потребляет меньше ресурсов чем классовая компонента.</li>
-					</ol>
-
-
-
-				
-
-				<h2 class="h2_with_border">ComponentDidUpdate, ComponentDidMount</h2>
-					<ul style="text-align: left; font-size: 20px;">
-						<div style="padding-bottom: 20px;"><b>Mounted</b> - означает что компонент вмонтирован в DOM дерево</div>
-						<div style="padding-bottom: 20px;"><b>ComponentDidUpdate</b> -  это метод который вызывается сразу после обновления. Этот метод не вызывается при первоначальной отрисовке. Используется метод как возможность работать с DOM при обновлении компонента.</div>
-						<div style="padding-bottom: 20px;"><b>ComponentDidMount</b> -  это метод который запускается после того, как компонент отрендерился в DOM .</div>
-					</ul>	
-					<div><img style="width:850px; max-width: 90%;" src="img/component_live.png"></div>
-
-
-
-
-
-
-				<h2 class="h2_with_border">Props</h2>
-					<span style="font-size: 20px;"><b>Props</b> — это объект,  аргумент функции, с которым мы можем работать внутри, но не изменять. С помощью props можно передавать данные от родителя к дочернему компоненту.</span>
-
-
-				<h2 class="h2_with_border">Refs</h2>
-					<span style="font-size: 20px;"><b>Refs</b> — это ссылка, которая позволяет ссылаться на DOM элемент, с помощью метода React.createRefs()</span>		
-
-
-
-				<h2 class="h2_with_border">BrowserRouter</h2>
-					<ol style="text-align: left; font-size: 20px;">
-						<li><b>&ltBrowserRouter/&gt</b> — это тег, который описывает, какой компонент должен отображаться, в зависимости от указанного url</li> 
-
-						<li><b>&ltRouter/&gt</b> — это один конкретный маршрут, который можно отобразить</li> 
-
-
-						<li><b>&ltNavLink/&gt</b> — это тег, который создает ссылку (тег &lta href=""/&gt) с помощью которого можно перейти на определенный Router</li>  
-
-
-						<li><b>&ltRedirect/&gt</b> — перенаправляет с одной страницы на другую </li>
-
-
-						<li><b>withRouter</b> — это HOC, который добавляет в компоненту данные из URL</li>				
-					</ol>
-
-
-
-
-				<h2 class="h2_with_border">UI BLL</h2>
-					<ul style="text-align: left; font-size: 20px;">
-						<div><b>UI</b> - это user interface(пользовательский интерфейс), использует библиотеку React </div>
-
-						<div><b>BLL</b> — (Business logic layer; уровень бизнес логики)  инкапсулирует все необходимые вычисления (всю бизнес-логику) , получает объекты из DAL (уровня доступа к данным) и передает их в UI (уровень представления), либо, наоборот, получает данные с UI (уровня представления) и передает в DAL (на уровень данных). Использует Redux</div>
-
-						<div>P.S. Инкапсуляция — сокрытие деталей</div>				
-					</ul>
-
-
-
-				<h2 class="h2_with_border">REDUX (state)</h2>
-					<ul style="text-align: left; font-size: 20px;">
-						<div style="padding-bottom: 20px;"><b>REDUX</b> — это библиотека для JavaScript, предназначенная для управления состоянием приложения. Redux создаёт свой  store(это объекта в котором есть методы dispatch, subscribe, getState, setState...), позволяет упростить передачу данных через контекст.</div> 
-
-						<div style="padding-bottom: 20px;"><b>Store</b> — это хранилище данных</div> 
-
-						<div style="padding-bottom: 20px;"><b>State</b> — это состояния приложения или сайта, это обычные JavaScript-объекты. State Содержит информацию, которая влияет на то, что видим после рендера
-						P.S. Бывает Local state и mobX</div>
-
-						<div style="padding-bottom: 20px;"><b>setState</b> — следит за изменением состояния(state) и при изменении указывает React, что компонент, которая изменился, и его дочерние элементы должны быть повторно отрендерены с обновлённым состоянием. Этот метод используется для обновления интерфейса в ответ на обработчики событий и ответы сервера.</div>
-
-
-						<div style="padding-bottom: 20px;">
-							<span>Почему нельзя изменять state напрямую?</span>
-							<div>Если мы изменим state напрямую то не будет присходит ререндеринга компоненты</div>
-						</div>
-
-
-						<div>...</div>				
-					</ul>
-
-
-
-				<h2 class="h2_with_border">FLUX-архитектура</h2>
-					<ul style="text-align: left; font-size: 20px;">
-						<div style="padding-bottom: 20px;"><b>FLUX-архитектура</b>  — накладывает ограничения на поток данных, в частности, исключая возможность обновления состояния компонентов самими собой. Такой подход делает поток данных предсказуемым и позволяет легче проследить причины возможных ошибок в программном обеспечении</div>
-
-
-						<div>Flux-архитектура может содержать три слоя, взаимодействующие по порядку:</div>
-						<div>
-							<ul>
-								<li><b>Actions</b> (действия)</li>
-								<li><b>Store</b> (хранилище)</li>
-								<li><b>Views</b> (компоненты, конечные точки данных)</li>					
-							</ul>
-						</div>
-						<div style="padding-bottom: 20px;">Хотя обычно между действиями и хранилищами добавляют Dispatch</div>
-
-						<div style="padding-bottom: 20px;">Благодаря правильной архитектуре возможно оптимизации.</div>
-
-						<div style="padding-bottom: 20px;">Компоненты которые меняются без bll и никак не взаимодействуют со state считаются неконтролируемыми</div>
-
-						<div style="padding-bottom: 20px;"><b>P.S.</b> Как я понимаю FLUX-архитектуру - ничего в UI не должно меняться без BLL</div>
-					</ul>
-
-
-
-				<h2 class="h2_with_border">Dispatch || Action || Action Creator || Subscribe</h2>
-					<ul style="text-align: left; font-size: 20px;">
-						<div style="padding-bottom: 20px;"><b>Dispatch</b> — это метод(функция), который отправляет action (в BLL), чтобы изменить state </div>
-
-						<div style="padding-bottom: 20px;"><b>Action</b> — это объект, у которого есть свойство - «type» (с названием действия, которое нужно выполнить)</div>
-
-						<div style="padding-bottom: 20px;"><b>Action Creator</b> — это вспомогательная функция, которая возвращает action </div>
-
-						<div style="padding-bottom: 20px;"><b>Subscribe</b> — это метод принимает функцию, которая будет вызывается каждый раз после обновления store. Он как бы «подписывает» функцию, переданную ему на обновление. К примеру следующий код при каждом обновлении (при каждом вызове dispatch()) будет выводить новое значение store в консоль.	</div>			
-					</ul>	
-
-
-
-				<h2 class="h2_with_border">Reducer</h2>
-					<ul style="text-align: left; font-size: 20px;">
-						<b>Редуктор (reducer)</b> — это чистая функция, которая принимает state, принимает action и возвращает новый state.
-					</ul>
-
-
-
-				<h2 class="h2_with_border">Context</h2>
-					<ul style="text-align: left; font-size: 20px;">
-						<div><b>Context</b> — это глобальный доступ к данным/state. Контекст позволяет передавать данные без необходимости передавать пропсы на промежуточных уровнях.</div>
-					</ul>		
-
-
-
-				<h2 class="h2_with_border">Connect || mapStateToPropse || mapDispatchToProps || Provider </h2>
-					<ul style="text-align: left; font-size: 20px;">
-						<div style="padding-bottom: 20px;"><b>&ltProvider store /&gt</b> — это глобальный доступ к данным/state. Контекст позволяет передавать данные без необходимости передавать пропсы на промежуточных уровнях.</div>
-
-						<div style="padding-bottom: 20px;"><b>Connect</b> —  это HOC, connect() используется для создания компонентов-контейнеров, которые подключены к хранилищу Redux. </div>		
-						
-						<div style="padding-bottom: 20px;"><b>mapStateToPropse</b> —  используется для подбора части данных из хранилища, в которой нуждается подключенный компонент. </div>	
-						
-						<div style="padding-bottom: 20px;"><b>mapDispatchToProps</b> —  используется для того чтобы диспачить action в store.</div>									
-					</ul>			
-
-
-
-
-				<h2 class="h2_with_border">API (DAL), AJAX</h2>
-					<ul style="text-align: left; font-size: 20px;">
-						<div style="padding-bottom: 20px;"><b>DAL</b> (Data Access Layer) - уровень доступа к данным</div>
-						<div style="padding-bottom: 20px;"><b>API</b> (Application Program Interface) —   Интерфейс взаимодействия с программой</div>
-						<div style="padding-bottom: 20px;"><b>AJAX</b> (Asynchronous Javascript and XML) — технология обращения к серверу без перезагрузки страницы (Запрос на сервер). С помощью AJAX можно обмениваться любыми данными с сервером.</div>	
-						
-						<ol style="padding-bottom: 20px;">
-							<div><b>Типы запросов:</b></div>
-							<li><b>Get</b> (получить с сервера)</li>
-							<li><b>Put</b> (обновить)</li>
-							<li><b>Post</b> (создать)</li>
-							<li><b>Delete</b> (удалить)</li>
-						</ol>	
-
-						<ol style="padding-bottom: 20px;">
-							<div><b>Осуществляется с помощью асинхронных функций:</b></div>
-							<li><b>Acync await </b></li>
-							<li><b>Axios.get().then() (promise)</b></li>
-							<li><b>Promis</b></li>
-						</ol>
-
-						<div>Запросы обычно делают из <b>componentDidMount</b></div>					
-					</ul>	
-
-
-
-
-				<h2 class="h2_with_border">Side Effect</h2>
-					<ul style="text-align: left; font-size: 20px;">
-						<div><b>Side Effect</b> —  это что-то, что может повлиять на "чистоту" вашей функции. Асинхронные операции...</div>
-						<div><b>Чистая функция</b>(Идемпоте́нтность) —  это функция которая если ей на вход подать одни и те же параметры, то результат будет всегда один и тот же. Компонента может вернуть другой JSX только если поменялся локальный State или пришли другие props. В ней нету ни глобального state, ни локальных данных</div>
-					</ul>							
-
-
-
-				<h2 class="h2_with_border">Redux-thunk, thunk middleware</h2>
-					<ul style="text-align: left; font-size: 20px;">
-						<div><b>thunk</b> —  это функция которая делает асинхронные операции и dispatch, thunk также диспачится </div>
-						<div><b>middleware</b> —   промежуточный уровень который обрабатывает thunk.</div>
-					</ul>									
-
-
-
-				<h2 class="h2_with_border">HOC</h2>
-					<ul style="text-align: left; font-size: 20px;">
-						<div><b>HOC (high order component)</b> компонент высшего порядка - это функция, которая принимает компонент и возвращает новый контейнерный компонент.  С помощью HOC можно повторно использовать логику для других компонент.</div>
-					</ul>		
-
-
-
-				<h2 class="h2_with_border">Compose</h2>
-					<ul style="text-align: left; font-size: 20px;">
-						<div><b>Compose()</b> - Это функция которая объединяет функции справа налево.</div>
-					</ul>				
-
-
-
-				<h2 class="h2_with_border">Suspense, React.lazy </h2>
-					<ul style="text-align: left; font-size: 20px;">
-						<div>это отложенная загрузка. (До востребования)</div>
-					</ul>				
-
-
-
-
-
-				<h2 class="h2_with_border">Redux-form || field || validation || stopSubmit </h2>
-					<ul style="text-align: left; font-size: 20px;">
-						<div style="padding-bottom: 20px;"><b>Redux-form</b> - это библиотека Redux, которая позволяет управления состоянием форм в приложении React.</div>
-						<div style="padding-bottom: 20px;"><b>&ltField /&gt</b> - это способ подключения каждого отдельного input к Redux store.</div>
-						<div style="padding-bottom: 20px;"><b>stopSubmit</b> -  </div>
-						<div><b>validation</b> -  </div>
-					</ul>			
-
-
-
-				<h2 class="h2_with_border">Selectors, reselect</h2>
-					<ul style="text-align: left; font-size: 20px;">
-						<div style="padding-bottom: 20px;"><b>Selector</b> - это функция которая получает state, делает выборку данных из state (типа .filter(friend)) и возвращает их.</div>
-						<div><b>Reselect</b> -  это библиотека для создания мемоизированных селекторов.  Используя мемоизацию, мы можем предотвратить ненужные перерисовки</div>
-					</ul>	
-
-
-
-				<h2 class="h2_with_border">Hook, useEffect</h2>
-					<ul style="text-align: left; font-size: 20px;">
-						<div style="padding-bottom: 20px;"><b>Hook</b> - это функции, которые позволяют определять категорию состояния и жизненный цикл (state, lifecycle) компонент без использования классов.</div>
-						<div style="padding-bottom: 20px;"><b>lifecycle</b> - Компоненты создаются (монтируются в DOM), растут путем обновления, а затем умирают (размонтируются в DOM)</div>
-						<div><b>useEffect</b> - Используя этот хук, вы сообщаете React, что ваш компонент должен что-то делать после отрисовки. React запомнит переданную вами функцию и вызовет ее после обновления DOM.</div>				
-					</ul>	
-
-
-
-				<h2 class="h2_with_border">ShouldComponentUpdate, PureComponent, memo </h2>
-					<ul style="text-align: left; font-size: 20px;">
-						<div> Используется чтобы указать необходимость следующего рендера на основе изменений состояния и пропсов. Этот метод нужен только для повышения производительности.</div>			
-					</ul>	
-
-
-
-				<h2 class="h2_with_border">+</h2>
-					<ul style="text-align: left; font-size: 20px;">
-						<div style="padding-bottom: 20px;"><b>Key()</b> - Ключи помогают реакту определить какие элементы в массиве были изменены, добавлены или удалены.</div>
-						<div style="padding-bottom: 20px;"><b>&ltReact.fragment /&gt</b> — это тег который позволяет не создавать лишние Html узлы, благодаря этому шаблон становится более легковесным, но при этом родительский элемент для JSX остаётся, но пустой </div>			
-						<div><b> Как реакт обрабатывает пользовательские события</b> - Для того чтобы оптимизировать приложение реакт добавляет только одно событие для корневого элемента </div>	
-					</ul>								
-		</span>	
-	</span>
-
-
-
-
-
-	<script src="script.js"></script>
-</body>
+   <head>
+      <title>Шпаргалка</title>
+      <meta name="description" content="до 200 символов, серое описание под сайтом">
+      <meta name="viewport" content="width=device-width">
+      <link rel="stylesheet" href="css.css">
+      <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+      <link rel="apple-touch-icon" href="icon120.png">
+      <link rel="apple-touch-icon" size="72x72" href="icon76.png">
+      <link rel="apple-touch-icon" size="128x128" href="icon120.png">
+      <link rel="apple-touch-icon" size="256x256" href="icon152.png">
+      <script src="https://kit.fontawesome.com/adcc431357.js" crossorigin="anonymous"></script>
+   </head>
+   <body onscroll="autoClose()">
+      <header>
+         <div class="box">
+            <i class="fas fa-code"></i>
+            <span>Hello world!</span>
+            <i class="fas fa-atom infinity"></i>
+         </div>
+         <span class="menu">
+         <a href="https://www.instagram.com/kuberg/" target="_blank" class="menu_item"><i class="fab fa-instagram"></i></a>
+         <a href="mailto:kuberg8@gmail.com" class="menu_item"><i class="fas fa-envelope"></i></a>		
+         <a href="https://github.com/kuberg8?tab=repositories" target="_blank" class="menu_item"><i class="fas fa-briefcase"></i></a>
+         </span>	
+	  </header>
+	  
+      <nav>
+         <a onclick="scrollToBlock('Tasks')">Tasks</a>
+         <a onclick="scrollToBlock('js')">JS</a>
+         <a onclick="scrollToBlock('React')">React</a>
+         <a onclick="scrollToBlock('Vue')">Vue</a>
+         <span onclick="openNav()"><i class="fas fa-sort"></i></span>
+	  </nav>
+	  
+      <span>
+         <section>
+            <h1 id="Tasks"><i class="fas fa-thumbtack"></i> Tasks <i class="fas fa-tasks"></i></h1>
+            <h2><i class="fas fa-binoculars"></i> Search <i class="fas fa-search"></i></h2>
+            <input placeholder="Search.." onkeyup="find(this)" style="width: 80%; height: 50px; border-radius: 10px;">
+            <div id="text">Meet my family. There are five of us – my parents, my elder brother, my baby sister and me. First, meet my mum and dad, Jane and Michael. My mum enjoys reading and my dad enjoys playing chess with my brother Ken. My mum is slim and rather tall. She has long red hair and big brown eyes. She has a very pleasant smile and a soft voice. My mother is very kind and understanding. We are real friends. She is a housewife. As she has three children, she is always busy around the house. She takes care of my baby sister Meg, who is only three months old. My sister is very small and funny. She sleeps, eats and sometimes cries. We all help our mother and let her have a rest in the evening. Then she usually reads a book or just watches TV. My father is a doctor. He is tall and handsome. He has short dark hair and gray eyes. He is a very hardworking man. He is rather strict with us, but always fair. My elder brother Ken is thirteen, and he is very clever. He is good at Maths and always helps me with it, because I can hardly understand all these sums and problems. Ken has red hair and brown eyes. My name is Jessica. I am eleven. I have long dark hair and brown eyes. I am not as clever as my brother, though I try to do my best at school too. I am fond of dancing. Our dancing studio won The Best Dancing Studio 2015 competition last month. I am very proud of it. I also like to help my mother with my little sister very much. Our family is very united. We love each other and always try to spend more time together.</div>
+            <b><a style="font-size: 20px; color: red;" target="_blank" href="http://old.code.mu/tasks/javascript/regular/rabota-s-regulyarnymi-vyrazeniyami-v-javascript-glava-1.html">Reminder - Regular Expressions</a></b>
+            <h2><i class="fas fa-square-root-alt"></i> Calculator <i class="fas fa-calculator"></i></h2>
+            <span class="flex">
+               <div class="calculator">
+                  <table align="center" cols="4">
+                     <caption><input id="caption" placeholder="0"></caption>
+                     <tbody>
+                        <tr>
+                           <td colspan="3"><input class="cal_item above" type="button" value="AC" onclick="delet()"></td>
+                           <td><input class="cal_item" type="button" value="%" onclick="lst()"></td>
+                        </tr>
+                        <tr>
+                           <td><input class="cal_item" type="button" value="7" onclick="pressing(this)"></td>
+                           <td><input class="cal_item" type="button" value="8" onclick="pressing(this)"></td>
+                           <td><input class="cal_item" type="button" value="9" onclick="pressing(this)"></td>
+                           <td><input class="cal_item" type="button" value="/" onclick="shr()"></td>
+                        </tr>
+                        <tr>
+                           <td><input class="cal_item" type="button" value="4" onclick="pressing(this)"></td>
+                           <td><input class="cal_item" type="button" value="5" onclick="pressing(this)"></td>
+                           <td><input class="cal_item" type="button" value="6" onclick="pressing(this)"></td>
+                           <td><input class="cal_item" type="button" value="x" onclick="mlt()"></td>
+                        </tr>
+                        <tr>
+                           <td><input class="cal_item" type="button" value="1" onclick="pressing(this)"></td>
+                           <td><input class="cal_item" type="button" value="2" onclick="pressing(this)"></td>
+                           <td><input class="cal_item" type="button" value="3" onclick="pressing(this)"></td>
+                           <td><input class="cal_item" type="button" value="-" onclick="mns()"></td>
+                        </tr>
+                        <tr>
+                           <td><input class="cal_item" type="button" value="0" onclick="pressing(this)"></td>
+                           <td><input class="cal_item" type="button" value="." onclick="pressing(this)"></td>
+                           <td><input class="cal_item" type="button" value="=" onclick="reslt()"></td>
+                           <td><input class="cal_item" type="button" value="+" onclick="pls()"></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <div class="calculator2">
+                  <table align="center" cols="5">
+                     <caption><input id="caption2" placeholder="0" disabled></caption>
+                     <tbody>
+                        <tr>
+                           <td><input class="cal_item" type="button" value="(" onclick="pressingOperation(this)"></td>
+                           <td><input class="cal_item" type="button" value=")" onclick="pressingOperation(this)"></td>
+                           <td><input class="cal_item" type="button" value="%" onclick="pressingOperation(this)"></td>
+                           <td><input class="cal_item" type="button" value="C" onclick="deletOne()"></td>
+                           <td rowspan="5"><input class="cal_item above2" type="button" value="AC" onclick="delet2()"></td>
+                        </tr>
+                        <tr>
+                           <td><input class="cal_item" type="button" value="7" onclick="pressing2(this)"></td>
+                           <td><input class="cal_item" type="button" value="8" onclick="pressing2(this)"></td>
+                           <td><input class="cal_item" type="button" value="9" onclick="pressing2(this)"></td>
+                           <td><input class="cal_item" type="button" value="/" onclick="pressingOperation(this)"></td>
+                        </tr>
+                        <tr>
+                           <td><input class="cal_item" type="button" value="4" onclick="pressing2(this)"></td>
+                           <td><input class="cal_item" type="button" value="5" onclick="pressing2(this)"></td>
+                           <td><input class="cal_item" type="button" value="6" onclick="pressing2(this)"></td>
+                           <td><input class="cal_item" type="button" value="*" onclick="pressingOperation(this)"></td>
+                        </tr>
+                        <tr>
+                           <td><input class="cal_item" type="button" value="1" onclick="pressing2(this)"></td>
+                           <td><input class="cal_item" type="button" value="2" onclick="pressing2(this)"></td>
+                           <td><input class="cal_item" type="button" value="3" onclick="pressing2(this)"></td>
+                           <td><input class="cal_item" type="button" value="-" onclick="pressingOperation(this)"></td>
+                        </tr>
+                        <tr>
+                           <td><input class="cal_item" type="button" value="0" onclick="pressing2(this)"></td>
+                           <td><input class="cal_item" type="button" value="." onclick="pressing2(this)"></td>
+                           <td><input class="cal_item" type="button" value="=" onclick="reslt2()"></td>
+                           <td><input class="cal_item" type="button" value="+" onclick="pressingOperation(this)"></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </span>
+            <h2><i class="far fa-calendar-alt"></i> Time <i class="far fa-clock"></i></h2>
+            <div id="time"></div>
+            <div id="date"></div>
+            <h2 id="promise_title">Promise & Async Await</h2>
+            <button id="promise" onclick="play()" style=" display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 0 auto; height: 40px; width: 40px; min-height: 40px; min-width: 40px; border-radius: 50%; font-size: 30px;"><i class="fas fa-play-circle"></i></button>
+            <h2><i class="fas fa-network-wired"></i> API (get) <i class="fas fa-wifi"></i></h2>
+            <!--
+               <form id="form">
+               	<input name="number" placeholder="Введите число" type="number">
+               	<select name="type">
+               		<option disabled="diabled" >type</option>
+               		<option value="trivia" selected>trivia</option>
+               		<option value="math">math</option>
+               		<option value="date">date</option>
+               		<option value="year">year</option>
+               	</select>
+               	<p>
+               		<button>Сделать запрос</button>								
+               	</p>
+               		<span id="result_api">date or number information</span>
+               	<span style='font-size: 20px;'>работает только на локальном сайте т.к. запрос с незащищенного сайта (http)</span>
+               </form>
+               -->
+            <form id="form">
+               <input id="pokemon" name="pokemon" autocomplete="off" placeholder="Number or name of the pokemon">
+               <b><span id="result_api">POKEMON</span></b>
+               <button>Сделать запрос</button>	
+            </form>
+            <h2><i class="fas fa-map-marker"></i> Event <i class="fas fa-location-arrow"></i></h2>
+            <b>не закончено</b>
+            <div style="display: flex; justify-content: space-around;">
+               <table class="chess" cols="8" align="center" onclick="chess(event)">
+                  <tr>
+                     <td class="cell_white" align="center" valign="center">
+                        <i figure="rook" team="black" class="fas fa-chess-rook black"></i>
+                     </td>
+                     <td class="cell_black" align="center">
+                        <i figure="horse" team="black" class="fas fa-chess-knight black"></i>
+                     </td>
+                     <td class="cell_white" align="center">
+                        <i figure="bishop" team="black" class="fas fa-chess-bishop black"></i>
+                     </td>
+                     <td class="cell_black" align="center">
+                        <i figure="queen" team="black" class="fas fa-chess-queen black"></i>
+                     </td>
+                     <td class="cell_white" align="center">
+                        <i figure="king" team="black" class="fas fa-chess-king black"></i>
+                     </td>
+                     <td class="cell_black" align="center">
+                        <i figure="bishop" team="black" class="fas fa-chess-bishop black"></i>
+                     </td>
+                     <td class="cell_white" align="center">
+                        <i figure="horse" team="black" class="fas fa-chess-knight black"></i>
+                     </td>
+                     <td class="cell_black" align="center">
+                        <i figure="rook" team="black" class="fas fa-chess-rook black"></i>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="cell_black" align="center">
+                        <i figure="pawn" team="black" class="fas fa-chess-pawn black"></i>
+                     </td>
+                     <td class="cell_white" align="center">
+                        <i figure="pawn" team="black" class="fas fa-chess-pawn black"></i>
+                     </td>
+                     <td class="cell_black" align="center">
+                        <i figure="pawn" team="black" class="fas fa-chess-pawn black"></i>
+                     </td>
+                     <td class="cell_white" align="center">
+                        <i figure="pawn" team="black" class="fas fa-chess-pawn black"></i>
+                     </td>
+                     <td class="cell_black" align="center">
+                        <i figure="pawn" team="black" class="fas fa-chess-pawn black"></i>
+                     </td>
+                     <td class="cell_white" align="center">
+                        <i figure="pawn" team="black" class="fas fa-chess-pawn black"></i>
+                     </td>
+                     <td class="cell_black" align="center">
+                        <i figure="pawn" team="black" class="fas fa-chess-pawn black"></i>
+                     </td>
+                     <td class="cell_white" align="center">
+                        <i figure="pawn" team="black" class="fas fa-chess-pawn black"></i>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="cell_white" align="center"></td>
+                     <td class="cell_black" align="center"></td>
+                     <td class="cell_white" align="center"></td>
+                     <td class="cell_black" align="center"></td>
+                     <td class="cell_white" align="center"></td>
+                     <td class="cell_black" align="center"></td>
+                     <td class="cell_white" align="center"></td>
+                     <td class="cell_black" align="center"></td>
+                  </tr>
+                  <tr>
+                     <td class="cell_black" align="center"></td>
+                     <td class="cell_white" align="center"></td>
+                     <td class="cell_black" align="center"></td>
+                     <td class="cell_white" align="center"></td>
+                     <td class="cell_black" align="center"></td>
+                     <td class="cell_white" align="center"></td>
+                     <td class="cell_black" align="center"></td>
+                     <td class="cell_white" align="center"></td>
+                  </tr>
+                  <tr>
+                     <td class="cell_white" align="center"></td>
+                     <td class="cell_black" align="center"></td>
+                     <td class="cell_white" align="center"></td>
+                     <td class="cell_black" align="center"></td>
+                     <td class="cell_white" align="center"></td>
+                     <td class="cell_black" align="center"></td>
+                     <td class="cell_white" align="center"></td>
+                     <td class="cell_black" align="center"></td>
+                  </tr>
+                  <tr>
+                     <td class="cell_black" align="center"></td>
+                     <td class="cell_white" align="center"></td>
+                     <td class="cell_black" align="center"></td>
+                     <td class="cell_white" align="center"></td>
+                     <td class="cell_black" align="center"></td>
+                     <td class="cell_white" align="center"></td>
+                     <td class="cell_black" align="center"></td>
+                     <td class="cell_white" align="center"></td>
+                  </tr>
+                  <tr>
+                     <td class="cell_white" align="center">
+                        <i figure="pawn" team="white" class="fas fa-chess-pawn white"></i>
+                     </td>
+                     <td class="cell_black" align="center">
+                        <i figure="pawn" team="white" class="fas fa-chess-pawn white"></i>
+                     </td>
+                     <td class="cell_white" align="center">
+                        <i figure="pawn" team="white" class="fas fa-chess-pawn white"></i>
+                     </td>
+                     <td class="cell_black" align="center">
+                        <i figure="pawn" team="white" class="fas fa-chess-pawn white"></i>
+                     </td>
+                     <td class="cell_white" align="center">
+                        <i figure="pawn" team="white" class="fas fa-chess-pawn white"></i>
+                     </td>
+                     <td class="cell_black" align="center">
+                        <i figure="pawn" team="white" class="fas fa-chess-pawn white"></i>
+                     </td>
+                     <td class="cell_white" align="center">
+                        <i figure="pawn" team="white" class="fas fa-chess-pawn white"></i>
+                     </td>
+                     <td class="cell_black" align="center">
+                        <i figure="pawn" team="white" class="fas fa-chess-pawn white"></i>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="cell_black" align="center">
+                        <i figure="rook" team="white" class="fas fa-chess-rook white"></i>
+                     </td>
+                     <td class="cell_white" align="center">
+                        <i figure="horse" team="white" class="fas fa-chess-knight white"></i>
+                     </td>
+                     <td class="cell_black" align="center">
+                        <i figure="bishop" team="white" class="fas fa-chess-bishop white"></i>
+                     </td>
+                     <td class="cell_white" align="center">
+                        <i figure="king" team="white" class="fas fa-chess-king white"></i>
+                     </td>
+                     <td class="cell_black" align="center">
+                        <i figure="queen" team="white" class="fas fa-chess-queen white"></i>
+                     </td>
+                     <td class="cell_white" align="center">
+                        <i figure="bishop" team="white" class="fas fa-chess-bishop white"></i>
+                     </td>
+                     <td class="cell_black" align="center">
+                        <i figure="horse" team="white" class="fas fa-chess-knight white"></i>
+                     </td>
+                     <td class="cell_white" align="center">
+                        <i figure="rook" team="white" class="fas fa-chess-rook white"></i>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <h2><i class="fas fa-random"></i> Random <i class="fas fa-sync-alt"></i></h2>
+            <div class="random_block">
+               <span class="result_block"><span id="result_random">0</span></span>	
+               <span class="random_input">
+               <span><input id="min" placeholder="0" style="width: 120px; height: 40px;"> <b>- MINIMUM</b></span>
+               <span><input id="max" placeholder="0" style="width: 120px; height: 40px;"> <b>- MAXIMUM</b></span>
+               </span>
+            </div>
+            <button id="random_button" onclick="random()" style="height: 40px;">Сгенерировать</button>
+            <h2><i class="fas fa-gamepad"></i> Simon said <i class="fas fa-puzzle-piece"></i></h2>
+            <span id="Round">Round: 1</span>
+            <div id="game" onclick="game(event)">
+               <span class="gameColor" style="background: #1e90ff;">
+                  <audio preload='auto' src="audio/1.mp3"></audio>
+               </span>
+               <span class="gameColor" style="background: #FF5643;">
+                  <audio preload='auto' src="audio/2.mp3"></audio>
+               </span>
+               <span class="gameColor" style="background: #feef33;">
+                  <audio preload='auto' src="audio/3.mp3"></audio>
+               </span>
+               <span class="gameColor" style="background: #BEDE15;">
+                  <audio preload='auto' src="audio/4.mp3"></audio>
+               </span>
+            </div>
+            <form id="customization">
+               <input type="radio" name="complexity" value="1500" checked><label>Easy</label>
+               <input type="radio" name="complexity" value="1000"><label>Middle</label>
+               <input type="radio" name="complexity" value="400"><label>Hard</label>		
+            </form>
+            <div id="game_result"></div>
+            <button id="gameButton" onclick="getMassRandom()" style="margin: 30px 0; font-size: 20px;">Play</button>
+            <h2><i class="far fa-keyboard"></i> Send Form <i class="fas fa-mouse"></i></h2>
+            <form id="form2">
+               <h1>Form send</h1>
+               <input 
+                  name="login" 
+                  placeholder="Login" 
+                  required
+                  pattern='[A-Za-z1-9]{1,8}' 
+                  title="Только латинские буквы" 
+                  maxlength='8'><!--pattern='[a-zA-Z]' не работает почему-то-->
+               <input 
+                  type="password" 
+                  name="password" 
+                  required 
+                  placeholder="Password">
+               <textarea name="textarea" placeholder="Message..."></textarea>
+               <select name='select' style="margin: 100px 0 0 15px; width: 50%;">
+                  <option>Mood</option>
+                  <option value="good">Good</option>
+                  <option value="bad">Bad</option>
+                  <option value="idk">I dont know</option>
+               </select>
+               <span style="font-size: 20px; text-align: left; margin: 10px 0;">
+               <input type="checkbox" name="checkbox" style="width: 30px; height: 30px;">
+               <span>Remember</span> 
+               </span>
+               <span style="font-size: 20px; text-align: left;">
+               <input type="radio"
+                  name="radio" value="male">
+               <label for="male">Male</label>
+               <input type="radio"
+                  name="radio" value="female">
+               <label for="female">Female</label>			
+               </span>
+               <input type="file" name="file" multiple style="border: none; font-size: 15px;">
+               <span style="text-align: left;">
+               <input type="datetime-local" name="time"> - choose time
+               </span>
+               <span style="text-align: left;">
+               <input type="color" name="color"> - choose color
+               </span>	
+               <input type="range" name="range" step="1" value="5" min="0" max="10">
+               <input type="reset" style="width: 50%; margin: 50px auto 0; cursor: pointer; border-radius: 10px; font-size: 17px; border: 2px dashed black;">
+               <button>Отправить</button>
+            </form>
+            <h2><i class="fas fa-filter"></i> .sort() <i class="fas fa-sort-amount-down-alt"></i></h2>
+            <span id="sort_date">
+               <h3>Сортировка по дате :</h3>
+            </span>
+            <span style="display: flex; width: 100%; flex-direction: column; text-align: center; margin-bottom: 100px;">
+            <span style="display: flex; width: 100%; justify-content: space-around; margin: 100px 0 20px 0;">
+            <button onclick="sortByReview(arr2)" style="width: 45%;">Отсортировать по кол-ву отзывов</button>
+            <button onclick="sortByPrice(arr2)" style="width: 45%;">Отсортировать по цене</button>	
+            </span>
+            <span id="mass"></span>
+            </span>			
+		 </section>
+		 
+         <section style="font-style: italic; border-top: 4px dashed black; display: block;">
+            <h1 id="js"><i class="fab fa-js-square"></i> JS <i class="fab fa-chrome"></i></h1>
+            <span style="padding: 0 20px; text-align: left; font-size: 18px; font-family: Arial;">
+               <span class="methods">
+                  <h3>Cheat sheets:</h3>
+                  <h3><a id="methods_title" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects">Standard objects</a></h3>
+                  <span class="methods_block">
+                  <a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array#">Array</a>
+                  <a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+                  <a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+                  <a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>	
+                  <a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a>						
+                  <a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>	
+                  <a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON">JSON</a>
+                  <a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol">Symbol</a>
+                  <a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>
+                  <a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Set">Set</a>
+                  <a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>															
+                  </span>
+               </span>
+               <h3 style="font-family: Indie Flower; padding-left: 30px; font-size: 40px;">Reminder:</h3>
+               <span class="reminder_item">
+                  <h3>Структуры данных:</h3>
+                  <li>
+                     <b>Объекты</b> - для хранения именованных коллекций.
+                  </li>
+                  <li>
+                     <b>Массивы</b> - для хранения упорядоченных коллекций.
+                  </li>
+                  <li><b>Map</b> - это коллекция ключ/значение, как и Object. Но основное отличие в том, что Map позволяет использовать ключи любого типа. Object приводит свои ключи к строкам</li>
+                  <li><b>Set</b> - это особый вид коллекции: «множество» значений (без ключей), где каждое значение может появляться только один раз.</li>
+                  <li><b>WeakMap</b> — коллекция пар ключ-значение. В качестве ключей могут быть использованы только объекты, а значения могут быть произвольных типов.<span style="text-decoration: underline;">(В основном, WeakMap используется в качестве дополнительного хранилища данных.)</span></li>
+                  <li><b>WeakSet</b> - коллекция, элементами которой могут быть только объекты. Ссылки на эти объекты в WeakSet являются слабыми. Каждый объект может быть добавлен в WeakSet только один раз.</li>
+               </span>
+               <span class="reminder_item">
+                  <h3>Циклы:</h3>
+                  <li>
+                     <b>for(key of arr)</b> - Перебирает элементы итерируемых объектов(объекты с ключами - цифрами, свойством length и свойством Symbol.itertor(у массивов в __proto__ лежит))
+                     <p>(псевдомассивы не работают так как нету Symbol.itertor, потому что __proto__ ссылается на Object.prototype).</p>
+                     <p>Способ перебрать объект через <b>for(key of obj)</b> - <b>for([key, value] of Object.entries(obj))</b>, работает так как Object.entries() и Object.keys() возвращают МАССИВ из ключей и значений</p>
+                  </li>
+                  <li>
+                     <b>for(key in obj) </b> - Перебирает ключи у объектов(всех)
+                  </li>
+                  <li><b>while (condition) {}</b> - проверяет условие на true потом выполняет тело</li>
+                  <li><b>do {} while()</b> - сначала выолнит тело потом если условие true, повторит цикл
+                  </li>
+                  <li>
+                     <b>for(начало; условие; шаг) {}</b>
+                  </li>
+                  <li>
+                     <b>Метод массивов forEach( (item) => {body})</b>
+                  </li>
+               </span>
+               <span class="reminder_item">
+                  <h3>Формат данных(Сетевых запросов):</h3>
+                  <li>
+                     <b>JSON</b> (JavaScript Object Notation) - это текстовый формат обмена данными, основанный на JavaScript. JSON требует меньше кода и имеет меньший размер, что ускоряет обработку и передачу данных. Не смотря на то, что JSON написан на JavaScript , он не зависит от языка. Но это все, что может сделать с JSON. Он не имеет каких-либо мощных функций, связанных с проверкой и схемой, которые есть у XML.
+                     <p><img src="img/JSON.jpg"></p>
+                  </li>
+                  <li>
+                     <b>XML</b> (Extensible Markup Language) - это язык разметки. Является выбором по умолчанию для обмена данными, так-как практически у каждого языка есть синтаксический анализатор, будь то Java, .NET или любой другой язык, поэтому легко извлечь определенные данные из XML, и есть схемы, которые могут проверять XML. XML также широко используется в сфере услуг: банковские услуги, онлайн-магазины розничной торговли, интеграция промышленных систем и т.д.
+                     <p><img src="img/XML.jpg"></p>
+                  </li>
+               </span>
+               <span class="reminder_item">
+                  <h3>Promise:</h3>
+                  <p><b>- это объект, представляющий результат успешного или неудачного завершения асинхронной операции. (Обещание выполнить какое-либо действие)</b></p>
+                  <h3>Async Await:</h3>
+                  <p><b>Async - это функция всегда возвращает промис. <br>Await - заставляет ждать JS до тех пор пока промис справа от него не выполнится</b></p>
+               </span>
+               <span class="reminder_item">
+                  <h3>Замыкание:</h3>
+                  <p><b>- функция, которая ссылается на свободные переменные в своей области видимости.</b></p>
+                  <p><b>Замыкание возникает в том случае если мы из одной функции возвращаем новую функцию, в таком случае функция замкнута на область видимости родительской функции</b></p>
+                  <p><b>Область видимости — это область, где компилятор ищет переменные или функции когда они ему нужны, если не находит начинает искать в родительской области видимости и так пока не доходит до глобальной области.</b></p>
+                  <img src="img/count.jpg">										
+               </span>
+               <span class="reminder_item">
+                  <h3>this.(контекст):</h3>
+                  <p><b>- это переменная, которая ссылается на текущий обьект.</b></p>
+                  <p><b>this определяется от того как она вызвана.Например, как метод объекта или ...</b></p>
+               </span>
+               <span class="reminder_item">
+                  <h3>EventLoop(цикл событий):</h3>
+                  <p><b>- добавляет асинхронные операции в конец Call Stack</b></p>
+                  <p><b>Call Stack(очередь вызовов)</b></p>
+                  <a style="font-style: normal; font-family: Indie Flower; font-size: 25px; color: red;" href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D"><b>-> How EvenLoop works <-</b></a>
+               </span>
+               <span class="reminder_item">
+                  <h3>Способы AJAX запросов:</h3>
+                  <li>
+                     <b>Fetch(url)</b>
+                     <p><img src="img/fetch.jpg"> <img src="img/fetch_post.jpg"></p>
+                  </li>
+                  <li>
+                     <b>XMLHttpRequest</b> - это встроенный в браузер объект, который даёт возможность делать HTTP-запросы к серверу без перезагрузки страницы. Несмотря на наличие слова «XML» в названии, XMLHttpRequest может работать с любыми данными, а не только с XML. Мы можем загружать/скачивать файлы, отслеживать прогресс и многое другое. 
+                     <p>Запрос <b>XHR</b> легко завершить с помощью <b>xhr.abort()</b> и, при необходимости, обнаружить такое событие с помощью функции <b>xhr.onabort</b>.</p>
+                     <ol>
+                        <h4>Свойства и методы:</h4>
+                        <li>response</li>
+                        <li>responseType - можно указать тип response</li>
+                        <li>status</li>
+                        <li>setRequestHeader</li>
+                        <li>open()</li>
+                        <li>send()</li>
+                     </ol>
+                     <ol>
+                        <h4>События (on):</h4>
+                        <li>loadstart - начало запроса.</li>
+                        <li>progress – прибыла часть данных ответа, тело ответа полностью на данный момент можно получить из свойства responseText.</li>
+                        <li>abort – запрос был прерван вызовом xhr.abort().</li>
+                        <li>error – произошла ошибка соединения, например неправильное доменное имя. Событие не генерируется для HTTP-ошибок как, например, 404.</li>
+                        <li>load – запрос успешно завершён.</li>
+                        <li>timeout – запрос был отменён по причине истечения отведённого для него времени (происходит, только если был установлен таймаут).</li>
+                        <li>loadend – срабатывает после load, error, timeout или abort.</li>
+                        <li>readystatechange - срабатывает, когда изменяется атрибут</li>
+                     </ol>
+                     <p><img src="img/XMLHttpRequest.jpg"></p>
+                  </li>
+                  <li>
+                     <b>Axios</b> - это широко известная JavaScript-библиотека. Она представляет собой HTTP-клиент, основанный на промисах и предназначенный для браузеров и для Node.js.
+                     <p><img src="img/axios.jpg"> <img src="img/axios_post.jpg"></p>
+                  </li>
+               </span>
+               <span class="reminder_item">
+                  <h3>Конструктор "new":</h3>
+                  <p><b>- это конструктор который позволяет создать множество однотипных объектов</b></p>
+                  <p><b>все объекты в js создаются через конструктор new или class</p>
+                  <h3>Class:</h3>
+                  <p> - это аналог конструктора, для создания объектов, который устанавливает в них начальные значения(свойства) и методы</p>
+                  <h4>Отличия от обычного конструктора:</h4>
+                  <li>Есть специальное внутреннее свойство FunctionKind: classConstructor, из-за которого конструктор класса не может быть вызван без new</li>
+                  <li>В классах методы не перечисляются(в циклах)</li>
+               </span>
+               <span class="reminder_item">
+                  <h3>Прототипное наследование:</h3>
+                  <b>__proto__ - это объект (ссылка на prototype).</b><br> __proto__ есть у ЛЮБОГО объекта, но оно скрыто (ВСЕ в JS это объекты)
+                  <p><b>Прототипное наследование - это когда мы хотим прочитать свойство из объекта, а оно отсутсвует, js автоматически берет его из прототипа</p>
+                  <p><b>__proto__ любого объекта ссылается на prototype класса(функции-конструктора) с помощью которого этот объект был создан</p>
+                  <h3>Prototype:</h3>
+                  - это независимый объект, с определенным набором свойств и методов.		
+                  <p>Любой Class или function имеет свой прототип</p>
+               </span>
+               <span class="reminder_item">
+                  <h3>Делегирование событий:</h3>
+                  Если есть много элементов, события на которых нужно обрабатывать похожим образом, то вместо того, чтобы назначать обработчик каждому, мы ставим один обработчик на их общего предка.
+                  <h4>Зачем использовать?</h4>
+                  <ul>
+                     <li>Упрощает процесс инициализации и экономит память: не нужно вешать много обработчиков.</li>
+                     <li>Меньше кода: при добавлении и удалении элементов не нужно ставить или снимать обработчики.</li>
+                     <li>Удобство изменений DOM: можно массово добавлять или удалять элементы путём изменения innerHTML и ему подобных.</li>
+                  </ul>
+                  <h4>Есть свои ограничения:</h4>
+                  <ul>
+                     <li>Событие должно всплывать. Некоторые события этого не делают. Также, низкоуровневые обработчики не должны вызывать event.stopPropagation()</li>
+                     <li>Делегирование создаёт дополнительную нагрузку на браузер, ведь обработчик запускается, когда событие происходит в любом месте контейнера, не обязательно на элементах, которые нам интересны. Но обычно эта нагрузка настолько пустяковая, что её даже не стоит принимать во внимание.</li>
+                  </ul>
+                  <h4>Методы:</h4>
+                  <ul>
+                     <li>type - строка, содержащее имя события.</li>
+                     <li>target - DOM-элемент, который сгенерировал событие.</li>
+                     <li>currentTarget - DOM-элемент, который вызвал обработчик события.</li>
+                     <li>eventPhase - число, показывающее на каком этапе произошло событие (1 - этапе погружения (перехвата), 2 - на цели, 3 - на этапе всплытия).</li>
+                     <li>timestamp - число (дата), когда произошло событие</li>
+                     <li>bubbles - возвращает логическое значение, указывающее может ли данное событие всплывать</li>
+                     <li>defaultPrevented - проверяет можно ли вызвать метод preventDefault() для данного события.</li>
+                     <li>view - возвращает ссылку на объект window, в котором произошло событие.</li>
+                     <li>detail (для мыши) - возвращает число, указывающее сколько раз была нажата кнопка мыши в некоторой области за короткий промежуток времени.</li>
+                     <li>screenX, screenY (для мыши) - возвращают информацию о положении курсора (screenX - горизонтальная координата, screenY - вертикальная координата) относительно левого верхнего угла экрана.</li>
+                     <li>clientX, clientY (для мыши) - возвращают информацию о положении курсора (clientX - горизонтальная координата, clientY - вертикальная координата) относительно левого верхнего угла клиентской области.</li>
+                     <li>location (для клавиатуры) - возвращает число, указывающее на область клавиатуры или устройства в котором расположена нажатая клавиша (0 - основная область клавиатуры, 1 - область, в которой расположена левая клавиша CTRL или левая клавиша ALT, 2 - область, в которой расположена правая клавиша CTRL или правая клавиша ALT, 3 - область цифровой панели, которая дублирует клавиши основной области для ввода цифр и арифметических операторов).</li>
+                     <li>keyCode, which (для клавиатуры) - возвращает код символа Unicode (для события keypress) или код ключа Unicode (для событий keydown и keyup).</li>
+                     <li>charCode (для клавиатуры) - возвращает код символа Unicode нажатой клавиши (для события keypress). Если данное свойство использовать для получения дополнительной информации о событиях keydown или keyup, то оно всегда вернёт "0".</li>
+                  </ul>
+               </span>
+            </span>
+            <h2 class="h2_with_border">Work with D.O.M</h2>
+            <span class="work_With_Dom">
+               <ul>
+                  <h3>Часто используемые атрибуты(свойства) у document.elim:</h3>
+                  <li><b>elim.parentElement</b> - вернет родителя</li>
+                  <li><b>elim.firstElementChild & lastElementChild</b> - первый и последний дочерний элемент</li>
+                  <li><b>elim.previousElementSibling & nextElementSibling</b> - соседи-элементы</li>
+                  <li><b>elim.children</b> - вернет коллекцию детей элемента</li>
+                  <li style="padding-top: 10px;"><b>elim.style</b></li>
+                  <li><b>elim.className</b></li>
+                  <li><b>elim.classList</b></li>
+                  <li><b>elim.tagName</b></li>
+                  <li><b>elim.onclick.. onblur.. on...</b></li>
+                  <li><b>...</b></li>
+                  <li><b>elim..clientTop || left ...</b></li>
+                  <li><b>elim.scrollTop || right ...</b></li>
+                  <li><b>elim.scrollHeight || Width</b></li>
+                  <li><b>elim.offsetWidth || Height</b></li>
+                  <div style="padding: 10px 0 5px 0; font-style: italic;"><b>Берутся из __proto__:</b></div>
+                  <li><b>elim.remove()</b></li>
+                  <li><b>elim.removeChild(child)</b></li>
+                  <li><b>elim.appendChild(child)</b></li>
+                  <li><b>elim.cloneNode(true)</b></li>
+                  <li><b>elim.addEventListener()</b></li>
+                  <li><b>elim.removeEventListener()</b></li>
+                  <li><b>elim.setAttribute()</b></li>
+                  <li><b>elim.removeAttribute()</b></li>
+                  <li><b>...</b></li>
+                  <h3 style="padding-top: 10px;">Некоторые теги имеют дополнительные атрибуты:</h3>
+                  <li><b>input</b></li>
+                  <li><b>button</b></li>
+                  <li><b>...</b></li>
+                  <h3 style="padding-top: 10px;">Cпособ посмотреть HTMLCollection из элементов страницы:</h3>
+                  <li>console.log(document.body.children) - <small>HTMLCollection это список узлов. Отдельный узел может быть доступен по порядковому номеру или имени узла и атрибута. Коллекции в HTML DOM являются живыми. Коллекции обновляются при изменении документа. Неживые коллекции при изминении DOM не меняются</small></li>
+               </ul>
+            </span>
+            <span class="work_With_Dom">
+               <ul>
+                  <h3>Часто используемые методы у document:</h3>
+                  <div style="font-style: italic;font-weight: bold; padding-bottom: 10px;">Это встроенные методы которые берутся в document.__proto__.__proto__ || Document.prototype</div>
+                  <li>
+                     <b>
+                        document.createElement('
+                        <тег>
+                        ')
+                     </b>
+                  </li>
+                  <li><b>document.insertAdjacentHTML('afterend', '&ltdiv>&lt/div>')</b></li>
+                  <li><b>document.getElementById('id')</b></li>
+                  <li><b>document.getElementsByClassName('class')</b></li>
+                  <li><b>document.querySelector('css-selector')</b> - возвращает первый элемент из коллекции</li>
+                  <li><b>document.querySelectorAll('css-selector')</b> - возвращает всю коллекцию</li>
+                  <li><b>document.getElementsByName('name')</b></li>
+                  <li><b>getElementsByTagName('tag')</b></li>
+                  <h3 style="padding-top: 10px;">Полезные функции:</h3>
+                  <li><b>getComputedStyle(elim).height ... .width</b> - свойства написанные в css</li>
+                  <li><b>window.pageYOffset || window.pageXOffset</b></li>
+                  <li><b>window.scrollBy</b></li>
+               </ul>
+            </span>
+            <span class="work_With_Dom">
+               <ul>
+                  <h3>Способы присваивать, создавать и удалять события и атрибуты:</h3>
+                  <li class="margin">
+                     <b>elim.addEventListener("click", func), elim.removeEventListener("click", func)</b> - преимущество в том что можно повесить сразу несколько функций и несколько обработчиков событий. 
+                  </li>
+                  <li class="margin">
+                     <b>elim.onclick = func, elim.onclick = null || " "</b>
+                  </li>
+                  <li>
+                     <b>elim.setAttribute("onclick", "func(this)"), elim.removeAttribute("onclick"), elim.hasAttribute("onclick"), elim.getAttribute("onclick")</b>
+                  </li>
+               </ul>
+               <span style="padding: 0 20px;">
+                  <ol>
+                     <h4>Способ передать параметр в функцию если нельзя писать func(): </h4>
+                     <li>Обернуть анонимной фунцией или стрелочной: <b>function() { func(this) } || () => { func(this) }</b></li>
+                     <li><b>func.bind(this)</b> (но это не точно)</li>
+                  </ol>
+               </span>
+            </span>
+		 </section>
+		 
+         <section style="background: #282c34;; color: #61dafb;">
+            <h1 id="React"><i class="fab fa-react"></i> React <i class="fab fa-react"></i></h1>
+            <span id="reactDOM"></span>								
+         </section>
+
+         <section style="background: white; color: #2c3e50; font-family: Avenir, Helvetica, Arial, sans-serif;">
+            <h1 id="Vue"><i class="fab fa-vuejs"></i> Vue <i class="fab fa-vuejs"></i></h1>
+            <span id="vueDOM"></span>
+         </section>
+	  </span>
+	  
+      <script src="scripts/script.js"></script>
+      
+      <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+      <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+      <script src="scripts/react.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+      <script src="scripts/vue.js"></script>
+   </body>
 </html>
