@@ -21,6 +21,11 @@ body {
   }
 }
 
+@font-face {
+  font-family: "Indie Flower";
+  src: url("fonts/IndieFlower-Regular.ttf");
+}
+
 * {
   box-sizing: border-box;
 }
@@ -33,11 +38,6 @@ h1 {
 
 h2 {
   padding: 20px;
-}
-
-@font-face {
-  font-family: "Indie Flower";
-  src: url("fonts/IndieFlower-Regular.ttf");
 }
 
 header {
@@ -689,7 +689,7 @@ img {
   }
 
   nav span {
-    bottom: -60%;
+    bottom: -45%;
   }
 
   nav a {

@@ -123,23 +123,6 @@
             <h2 id="promise_title">Promise & Async Await</h2>
             <button id="promise" onclick="play()" style=" display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 0 auto; height: 40px; width: 40px; min-height: 40px; min-width: 40px; border-radius: 50%; font-size: 30px;"><i class="fas fa-play-circle"></i></button>
             <h2><i class="fas fa-network-wired"></i> API (get) <i class="fas fa-wifi"></i></h2>
-            <!--
-               <form id="form">
-               	<input name="number" placeholder="Введите число" type="number">
-               	<select name="type">
-               		<option disabled="diabled" >type</option>
-               		<option value="trivia" selected>trivia</option>
-               		<option value="math">math</option>
-               		<option value="date">date</option>
-               		<option value="year">year</option>
-               	</select>
-               	<p>
-               		<button>Сделать запрос</button>								
-               	</p>
-               		<span id="result_api">date or number information</span>
-               	<span style='font-size: 20px;'>работает только на локальном сайте т.к. запрос с незащищенного сайта (http)</span>
-               </form>
-               -->
             <form id="form">
                <input id="pokemon" name="pokemon" autocomplete="off" placeholder="Number or name of the pokemon">
                <b><span id="result_api">POKEMON</span></b>
@@ -387,7 +370,9 @@
 		 
          <section style="font-style: italic; border-top: 4px dashed black; display: block;">
             <h1 id="js"><i class="fab fa-js-square"></i> JS <i class="fab fa-chrome"></i></h1>
+
             <span style="padding: 0 20px; text-align: left; font-size: 18px; font-family: Arial;">
+
                <span class="methods">
                   <h3>Cheat sheets:</h3>
                   <h3><a id="methods_title" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects">Standard objects</a></h3>
@@ -405,51 +390,19 @@
                   <a class="methods_item" target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>															
                   </span>
                </span>
+
+               <span class="methods">
+                  <h2>JavaScript-package</h2>
+                  <span class="methods_block">
+                     <a class="methods_item" href="https://github.com/axios/axios" target="_blank">axios</a>             
+                     <a class="methods_item" href="https://lodash.com/" target="_blank">lodash</a>
+                     <a class="methods_item" href="https://www.npmjs.com/package/typescript" target="_blank">typescript</a>
+                     <a class="methods_item" href="https://www.npmjs.com/package/eslint" target="_blank">eslint</a>
+                     <a class="methods_item" href="https://momentjs.com/">moment</a>
+                  </span>               
+               </span>
+
                <h3 style="font-family: Indie Flower; padding-left: 30px; font-size: 40px;">Reminder:</h3>
-               <span class="reminder_item">
-                  <h3>Структуры данных:</h3>
-                  <li>
-                     <b>Объекты</b> - для хранения именованных коллекций.
-                  </li>
-                  <li>
-                     <b>Массивы</b> - для хранения упорядоченных коллекций.
-                  </li>
-                  <li><b>Map</b> - это коллекция ключ/значение, как и Object. Но основное отличие в том, что Map позволяет использовать ключи любого типа. Object приводит свои ключи к строкам</li>
-                  <li><b>Set</b> - это особый вид коллекции: «множество» значений (без ключей), где каждое значение может появляться только один раз.</li>
-                  <li><b>WeakMap</b> — коллекция пар ключ-значение. В качестве ключей могут быть использованы только объекты, а значения могут быть произвольных типов.<span style="text-decoration: underline;">(В основном, WeakMap используется в качестве дополнительного хранилища данных.)</span></li>
-                  <li><b>WeakSet</b> - коллекция, элементами которой могут быть только объекты. Ссылки на эти объекты в WeakSet являются слабыми. Каждый объект может быть добавлен в WeakSet только один раз.</li>
-               </span>
-               <span class="reminder_item">
-                  <h3>Циклы:</h3>
-                  <li>
-                     <b>for(key of arr)</b> - Перебирает элементы итерируемых объектов(объекты с ключами - цифрами, свойством length и свойством Symbol.itertor(у массивов в __proto__ лежит))
-                     <p>(псевдомассивы не работают так как нету Symbol.itertor, потому что __proto__ ссылается на Object.prototype).</p>
-                     <p>Способ перебрать объект через <b>for(key of obj)</b> - <b>for([key, value] of Object.entries(obj))</b>, работает так как Object.entries() и Object.keys() возвращают МАССИВ из ключей и значений</p>
-                  </li>
-                  <li>
-                     <b>for(key in obj) </b> - Перебирает ключи у объектов(всех)
-                  </li>
-                  <li><b>while (condition) {}</b> - проверяет условие на true потом выполняет тело</li>
-                  <li><b>do {} while()</b> - сначала выолнит тело потом если условие true, повторит цикл
-                  </li>
-                  <li>
-                     <b>for(начало; условие; шаг) {}</b>
-                  </li>
-                  <li>
-                     <b>Метод массивов forEach( (item) => {body})</b>
-                  </li>
-               </span>
-               <span class="reminder_item">
-                  <h3>Формат данных(Сетевых запросов):</h3>
-                  <li>
-                     <b>JSON</b> (JavaScript Object Notation) - это текстовый формат обмена данными, основанный на JavaScript. JSON требует меньше кода и имеет меньший размер, что ускоряет обработку и передачу данных. Не смотря на то, что JSON написан на JavaScript , он не зависит от языка. Но это все, что может сделать с JSON. Он не имеет каких-либо мощных функций, связанных с проверкой и схемой, которые есть у XML.
-                     <p><img src="img/JSON.jpg"></p>
-                  </li>
-                  <li>
-                     <b>XML</b> (Extensible Markup Language) - это язык разметки. Является выбором по умолчанию для обмена данными, так-как практически у каждого языка есть синтаксический анализатор, будь то Java, .NET или любой другой язык, поэтому легко извлечь определенные данные из XML, и есть схемы, которые могут проверять XML. XML также широко используется в сфере услуг: банковские услуги, онлайн-магазины розничной торговли, интеграция промышленных систем и т.д.
-                     <p><img src="img/XML.jpg"></p>
-                  </li>
-               </span>
                <span class="reminder_item">
                   <h3>Promise:</h3>
                   <p><b>- это объект, представляющий результат успешного или неудачного завершения асинхронной операции. (Обещание выполнить какое-либо действие)</b></p>
@@ -562,6 +515,7 @@
                   </ul>
                </span>
             </span>
+
             <h2 class="h2_with_border">Work with D.O.M</h2>
             <span class="work_With_Dom">
                <ul>
@@ -590,12 +544,6 @@
                   <li><b>elim.setAttribute()</b></li>
                   <li><b>elim.removeAttribute()</b></li>
                   <li><b>...</b></li>
-                  <h3 style="padding-top: 10px;">Некоторые теги имеют дополнительные атрибуты:</h3>
-                  <li><b>input</b></li>
-                  <li><b>button</b></li>
-                  <li><b>...</b></li>
-                  <h3 style="padding-top: 10px;">Cпособ посмотреть HTMLCollection из элементов страницы:</h3>
-                  <li>console.log(document.body.children) - <small>HTMLCollection это список узлов. Отдельный узел может быть доступен по порядковому номеру или имени узла и атрибута. Коллекции в HTML DOM являются живыми. Коллекции обновляются при изменении документа. Неживые коллекции при изминении DOM не меняются</small></li>
                </ul>
             </span>
             <span class="work_With_Dom">
@@ -639,7 +587,7 @@
                   <ol>
                      <h4>Способ передать параметр в функцию если нельзя писать func(): </h4>
                      <li>Обернуть анонимной фунцией или стрелочной: <b>function() { func(this) } || () => { func(this) }</b></li>
-                     <li><b>func.bind(this)</b> (но это не точно)</li>
+                     <li><b>func.bind(this)</b></li>
                   </ol>
                </span>
             </span>
@@ -656,7 +604,7 @@
          </section>
 	  </span>
 	  
-      <script src="scripts/script.js"></script>
+      <script src="scripts/es6.js"></script>
       
       <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
       <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>

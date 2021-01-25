@@ -82,6 +82,18 @@ var vm = new Vue({
           text: "Keep-alive - это кеширование компонентов",
           link: "https://ru.vuejs.org/v2/guide/components-dynamic-async.html",
         },
+        {
+          title: "Provide & Inject",
+          text: "provide позволяет нам указать данные/методы, которые мы хотим предоставить всем компонентам-потомкам, а inject для получения специальных свойств, которые мы хотели бы добавить к этому экземпляру",
+          link: "https://ru.vuejs.org/v2/guide/components-edge-cases.html#%D0%92%D0%BD%D0%B5%D0%B4%D1%80%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B5%D0%B9",
+        },
+        {
+          title: "Event bus",
+          text:
+            "Event bus - это встроенный publish subscribe паттерн, который позволяет нам передавать данные между любыми компонентами.",
+          link:
+            "https://monsterlessons.com/project/lessons/eventbus-v-vuejs#:~:text=%D0%92%20Vue%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%B2%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20publish,child%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D1%8B%20LoginForm%20%D0%B8%20SuccessMessage",
+        },
       ],
     };
   },
