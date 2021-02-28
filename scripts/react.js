@@ -61,6 +61,12 @@ class ReactPage extends React.Component {
             "Reselect - это библиотека для создания мемоизированных селекторов. Используя мемоизацию, мы можем предотвратить ненужные перерисовки. Selector - это функция которая получает state, делает выборку данных из state.",
           link: "https://github.com/reduxjs/reselect",
         },
+        {
+          title: "MATERIAL-UI",
+          text:
+            "MATERIAL-UI - это UI библиотека с React компонентами для быстрой и легкой веб-разработки.",
+          link: "https://material-ui.com/ru/",
+        },
       ],
     };
   }
