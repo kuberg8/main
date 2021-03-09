@@ -94,6 +94,11 @@ var vm = new Vue({
           link:
             "https://monsterlessons.com/project/lessons/eventbus-v-vuejs#:~:text=%D0%92%20Vue%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%B2%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20publish,child%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D1%8B%20LoginForm%20%D0%B8%20SuccessMessage",
         },
+        {
+          title: "v-mask",
+          text: "v-mask - это библиотека входных масок для vue.js",
+          link: "https://www.npmjs.com/package/v-mask"
+        }
       ],
     };
   },
