@@ -17,7 +17,7 @@
 
       <script src="https://kit.fontawesome.com/adcc431357.js" crossorigin="anonymous"></script>
    </head>
-   <body onscroll="autoClose()">
+   <body>
       <header>
          <div class="box">
             <i class="fas fa-code"></i>
@@ -32,11 +32,11 @@
 	  </header>
 	  
       <nav>
-         <a onclick="scrollToBlock('Tasks')">Tasks</a>
-         <a onclick="scrollToBlock('js')">JS</a>
-         <a onclick="scrollToBlock('React')">React</a>
-         <a onclick="scrollToBlock('Vue')">Vue</a>
-         <span onclick="openNav()"><i class="fas fa-sort"></i></span>
+         <a>Tasks</a>
+         <a>JS</a>
+         <a>React</a>
+         <a>Vue</a>
+         <span><i class="fas fa-sort"></i></span>
 	  </nav>
 	  
       <span>
@@ -374,7 +374,7 @@
 		 </section>
 		 
          <section style="font-style: italic; border-top: 4px dashed black; display: block;">
-            <h1 id="js"><i class="fab fa-js-square"></i> JS <i class="fab fa-chrome"></i></h1>
+            <h1 id="JS"><i class="fab fa-js-square"></i> JS <i class="fab fa-chrome"></i></h1>
 
             <span style="padding: 0 20px; text-align: left; font-size: 18px; font-family: Arial;">
 
@@ -609,13 +609,13 @@
          </section>
 	  </span>
 	  
-      <script src="scripts/es6.js"></script>
+      <script src="bundle.js"></script>
       
       <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
       <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-      <script src="scripts/react.js"></script>
+      <script src="../src/react.js"></script>
 
       <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-      <script src="scripts/vue.js"></script>
+      <script src="../src/vue.js"></script>
    </body>
 </html>
