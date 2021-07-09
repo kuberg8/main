@@ -40,99 +40,112 @@
 	  </nav>
 	  
       <span>
+         <!-- Задачки -->
          <section>
             <h1 id="Tasks"><i class="fas fa-thumbtack"></i> Tasks <i class="fas fa-tasks"></i></h1>
+
+            <!-- Поиск совпадений -->
             <h2><i class="fas fa-binoculars"></i> Search <i class="fas fa-search"></i></h2>
-            <input placeholder="Search.." onkeyup="find(this)" style="width: 80%; height: 50px; border-radius: 10px;">
+            <input placeholder="Search.." style="width: 80%; height: 50px; border-radius: 10px;">
             <div id="text">Meet my family. There are five of us – my parents, my elder brother, my baby sister and me. First, meet my mum and dad, Jane and Michael. My mum enjoys reading and my dad enjoys playing chess with my brother Ken. My mum is slim and rather tall. She has long red hair and big brown eyes. She has a very pleasant smile and a soft voice. My mother is very kind and understanding. We are real friends. She is a housewife. As she has three children, she is always busy around the house. She takes care of my baby sister Meg, who is only three months old. My sister is very small and funny. She sleeps, eats and sometimes cries. We all help our mother and let her have a rest in the evening. Then she usually reads a book or just watches TV. My father is a doctor. He is tall and handsome. He has short dark hair and gray eyes. He is a very hardworking man. He is rather strict with us, but always fair. My elder brother Ken is thirteen, and he is very clever. He is good at Maths and always helps me with it, because I can hardly understand all these sums and problems. Ken has red hair and brown eyes. My name is Jessica. I am eleven. I have long dark hair and brown eyes. I am not as clever as my brother, though I try to do my best at school too. I am fond of dancing. Our dancing studio won The Best Dancing Studio 2015 competition last month. I am very proud of it. I also like to help my mother with my little sister very much. Our family is very united. We love each other and always try to spend more time together.</div>
             <b><a style="font-size: 20px; color: red;" target="_blank" href="http://old.code.mu/tasks/javascript/regular/rabota-s-regulyarnymi-vyrazeniyami-v-javascript-glava-1.html">Reminder - Regular Expressions</a></b>
+            
+            <!-- Калькулятор -->
             <h2><i class="fas fa-square-root-alt"></i> Calculator <i class="fas fa-calculator"></i></h2>
             <span class="flex">
                <div class="calculator">
-                  <table align="center" cols="4">
+                  <table id="calculator1" align="center" cols="4">
                      <caption><input id="caption" placeholder="0"></caption>
                      <tbody>
                         <tr>
-                           <td colspan="3"><input class="cal_item above" type="button" value="AC" onclick="delet()"></td>
+                           <td colspan="3"><input isOperation class="cal_item above" type="button" value="AC"></td>
                            <td><input class="cal_item" type="button" value="%" onclick="lst()"></td>
                         </tr>
                         <tr>
-                           <td><input class="cal_item" type="button" value="7" onclick="pressing(this)"></td>
-                           <td><input class="cal_item" type="button" value="8" onclick="pressing(this)"></td>
-                           <td><input class="cal_item" type="button" value="9" onclick="pressing(this)"></td>
-                           <td><input class="cal_item" type="button" value="/" onclick="shr()"></td>
+                           <td><input isNumber class="cal_item" type="button" value="7"></td>
+                           <td><input isNumber class="cal_item" type="button" value="8"></td>
+                           <td><input isNumber class="cal_item" type="button" value="9"></td>
+                           <td><input isOperation class="cal_item" type="button" value="/"></td>
                         </tr>
                         <tr>
-                           <td><input class="cal_item" type="button" value="4" onclick="pressing(this)"></td>
-                           <td><input class="cal_item" type="button" value="5" onclick="pressing(this)"></td>
-                           <td><input class="cal_item" type="button" value="6" onclick="pressing(this)"></td>
-                           <td><input class="cal_item" type="button" value="x" onclick="mlt()"></td>
+                           <td><input isNumber class="cal_item" type="button" value="4"></td>
+                           <td><input isNumber class="cal_item" type="button" value="5"></td>
+                           <td><input isNumber class="cal_item" type="button" value="6"></td>
+                           <td><input isOperation class="cal_item" type="button" value="*"></td>
                         </tr>
                         <tr>
-                           <td><input class="cal_item" type="button" value="1" onclick="pressing(this)"></td>
-                           <td><input class="cal_item" type="button" value="2" onclick="pressing(this)"></td>
-                           <td><input class="cal_item" type="button" value="3" onclick="pressing(this)"></td>
-                           <td><input class="cal_item" type="button" value="-" onclick="mns()"></td>
+                           <td><input isNumber class="cal_item" type="button" value="1"></td>
+                           <td><input isNumber class="cal_item" type="button" value="2"></td>
+                           <td><input isNumber class="cal_item" type="button" value="3"></td>
+                           <td><input isOperation class="cal_item" type="button" value="-"></td>
                         </tr>
                         <tr>
-                           <td><input class="cal_item" type="button" value="0" onclick="pressing(this)"></td>
-                           <td><input class="cal_item" type="button" value="." onclick="pressing(this)"></td>
-                           <td><input class="cal_item" type="button" value="=" onclick="reslt()"></td>
-                           <td><input class="cal_item" type="button" value="+" onclick="pls()"></td>
+                           <td><input isNumber class="cal_item" type="button" value="0"></td>
+                           <td><input isNumber class="cal_item" type="button" value="."></td>
+                           <td><input isOperation class="cal_item" type="button" value="="></td>
+                           <td><input isOperation class="cal_item" type="button" value="+"></td>
                         </tr>
                      </tbody>
                   </table>
                </div>
+
                <div class="calculator2">
-                  <table align="center" cols="5">
+                  <table id="calculator2" align="center" cols="5">
                      <caption><input id="caption2" placeholder="0" disabled></caption>
                      <tbody>
                         <tr>
-                           <td><input class="cal_item" type="button" value="(" onclick="pressingOperation(this)"></td>
-                           <td><input class="cal_item" type="button" value=")" onclick="pressingOperation(this)"></td>
-                           <td><input class="cal_item" type="button" value="%" onclick="pressingOperation(this)"></td>
-                           <td><input class="cal_item" type="button" value="C" onclick="deletOne()"></td>
-                           <td rowspan="5"><input class="cal_item above2" type="button" value="AC" onclick="delet2()"></td>
+                           <td><input isOperation class="cal_item" type="button" value="("></td>
+                           <td><input isOperation class="cal_item" type="button" value=")"></td>
+                           <td><input isOperation class="cal_item" type="button" value="%"></td>
+                           <td><input isOperation class="cal_item" type="button" value="C"></td>
+                           <td rowspan="5"><input isOperation class="cal_item above2" type="button" value="AC"></td>
                         </tr>
                         <tr>
-                           <td><input class="cal_item" type="button" value="7" onclick="pressing2(this)"></td>
-                           <td><input class="cal_item" type="button" value="8" onclick="pressing2(this)"></td>
-                           <td><input class="cal_item" type="button" value="9" onclick="pressing2(this)"></td>
-                           <td><input class="cal_item" type="button" value="/" onclick="pressingOperation(this)"></td>
+                           <td><input isNumber class="cal_item" type="button" value="7"></td>
+                           <td><input isNumber class="cal_item" type="button" value="8"></td>
+                           <td><input isNumber class="cal_item" type="button" value="9"></td>
+                           <td><input isOperation class="cal_item" type="button" value="/"></td>
                         </tr>
                         <tr>
-                           <td><input class="cal_item" type="button" value="4" onclick="pressing2(this)"></td>
-                           <td><input class="cal_item" type="button" value="5" onclick="pressing2(this)"></td>
-                           <td><input class="cal_item" type="button" value="6" onclick="pressing2(this)"></td>
-                           <td><input class="cal_item" type="button" value="*" onclick="pressingOperation(this)"></td>
+                           <td><input isNumber class="cal_item" type="button" value="4"></td>
+                           <td><input isNumber class="cal_item" type="button" value="5"></td>
+                           <td><input isNumber class="cal_item" type="button" value="6"></td>
+                           <td><input isOperation class="cal_item" type="button" value="*"></td>
                         </tr>
                         <tr>
-                           <td><input class="cal_item" type="button" value="1" onclick="pressing2(this)"></td>
-                           <td><input class="cal_item" type="button" value="2" onclick="pressing2(this)"></td>
-                           <td><input class="cal_item" type="button" value="3" onclick="pressing2(this)"></td>
-                           <td><input class="cal_item" type="button" value="-" onclick="pressingOperation(this)"></td>
+                           <td><input isNumber class="cal_item" type="button" value="1"></td>
+                           <td><input isNumber class="cal_item" type="button" value="2"></td>
+                           <td><input isNumber class="cal_item" type="button" value="3"></td>
+                           <td><input isOperation class="cal_item" type="button" value="-"></td>
                         </tr>
                         <tr>
-                           <td><input class="cal_item" type="button" value="0" onclick="pressing2(this)"></td>
-                           <td><input class="cal_item" type="button" value="." onclick="pressing2(this)"></td>
-                           <td><input class="cal_item" type="button" value="=" onclick="reslt2()"></td>
-                           <td><input class="cal_item" type="button" value="+" onclick="pressingOperation(this)"></td>
+                           <td><input isNumber class="cal_item" type="button" value="0"></td>
+                           <td><input isNumber class="cal_item" type="button" value="."></td>
+                           <td><input isOperation class="cal_item" type="button" value="="></td>
+                           <td><input isOperation class="cal_item" type="button" value="+"></td>
                         </tr>
                      </tbody>
                   </table>
                </div>
             </span>
+
+            <!-- Часы -->
             <h2><i class="far fa-calendar-alt"></i> Time <i class="far fa-clock"></i></h2>
-            <div id="time"></div>
             <div id="date"></div>
+
+            <!-- Промисы -->
             <h2 id="promise_title">Promise & Async Await</h2>
-            <button id="promise" onclick="play()" style=" display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 0 auto; height: 40px; width: 40px; min-height: 40px; min-width: 40px; border-radius: 50%; font-size: 30px;"><i class="fas fa-play-circle"></i></button>
+            <button id="promise" style=" display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 0 auto; height: 40px; width: 40px; min-height: 40px; min-width: 40px; border-radius: 50%; font-size: 30px;"><i class="fas fa-play-circle"></i></button>
+            
+            <!-- HTTP-запросы -->
             <h2><i class="fas fa-network-wired"></i> API (get) <i class="fas fa-wifi"></i></h2>
             <form id="form">
                <input id="pokemon" name="pokemon" autocomplete="off" placeholder="Number or name of the pokemon">
                <b><span id="result_api">POKEMON</span></b>
                <button>Сделать запрос</button>	
             </form>
+
+            <!-- Шахматы -->
             <h2><i class="fas fa-map-marker"></i> Event <i class="fas fa-location-arrow"></i></h2>
             <b>не закончено</b>
             <div style="display: flex; justify-content: space-around;">
@@ -283,6 +296,8 @@
                   </tr>
                </table>
             </div>
+
+            <!-- Рандом -->
             <h2><i class="fas fa-random"></i> Random <i class="fas fa-sync-alt"></i></h2>
             <div class="random_block">
                <span class="result_block"><span id="result_random">0</span></span>	
@@ -291,7 +306,7 @@
                <span><input id="max" placeholder="0" style="width: 120px; height: 40px;"> <b>- MAXIMUM</b></span>
                </span>
             </div>
-            <button id="random_button" onclick="random()" style="height: 40px;">Сгенерировать</button>
+            <button id="random_button" style="height: 40px;">Сгенерировать</button>
             <h2><i class="fas fa-gamepad"></i> Simon said <i class="fas fa-puzzle-piece"></i></h2>
             <span id="Round">Round: 1</span>
             <div id="game" onclick="game(event)">
@@ -315,6 +330,8 @@
             </form>
             <div id="game_result"></div>
             <button id="gameButton" onclick="getMassRandom()" style="margin: 30px 0; font-size: 20px;">Play</button>
+            
+            <!-- Отправка формы -->
             <h2><i class="far fa-keyboard"></i> Send Form <i class="fas fa-mouse"></i></h2>
             <form id="form2">
                <h1>Form send</h1>
@@ -324,7 +341,7 @@
                   required
                   pattern='[A-Za-z1-9]{1,8}' 
                   title="Только латинские буквы" 
-                  maxlength='8'><!--pattern='[a-zA-Z]' не работает почему-то-->
+                  maxlength='8'>
                <input 
                   type="password" 
                   name="password" 
@@ -360,20 +377,14 @@
                <input type="reset" style="width: 50%; margin: 50px auto 0; cursor: pointer; border-radius: 10px; font-size: 17px; border: 2px dashed black;">
                <button>Отправить</button>
             </form>
+
+            <!-- Сортировка -->
             <h2><i class="fas fa-filter"></i> .sort() <i class="fas fa-sort-amount-down-alt"></i></h2>
-            <span id="sort_date">
-               <h3>Сортировка по дате :</h3>
-            </span>
-            <span style="display: flex; width: 100%; flex-direction: column; text-align: center; margin-bottom: 100px;">
-            <span style="display: flex; width: 100%; justify-content: space-around; margin: 100px 0 20px 0;">
-            <button onclick="sortByReview(arr2)" style="width: 45%;">Отсортировать по кол-ву отзывов</button>
-            <button onclick="sortByPrice(arr2)" style="width: 45%;">Отсортировать по цене</button>	
-            </span>
-            <span id="mass"></span>
-            </span>			
+            <p>...</p>
+ 		
 		 </section>
 		 
-         <section style="font-style: italic; border-top: 4px dashed black; display: block;">
+       <section style="font-style: italic; border-top: 4px dashed black; display: block;">
             <h1 id="JS"><i class="fab fa-js-square"></i> JS <i class="fab fa-chrome"></i></h1>
 
             <span style="padding: 0 20px; text-align: left; font-size: 18px; font-family: Arial;">
